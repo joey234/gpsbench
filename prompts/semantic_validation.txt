@@ -1,0 +1,10 @@
+Is it plausible to have a {context} at coordinates {coordinate_string}?
+
+Consider:
+- Is this location on land or water?
+- Is the terrain/environment suitable for a {context}?
+- Are there any geographic constraints that would make this implausible?
+
+Provide your assessment of whether this location-entity pair is plausible.
+
+FINAL ANSWER: [Yes/Plausible or No/Implausible with brief reason]

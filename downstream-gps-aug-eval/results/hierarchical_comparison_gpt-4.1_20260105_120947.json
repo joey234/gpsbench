@@ -1,0 +1,113 @@
+{
+  "model": "gpt-4.1",
+  "timestamp": "20260105_120947",
+  "num_questions": 22,
+  "num_runs": 1,
+  "base": {
+    "total_evaluations": 22,
+    "num_questions": 22,
+    "num_runs": 1,
+    "correct": 9,
+    "accuracy": 0.4090909090909091,
+    "by_bias_type": {
+      "hierarchical": {
+        "correct": 7,
+        "total": 10,
+        "accuracy": 0.7
+      },
+      "proximity": {
+        "correct": 0,
+        "total": 4,
+        "accuracy": 0.0
+      },
+      "rotation": {
+        "correct": 0,
+        "total": 4,
+        "accuracy": 0.0
+      },
+      "alignment": {
+        "correct": 2,
+        "total": 4,
+        "accuracy": 0.5
+      }
+    },
+    "per_question": {
+      "1": 0.0,
+      "2": 0.0,
+      "3": 1.0,
+      "4": 0.0,
+      "5": 1.0,
+      "6": 1.0,
+      "7": 1.0,
+      "8": 1.0,
+      "9": 1.0,
+      "10": 1.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.0,
+      "14": 0.0,
+      "15": 0.0,
+      "16": 0.0,
+      "17": 0.0,
+      "18": 0.0,
+      "19": 0.0,
+      "20": 0.0,
+      "21": 1.0,
+      "22": 1.0
+    }
+  },
+  "augmented": {
+    "total_evaluations": 22,
+    "num_questions": 22,
+    "num_runs": 1,
+    "correct": 14,
+    "accuracy": 0.6363636363636364,
+    "by_bias_type": {
+      "hierarchical": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "proximity": {
+        "correct": 0,
+        "total": 4,
+        "accuracy": 0.0
+      },
+      "rotation": {
+        "correct": 0,
+        "total": 4,
+        "accuracy": 0.0
+      },
+      "alignment": {
+        "correct": 4,
+        "total": 4,
+        "accuracy": 1.0
+      }
+    },
+    "per_question": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0,
+      "6": 1.0,
+      "7": 1.0,
+      "8": 1.0,
+      "9": 1.0,
+      "10": 1.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.0,
+      "14": 0.0,
+      "15": 0.0,
+      "16": 0.0,
+      "17": 0.0,
+      "18": 0.0,
+      "19": 1.0,
+      "20": 1.0,
+      "21": 1.0,
+      "22": 1.0
+    }
+  },
+  "improvement": 22.72727272727272
+}

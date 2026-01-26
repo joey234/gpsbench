@@ -1,0 +1,84 @@
+# Configuration file for LoRA fine-tuning
+
+# Dataset generation settings
+dataset:
+  cities_file: "../data/raw/cities15000.txt"
+  output_dir: "./data"
+  max_cities: 10000
+  train_ratio: 0.8
+  noise_levels: [0.001, 0.005, 0.01]  # Noise std in degrees (~111m, 555m, 1.1km)
+  samples_per_city: 3
+  seed: 42
+
+# Model settings
+model:
+  name: "Qwen/Qwen2.5-0.5B"
+  use_4bit: true
+  max_seq_length: 256
+
+# LoRA settings
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+
+# Training settings
+training:
+  output_dir: "./models/qwen-lora-location"
+  checkpoint_dir: "./models/checkpoints"
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  num_epochs: 3
+  learning_rate: 0.0002
+  warmup_steps: 100
+  eval_steps: 100
+  save_steps: 200
+  logging_steps: 10
+
+# Inference settings
+inference:
+  temperature: 0.1
+  max_new_tokens: 50
+
+# Evaluation settings
+evaluation:
+  val_file: "./data/val_dataset.json"
+  output_dir: "./results"
+  sample_size: null  # Set to number for quick eval, null for full eval
+
+# Alternative configurations for experimentation
+
+# For quick testing (smaller dataset, faster training)
+quick:
+  dataset:
+    max_cities: 1000
+    samples_per_city: 2
+  training:
+    batch_size: 4
+    num_epochs: 1
+    eval_steps: 50
+
+# For production (larger dataset, more training)
+production:
+  dataset:
+    max_cities: 20000
+    samples_per_city: 5
+    noise_levels: [0.0001, 0.001, 0.005, 0.01, 0.05]
+  lora:
+    r: 32
+    alpha: 64
+  training:
+    num_epochs: 5
+    learning_rate: 0.0001
+    batch_size: 8
+
+# For low-memory systems
+low_memory:
+  model:
+    use_4bit: true
+  training:
+    batch_size: 2
+    gradient_accumulation_steps: 8
+  dataset:
+    max_cities: 5000

@@ -1,0 +1,171 @@
+{
+  "base_model": "Qwen/Qwen3-8B",
+  "lora_path": "../finetuning/models/qwen3-8b-lora",
+  "timestamp": "2025-11-10T04:39:56.398841",
+  "tracks": {
+    "pure_gps": {
+      "base": {
+        "track": "pure_gps",
+        "model": "Qwen/Qwen3-8B-base",
+        "timestamp": "2025-11-10T04:40:27.076021",
+        "overall_accuracy": 0,
+        "total_correct": 0,
+        "total_tests": 0,
+        "tasks": {
+          "format_conversion": {
+            "error": "Task file not found: data/layer_a/task2_format_conversion.json"
+          },
+          "precision_understanding": {
+            "error": "Task file not found: data/layer_a/task5_precision.json"
+          },
+          "distance_calculation": {
+            "error": "Task file not found: data/layer_c/task1_distance_calculation.json"
+          },
+          "bearing_computation": {
+            "error": "Task file not found: data/layer_c/task2_bearing_computation.json"
+          },
+          "interpolation": {
+            "error": "Task file not found: data/layer_c/task3_interpolation.json"
+          },
+          "area_perimeter": {
+            "error": "Task file not found: data/layer_c/task4_area_perimeter.json"
+          },
+          "coordinate_matching": {
+            "error": "Task file not found: data/layer_e/task6_coordinate_matching.json"
+          },
+          "consistency": {
+            "error": "Task file not found: data/layer_e/task3_consistency.json"
+          }
+        }
+      },
+      "finetuned": {
+        "track": "pure_gps",
+        "model": "Qwen/Qwen3-8B-finetuned",
+        "timestamp": "2025-11-10T04:41:02.113355",
+        "overall_accuracy": 0,
+        "total_correct": 0,
+        "total_tests": 0,
+        "tasks": {
+          "format_conversion": {
+            "error": "Task file not found: data/layer_a/task2_format_conversion.json"
+          },
+          "precision_understanding": {
+            "error": "Task file not found: data/layer_a/task5_precision.json"
+          },
+          "distance_calculation": {
+            "error": "Task file not found: data/layer_c/task1_distance_calculation.json"
+          },
+          "bearing_computation": {
+            "error": "Task file not found: data/layer_c/task2_bearing_computation.json"
+          },
+          "interpolation": {
+            "error": "Task file not found: data/layer_c/task3_interpolation.json"
+          },
+          "area_perimeter": {
+            "error": "Task file not found: data/layer_c/task4_area_perimeter.json"
+          },
+          "coordinate_matching": {
+            "error": "Task file not found: data/layer_e/task6_coordinate_matching.json"
+          },
+          "consistency": {
+            "error": "Task file not found: data/layer_e/task3_consistency.json"
+          }
+        }
+      }
+    },
+    "applied": {
+      "base": {
+        "track": "applied",
+        "model": "Qwen/Qwen3-8B-base",
+        "timestamp": "2025-11-10T04:41:03.618566",
+        "overall_accuracy": 0,
+        "total_correct": 0,
+        "total_tests": 0,
+        "tasks": {
+          "place_association": {
+            "error": "Task file not found: data/layer_b/task1_place_association.json"
+          },
+          "semantic_validation": {
+            "error": "Task file not found: data/layer_b/task2_semantic_validation_mc.json"
+          },
+          "regional_knowledge": {
+            "error": "Task file not found: data/layer_b/task3_regional_knowledge_mc.json"
+          },
+          "context_grounding": {
+            "error": "Task file not found: data/layer_b/task4_context_grounding.json"
+          },
+          "relative_position": {
+            "error": "Task file not found: data/layer_d/task1_relative_position_mc.json"
+          },
+          "proximity": {
+            "error": "Task file not found: data/layer_d/task2_proximity_mc.json"
+          },
+          "route_analysis": {
+            "error": "Task file not found: data/layer_d/task3_route_analysis.json"
+          },
+          "boundary_analysis": {
+            "error": "Task file not found: data/layer_d/task4_boundary_analysis_mc.json"
+          },
+          "spatial_patterns": {
+            "error": "Task file not found: data/layer_d/task5_spatial_patterns.json"
+          },
+          "noise_tolerance": {
+            "error": "Task file not found: data/layer_e/task1_noise_tolerance.json"
+          },
+          "missing_data": {
+            "error": "Task file not found: data/layer_e/task2_missing_data.json"
+          },
+          "hallucination_detection": {
+            "error": "Task file not found: data/layer_e/task4_hallucination_detection.json"
+          }
+        }
+      },
+      "finetuned": {
+        "track": "applied",
+        "model": "Qwen/Qwen3-8B-finetuned",
+        "timestamp": "2025-11-10T04:41:32.965375",
+        "overall_accuracy": 0,
+        "total_correct": 0,
+        "total_tests": 0,
+        "tasks": {
+          "place_association": {
+            "error": "Task file not found: data/layer_b/task1_place_association.json"
+          },
+          "semantic_validation": {
+            "error": "Task file not found: data/layer_b/task2_semantic_validation_mc.json"
+          },
+          "regional_knowledge": {
+            "error": "Task file not found: data/layer_b/task3_regional_knowledge_mc.json"
+          },
+          "context_grounding": {
+            "error": "Task file not found: data/layer_b/task4_context_grounding.json"
+          },
+          "relative_position": {
+            "error": "Task file not found: data/layer_d/task1_relative_position_mc.json"
+          },
+          "proximity": {
+            "error": "Task file not found: data/layer_d/task2_proximity_mc.json"
+          },
+          "route_analysis": {
+            "error": "Task file not found: data/layer_d/task3_route_analysis.json"
+          },
+          "boundary_analysis": {
+            "error": "Task file not found: data/layer_d/task4_boundary_analysis_mc.json"
+          },
+          "spatial_patterns": {
+            "error": "Task file not found: data/layer_d/task5_spatial_patterns.json"
+          },
+          "noise_tolerance": {
+            "error": "Task file not found: data/layer_e/task1_noise_tolerance.json"
+          },
+          "missing_data": {
+            "error": "Task file not found: data/layer_e/task2_missing_data.json"
+          },
+          "hallucination_detection": {
+            "error": "Task file not found: data/layer_e/task4_hallucination_detection.json"
+          }
+        }
+      }
+    }
+  }
+}

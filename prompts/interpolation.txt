@@ -1,0 +1,12 @@
+Find the point that is {fraction} of the way along the great circle path from Point A to Point B.
+
+Point A: {point_a_name}
+Coordinates: {point_a_lat}, {point_a_lon}
+
+Point B: {point_b_name}
+Coordinates: {point_b_lat}, {point_b_lon}
+
+Calculate the interpolated point at fraction {fraction} (where 0 = Point A, 1 = Point B).
+Use great circle interpolation (not linear).
+
+FINAL ANSWER: [latitude], [longitude]

@@ -1,0 +1,70 @@
+{
+  "model": "gpt-4.1",
+  "timestamp": "20260105_115136",
+  "num_samples": 5,
+  "base": {
+    "total_samples": 5,
+    "correct": 0,
+    "accuracy": 0.0,
+    "errors": 0,
+    "by_classification": {
+      "trip": {
+        "total": 2,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "routing": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "nearby": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "poi": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "augmented": {
+    "total_samples": 5,
+    "correct": 0,
+    "accuracy": 0.0,
+    "errors": 0,
+    "by_classification": {
+      "trip": {
+        "total": 2,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "routing": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "nearby": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "poi": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "improvement": {
+    "overall": 0.0,
+    "by_classification": {
+      "poi": 0.0,
+      "routing": 0.0,
+      "nearby": 0.0,
+      "trip": 0.0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Analyze this route with {num_waypoints} waypoints:
+
+{waypoints}
+
+Calculate the total route length by summing distances between consecutive waypoints, then use it to answer the question.
+
+FINAL ANSWER: [your answer]

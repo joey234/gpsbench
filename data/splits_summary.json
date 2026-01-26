@@ -1,0 +1,391 @@
+{
+  "total_tasks": 18,
+  "seed": 42,
+  "ratios": {
+    "train": 0.6,
+    "dev": 0.1,
+    "test": 0.3
+  },
+  "tasks": [
+    {
+      "task": "task11_missing_data",
+      "task_type": "missing_data_handling",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task11_missing_data_train.json",
+        "dev": "task11_missing_data_dev.json",
+        "test": "task11_missing_data_test.json"
+      }
+    },
+    {
+      "task": "task13_terrain_classification",
+      "task_type": "terrain_classification",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task13_terrain_classification_train.json",
+        "dev": "task13_terrain_classification_dev.json",
+        "test": "task13_terrain_classification_test.json"
+      }
+    },
+    {
+      "task": "task1_place_association",
+      "task_type": "place_association",
+      "split_strategy": "geographic",
+      "split_ratios": null,
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task1_place_association_train.json",
+        "dev": "task1_place_association_dev.json",
+        "test": "task1_place_association_test.json"
+      }
+    },
+    {
+      "task": "task3_name_disambiguation",
+      "task_type": "name_disambiguation",
+      "split_strategy": "geographic",
+      "split_ratios": null,
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2883,
+        "dev": 311,
+        "test": 206
+      },
+      "files": {
+        "train": "task3_name_disambiguation_train.json",
+        "dev": "task3_name_disambiguation_dev.json",
+        "test": "task3_name_disambiguation_test.json"
+      }
+    },
+    {
+      "task": "task5_relative_position",
+      "task_type": "relative_position",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task5_relative_position_train.json",
+        "dev": "task5_relative_position_dev.json",
+        "test": "task5_relative_position_test.json"
+      }
+    },
+    {
+      "task": "task6_proximity",
+      "task_type": "proximity",
+      "split_strategy": "geographic",
+      "split_ratios": null,
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task6_proximity_train.json",
+        "dev": "task6_proximity_dev.json",
+        "test": "task6_proximity_test.json"
+      }
+    },
+    {
+      "task": "task7_route_analysis",
+      "task_type": "route_analysis",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task7_route_analysis_train.json",
+        "dev": "task7_route_analysis_dev.json",
+        "test": "task7_route_analysis_test.json"
+      }
+    },
+    {
+      "task": "task8_boundary_analysis",
+      "task_type": "boundary_analysis",
+      "split_strategy": "geographic",
+      "split_ratios": null,
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task8_boundary_analysis_train.json",
+        "dev": "task8_boundary_analysis_dev.json",
+        "test": "task8_boundary_analysis_test.json"
+      }
+    },
+    {
+      "task": "task9_spatial_patterns",
+      "task_type": "spatial_patterns",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task9_spatial_patterns_train.json",
+        "dev": "task9_spatial_patterns_dev.json",
+        "test": "task9_spatial_patterns_test.json"
+      }
+    },
+    {
+      "task": "task10_relative_position",
+      "task_type": "relative_position",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task10_relative_position_train.json",
+        "dev": "task10_relative_position_dev.json",
+        "test": "task10_relative_position_test.json"
+      }
+    },
+    {
+      "task": "task1_format_conversion",
+      "task_type": "format_conversion",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task1_format_conversion_train.json",
+        "dev": "task1_format_conversion_dev.json",
+        "test": "task1_format_conversion_test.json"
+      }
+    },
+    {
+      "task": "task3_coordinate_system_transformation",
+      "task_type": "coordinate_system_transformation",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2039,
+        "dev": 339,
+        "test": 1022
+      },
+      "files": {
+        "train": "task3_coordinate_system_transformation_train.json",
+        "dev": "task3_coordinate_system_transformation_dev.json",
+        "test": "task3_coordinate_system_transformation_test.json"
+      }
+    },
+    {
+      "task": "task4_distance_calculation",
+      "task_type": "distance_calculation",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task4_distance_calculation_train.json",
+        "dev": "task4_distance_calculation_dev.json",
+        "test": "task4_distance_calculation_test.json"
+      }
+    },
+    {
+      "task": "task5_bearing_computation",
+      "task_type": "bearing_computation",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task5_bearing_computation_train.json",
+        "dev": "task5_bearing_computation_dev.json",
+        "test": "task5_bearing_computation_test.json"
+      }
+    },
+    {
+      "task": "task6_interpolation",
+      "task_type": "interpolation",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task6_interpolation_train.json",
+        "dev": "task6_interpolation_dev.json",
+        "test": "task6_interpolation_test.json"
+      }
+    },
+    {
+      "task": "task7_area_perimeter",
+      "task_type": "area_perimeter",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task7_area_perimeter_train.json",
+        "dev": "task7_area_perimeter_dev.json",
+        "test": "task7_area_perimeter_test.json"
+      }
+    },
+    {
+      "task": "task8_bounding_box",
+      "task_type": "bounding_box",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task8_bounding_box_train.json",
+        "dev": "task8_bounding_box_dev.json",
+        "test": "task8_bounding_box_test.json"
+      }
+    },
+    {
+      "task": "task9_route_geometry",
+      "task_type": "route_geometry",
+      "split_strategy": "random_stratified",
+      "split_ratios": {
+        "train": 0.6,
+        "dev": 0.1,
+        "test": 0.3
+      },
+      "seed": 42,
+      "total_examples": 3400,
+      "splits": {
+        "train": 2040,
+        "dev": 340,
+        "test": 1020
+      },
+      "files": {
+        "train": "task9_route_geometry_train.json",
+        "dev": "task9_route_geometry_dev.json",
+        "test": "task9_route_geometry_test.json"
+      }
+    }
+  ]
+}

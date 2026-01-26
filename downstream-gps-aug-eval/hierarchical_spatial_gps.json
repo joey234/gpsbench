@@ -1,0 +1,553 @@
+{
+  "metadata": {
+    "title": "Distortions in Judged Spatial Relations in Large Language Models",
+    "source": "arXiv:2401.04218",
+    "authors": [
+      "Nir Fulman",
+      "Abdulkadir Memduho\u011flu",
+      "Alexander Zipf"
+    ],
+    "institution": "Heidelberg University, Germany",
+    "published": "2024-01-08",
+    "revised": "2024-06-04",
+    "journal": "The Professional Geographer",
+    "doi": "10.1080/00330124.2024.2372792",
+    "description": "Benchmark for assessing LLM capability to discern intercardinal directions between geographic locations, evaluating hierarchical spatial bias similar to humans."
+  },
+  "benchmark_info": {
+    "total_questions": 22,
+    "bias_types": [
+      "hierarchical",
+      "proximity",
+      "rotation",
+      "alignment"
+    ],
+    "models_tested": [
+      "GPT-3.5",
+      "GPT-4",
+      "Llama-2",
+      "Gemini 1.0 Pro"
+    ],
+    "methodology": "Each question posed 10 times independently in zero-shot mode"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Portland, OR",
+      "city_b": "Toronto, Canada",
+      "correct_answer": "Southeast",
+      "suspect_bias": true,
+      "bias_explanation": "Canada is generally north of the US, leading to incorrect assumption that Toronto is north of Portland",
+      "model_scores": {
+        "GPT-4": 0,
+        "GPT-3.5": 0,
+        "Gemini": 0,
+        "Llama-2": 0
+      },
+      "city_a_coords": {
+        "lat": 45.5202471,
+        "lon": -122.674194
+      },
+      "city_b_coords": {
+        "lat": 43.6534817,
+        "lon": -79.3839347
+      },
+      "gps_augmentation": "Portland, OR is located at coordinates (45.5202\u00b0N, -122.6742\u00b0W). Toronto, Canada is located at coordinates (43.6535\u00b0N, -79.3839\u00b0W)."
+    },
+    {
+      "id": 2,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Tijuana, Mexico",
+      "city_b": "San Antonio, TX",
+      "correct_answer": "Southeast",
+      "suspect_bias": true,
+      "bias_explanation": "Mexico is generally south of the US, potentially influencing directional judgment",
+      "model_scores": {
+        "GPT-4": 3,
+        "GPT-3.5": 5,
+        "Gemini": 0,
+        "Llama-2": 0
+      },
+      "city_a_coords": {
+        "lat": 32.5317397,
+        "lon": -117.019529
+      },
+      "city_b_coords": {
+        "lat": 29.4246002,
+        "lon": -98.4951405
+      },
+      "gps_augmentation": "Tijuana, Mexico is located at coordinates (32.5317\u00b0N, -117.0195\u00b0W). San Antonio, TX is located at coordinates (29.4246\u00b0N, -98.4951\u00b0W)."
+    },
+    {
+      "id": 3,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Northeast",
+      "suspect_bias": true,
+      "bias_explanation": "State-level orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 10,
+        "Llama-2": 5
+      },
+      "city_a_coords": {
+        "lat": 34.2352853,
+        "lon": -77.9487284
+      },
+      "city_b_coords": {
+        "lat": 39.9527237,
+        "lon": -75.1635262
+      },
+      "gps_augmentation": "Wilmington, NC is located at coordinates (34.2353\u00b0N, -77.9487\u00b0W). Philadelphia, PA is located at coordinates (39.9527\u00b0N, -75.1635\u00b0W)."
+    },
+    {
+      "id": 4,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "San Diego, CA",
+      "city_b": "Reno, NV",
+      "correct_answer": "Northwest",
+      "suspect_bias": true,
+      "bias_explanation": "State boundaries and west coast orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 2,
+        "GPT-3.5": 8,
+        "Gemini": 0,
+        "Llama-2": 0
+      },
+      "city_a_coords": {
+        "lat": 32.7174202,
+        "lon": -117.162772
+      },
+      "city_b_coords": {
+        "lat": 39.5261788,
+        "lon": -119.812658
+      },
+      "gps_augmentation": "San Diego, CA is located at coordinates (32.7174\u00b0N, -117.1628\u00b0W). Reno, NV is located at coordinates (39.5262\u00b0N, -119.8127\u00b0W)."
+    },
+    {
+      "id": 5,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Memphis, TN",
+      "city_b": "Milwaukee, WI",
+      "correct_answer": "Northeast",
+      "suspect_bias": true,
+      "bias_explanation": "State-level geographic orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 7,
+        "Llama-2": 0
+      },
+      "city_a_coords": {
+        "lat": 35.1460249,
+        "lon": -90.0517638
+      },
+      "city_b_coords": {
+        "lat": 43.0386475,
+        "lon": -87.9090751
+      },
+      "gps_augmentation": "Memphis, TN is located at coordinates (35.1460\u00b0N, -90.0518\u00b0W). Milwaukee, WI is located at coordinates (43.0386\u00b0N, -87.9091\u00b0W)."
+    },
+    {
+      "id": 6,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Santo Domingo, Dominican Republic",
+      "city_b": "Miami, FL",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - less susceptible to hierarchical categorization",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 0,
+        "Llama-2": 10
+      },
+      "city_a_coords": {
+        "lat": 18.4713858,
+        "lon": -69.8918436
+      },
+      "city_b_coords": {
+        "lat": 25.7741566,
+        "lon": -80.1935973
+      },
+      "gps_augmentation": "Santo Domingo, Dominican Republic is located at coordinates (18.4714\u00b0N, -69.8918\u00b0W). Miami, FL is located at coordinates (25.7742\u00b0N, -80.1936\u00b0W)."
+    },
+    {
+      "id": 7,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Minneapolis, MN",
+      "city_b": "Chicago, IL",
+      "correct_answer": "Southeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - straightforward geographic relationship",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 9,
+        "Llama-2": 10
+      },
+      "city_a_coords": {
+        "lat": 44.9772995,
+        "lon": -93.2654692
+      },
+      "city_b_coords": {
+        "lat": 41.8755616,
+        "lon": -87.6244212
+      },
+      "gps_augmentation": "Minneapolis, MN is located at coordinates (44.9773\u00b0N, -93.2655\u00b0W). Chicago, IL is located at coordinates (41.8756\u00b0N, -87.6244\u00b0W)."
+    },
+    {
+      "id": 8,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Dallas, TX",
+      "city_b": "San Antonio, TX",
+      "correct_answer": "Southwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both cities in same state",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 10,
+        "Llama-2": 10
+      },
+      "city_a_coords": {
+        "lat": 32.7762719,
+        "lon": -96.7968559
+      },
+      "city_b_coords": {
+        "lat": 29.4246002,
+        "lon": -98.4951405
+      },
+      "gps_augmentation": "Dallas, TX is located at coordinates (32.7763\u00b0N, -96.7969\u00b0W). San Antonio, TX is located at coordinates (29.4246\u00b0N, -98.4951\u00b0W)."
+    },
+    {
+      "id": 9,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Havana, Cuba",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Northeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - clear geographic relationship",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 10,
+        "Llama-2": 8
+      },
+      "city_a_coords": {
+        "lat": 23.135305,
+        "lon": -82.3589631
+      },
+      "city_b_coords": {
+        "lat": 39.9527237,
+        "lon": -75.1635262
+      },
+      "gps_augmentation": "Havana, Cuba is located at coordinates (23.1353\u00b0N, -82.3590\u00b0W). Philadelphia, PA is located at coordinates (39.9527\u00b0N, -75.1635\u00b0W)."
+    },
+    {
+      "id": 10,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "San Antonio, TX",
+      "city_b": "Houston, TX",
+      "correct_answer": "Northeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both cities in same state",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 9,
+        "Llama-2": 4
+      },
+      "city_a_coords": {
+        "lat": 29.4246002,
+        "lon": -98.4951405
+      },
+      "city_b_coords": {
+        "lat": 29.7589382,
+        "lon": -95.3676974
+      },
+      "gps_augmentation": "San Antonio, TX is located at coordinates (29.4246\u00b0N, -98.4951\u00b0W). Houston, TX is located at coordinates (29.7589\u00b0N, -95.3677\u00b0W)."
+    },
+    {
+      "id": 11,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Philadelphia, PA",
+      "city_a": "Pittsburgh, PA",
+      "city_b": "New Haven, CT",
+      "correct_answer": "New Haven",
+      "suspect_bias": true,
+      "bias_explanation": "Tendency to perceive in-state distances as shorter than cross-state distances. Pittsburgh is ~450km, New Haven is ~250km from Philadelphia.",
+      "model_scores": {
+        "GPT-4": 0
+      },
+      "city_a_coords": {
+        "lat": 40.4406968,
+        "lon": -80.0025666
+      },
+      "city_b_coords": {
+        "lat": 41.3082138,
+        "lon": -72.9250518
+      },
+      "gps_augmentation": "Pittsburgh, PA is located at coordinates (40.4407\u00b0N, -80.0026\u00b0W). New Haven, CT is located at coordinates (41.3082\u00b0N, -72.9251\u00b0W)."
+    },
+    {
+      "id": 12,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Dallas, TX",
+      "city_a": "Houston, TX",
+      "city_b": "Oklahoma City, OK",
+      "correct_answer": "Oklahoma City",
+      "suspect_bias": true,
+      "bias_explanation": "Tendency to perceive in-state distances as shorter than cross-state distances",
+      "model_scores": {
+        "GPT-4": 0
+      },
+      "city_a_coords": {
+        "lat": 29.7589382,
+        "lon": -95.3676974
+      },
+      "city_b_coords": {
+        "lat": 35.4729886,
+        "lon": -97.5170536
+      },
+      "gps_augmentation": "Houston, TX is located at coordinates (29.7589\u00b0N, -95.3677\u00b0W). Oklahoma City, OK is located at coordinates (35.4730\u00b0N, -97.5171\u00b0W)."
+    },
+    {
+      "id": 13,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Dallas, TX",
+      "city_a": "Houston, TX",
+      "city_b": "Austin, TX",
+      "correct_answer": "Austin",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - all cities in same state",
+      "model_scores": {
+        "GPT-4": 10
+      },
+      "city_a_coords": {
+        "lat": 29.7589382,
+        "lon": -95.3676974
+      },
+      "city_b_coords": {
+        "lat": 30.2711286,
+        "lon": -97.7436995
+      },
+      "gps_augmentation": "Houston, TX is located at coordinates (29.7589\u00b0N, -95.3677\u00b0W). Austin, TX is located at coordinates (30.2711\u00b0N, -97.7437\u00b0W)."
+    },
+    {
+      "id": 14,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Philadelphia, PA",
+      "city_a": "Johnstown, PA",
+      "city_b": "Pittsburgh, PA",
+      "correct_answer": "Johnstown",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - all cities in same state, Johnstown is ~390km from Philadelphia",
+      "model_scores": {
+        "GPT-4": 10
+      },
+      "city_a_coords": {
+        "lat": 40.3267407,
+        "lon": -78.9219698
+      },
+      "city_b_coords": {
+        "lat": 40.4406968,
+        "lon": -80.0025666
+      },
+      "gps_augmentation": "Johnstown, PA is located at coordinates (40.3267\u00b0N, -78.9220\u00b0W). Pittsburgh, PA is located at coordinates (40.4407\u00b0N, -80.0026\u00b0W)."
+    },
+    {
+      "id": 15,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "San Diego, CA",
+      "city_b": "Fresno, CA",
+      "correct_answer": "Fresno",
+      "suspect_bias": true,
+      "bias_explanation": "West coast curvature - San Diego is commonly assumed to be furthest west due to being on the coast",
+      "model_scores": {
+        "GPT-4": 0
+      },
+      "city_a_coords": {
+        "lat": 32.7174202,
+        "lon": -117.162772
+      },
+      "city_b_coords": {
+        "lat": 36.7394421,
+        "lon": -119.78483
+      },
+      "gps_augmentation": "San Diego, CA is located at coordinates (32.7174\u00b0N, -117.1628\u00b0W). Fresno, CA is located at coordinates (36.7394\u00b0N, -119.7848\u00b0W)."
+    },
+    {
+      "id": 16,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Jacksonville, NC",
+      "correct_answer": "Wilmington",
+      "suspect_bias": true,
+      "bias_explanation": "East coast curvature simplification leads to errors",
+      "model_scores": {
+        "GPT-4": 2
+      },
+      "city_a_coords": {
+        "lat": 34.2352853,
+        "lon": -77.9487284
+      },
+      "city_b_coords": {
+        "lat": 34.7509962,
+        "lon": -77.4309829
+      },
+      "gps_augmentation": "Wilmington, NC is located at coordinates (34.2353\u00b0N, -77.9487\u00b0W). Jacksonville, NC is located at coordinates (34.7510\u00b0N, -77.4310\u00b0W)."
+    },
+    {
+      "id": 17,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Morehead City, NC",
+      "correct_answer": "Wilmington",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both coastal cities, common geographical feature forces more precise comparisons",
+      "model_scores": {
+        "GPT-4": 10
+      },
+      "city_a_coords": {
+        "lat": 34.2352853,
+        "lon": -77.9487284
+      },
+      "city_b_coords": {
+        "lat": 34.7229391,
+        "lon": -76.7260436
+      },
+      "gps_augmentation": "Wilmington, NC is located at coordinates (34.2353\u00b0N, -77.9487\u00b0W). Morehead City, NC is located at coordinates (34.7229\u00b0N, -76.7260\u00b0W)."
+    },
+    {
+      "id": 18,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Los Angeles, CA",
+      "city_b": "San Francisco, CA",
+      "correct_answer": "San Francisco",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - well-known California cities",
+      "model_scores": {
+        "GPT-4": 5
+      },
+      "city_a_coords": {
+        "lat": 34.0536909,
+        "lon": -118.242766
+      },
+      "city_b_coords": {
+        "lat": 37.7879363,
+        "lon": -122.4075201
+      },
+      "gps_augmentation": "Los Angeles, CA is located at coordinates (34.0537\u00b0N, -118.2428\u00b0W). San Francisco, CA is located at coordinates (37.7879\u00b0N, -122.4075\u00b0W)."
+    },
+    {
+      "id": 19,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Monaco",
+      "city_b": "Chicago, IL",
+      "correct_answer": "Southwest",
+      "suspect_bias": true,
+      "bias_explanation": "Common misconception that North America and Europe align on the same east-west axis, while Europe is predominantly north of the United States",
+      "model_scores": {
+        "GPT-4": 0
+      },
+      "city_a_coords": {
+        "lat": 43.7323492,
+        "lon": 7.4276832
+      },
+      "city_b_coords": {
+        "lat": 41.8755616,
+        "lon": -87.6244212
+      },
+      "gps_augmentation": "Monaco is located at coordinates (43.7323\u00b0N, 7.4277\u00b0W). Chicago, IL is located at coordinates (41.8756\u00b0N, -87.6244\u00b0W)."
+    },
+    {
+      "id": 20,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Rome, Italy",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Southwest",
+      "suspect_bias": true,
+      "bias_explanation": "Europe-North America alignment misconception",
+      "model_scores": {
+        "GPT-4": 0
+      },
+      "city_a_coords": {
+        "lat": 41.8933203,
+        "lon": 12.4829321
+      },
+      "city_b_coords": {
+        "lat": 39.9527237,
+        "lon": -75.1635262
+      },
+      "gps_augmentation": "Rome, Italy is located at coordinates (41.8933\u00b0N, 12.4829\u00b0W). Philadelphia, PA is located at coordinates (39.9527\u00b0N, -75.1635\u00b0W)."
+    },
+    {
+      "id": 21,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Lisbon, Portugal",
+      "city_b": "New York City, NY",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - Lisbon is indeed south of New York City, straightforward relationship",
+      "model_scores": {
+        "GPT-4": 10
+      },
+      "city_a_coords": {
+        "lat": 38.7077507,
+        "lon": -9.1365919
+      },
+      "city_b_coords": {
+        "lat": 40.7127281,
+        "lon": -74.0060152
+      },
+      "gps_augmentation": "Lisbon, Portugal is located at coordinates (38.7078\u00b0N, -9.1366\u00b0W). New York City, NY is located at coordinates (40.7127\u00b0N, -74.0060\u00b0W)."
+    },
+    {
+      "id": 22,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Madrid, Spain",
+      "city_b": "Boston, MA",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - clear geographic relationship",
+      "model_scores": {
+        "GPT-4": 10
+      },
+      "city_a_coords": {
+        "lat": 40.416782,
+        "lon": -3.703507
+      },
+      "city_b_coords": {
+        "lat": 42.3588336,
+        "lon": -71.0578303
+      },
+      "gps_augmentation": "Madrid, Spain is located at coordinates (40.4168\u00b0N, -3.7035\u00b0W). Boston, MA is located at coordinates (42.3588\u00b0N, -71.0578\u00b0W)."
+    }
+  ]
+}

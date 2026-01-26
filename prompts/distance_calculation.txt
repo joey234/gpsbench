@@ -1,0 +1,11 @@
+Calculate the distance between these two points:
+
+Point A: {point_a_name}
+Coordinates: {point_a_lat}, {point_a_lon}
+
+Point B: {point_b_name}
+Coordinates: {point_b_lat}, {point_b_lon}
+
+Provide the distance in kilometers.
+
+FINAL ANSWER: [distance] km

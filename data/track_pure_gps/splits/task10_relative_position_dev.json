@@ -1,0 +1,8502 @@
+[
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -14.56257,
+      "lon": 40.68538,
+      "name": "Nacala"
+    },
+    "point_b": {
+      "lat": 52.10577,
+      "lon": 21.26129,
+      "name": "Otwock"
+    },
+    "question": "What is the cardinal direction from Otwock to Nacala?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Nacala is south of Otwock"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 19.98533,
+      "lon": 76.52046,
+      "name": "Lonar"
+    },
+    "point_b": {
+      "lat": 43.69332,
+      "lon": 10.84119,
+      "name": "San Miniato Basso"
+    },
+    "question": "What is the cardinal direction from San Miniato Basso to Lonar?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Lonar is east of San Miniato Basso"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.37547,
+      "lon": 7.70281,
+      "name": "Iserlohn"
+    },
+    "point_b": {
+      "lat": 49.67682,
+      "lon": 12.15613,
+      "name": "Weiden"
+    },
+    "question": "What is the cardinal direction from Weiden to Iserlohn?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Iserlohn is west of Weiden"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.39559,
+      "lon": -97.87839,
+      "name": "Enid"
+    },
+    "point_b": {
+      "lat": -28.23078,
+      "lon": 28.30707,
+      "name": "Bethlehem"
+    },
+    "question": "What is the cardinal direction from Bethlehem to Enid?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Enid is west of Bethlehem"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.5832,
+      "lon": 121.0409,
+      "name": "Mandaluyong City"
+    },
+    "point_b": {
+      "lat": 17.98625,
+      "lon": -92.93928,
+      "name": "Villahermosa"
+    },
+    "question": "What is the cardinal direction from Villahermosa to Mandaluyong City?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Mandaluyong City is west of Villahermosa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 35.80167,
+      "lon": 128.50083,
+      "name": "Hwaw\u014fn"
+    },
+    "point_b": {
+      "lat": -3.55097,
+      "lon": -40.65724,
+      "name": "Corea\u00fa"
+    },
+    "question": "What is the cardinal direction from Corea\u00fa to Hwaw\u014fn?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Hwaw\u014fn is east of Corea\u00fa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -37.91482,
+      "lon": 144.75088,
+      "name": "Point Cook"
+    },
+    "point_b": {
+      "lat": 35.48333,
+      "lon": 136.91667,
+      "name": "Sekimachi"
+    },
+    "question": "What is the cardinal direction from Sekimachi to Point Cook?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Point Cook is south of Sekimachi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 7.75,
+      "lon": 2.18333,
+      "name": "Dassa-Zoum\u00e8"
+    },
+    "point_b": {
+      "lat": 30.64852,
+      "lon": -91.1565,
+      "name": "Zachary"
+    },
+    "question": "What is the cardinal direction from Zachary to Dassa-Zoum\u00e8?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Dassa-Zoum\u00e8 is east of Zachary"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 18.28329,
+      "lon": 83.53422,
+      "name": "Sriramnagar"
+    },
+    "point_b": {
+      "lat": -37.91928,
+      "lon": 145.05301,
+      "name": "Bentleigh East"
+    },
+    "question": "What is the cardinal direction from Bentleigh East to Sriramnagar?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Sriramnagar is west of Bentleigh East"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -10.43778,
+      "lon": -39.33278,
+      "name": "Monte Santo"
+    },
+    "point_b": {
+      "lat": -18.47333,
+      "lon": -47.20028,
+      "name": "Coromandel"
+    },
+    "question": "What is the cardinal direction from Coromandel to Monte Santo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Monte Santo is north of Coromandel"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.74753,
+      "lon": -87.71116,
+      "name": "Ashburn"
+    },
+    "point_b": {
+      "lat": 0.75833,
+      "lon": 30.6825,
+      "name": "Katoke"
+    },
+    "question": "What is the cardinal direction from Katoke to Ashburn?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ashburn is west of Katoke"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 21.92485,
+      "lon": 78.12786,
+      "name": "Amla"
+    },
+    "point_b": {
+      "lat": 7.81667,
+      "lon": 4.91667,
+      "name": "Oke Mesi"
+    },
+    "question": "What is the cardinal direction from Oke Mesi to Amla?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Amla is east of Oke Mesi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 37.9625,
+      "lon": 23.61972,
+      "name": "Kerats\u00edni"
+    },
+    "point_b": {
+      "lat": 2.77717,
+      "lon": -75.25642,
+      "name": "Rivera"
+    },
+    "question": "What is the cardinal direction from Rivera to Kerats\u00edni?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Kerats\u00edni is east of Rivera"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.99543,
+      "lon": -9.47122,
+      "name": "Gbarnga"
+    },
+    "point_b": {
+      "lat": 1.48218,
+      "lon": 124.84892,
+      "name": "Manado"
+    },
+    "question": "What is the cardinal direction from Manado to Gbarnga?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Gbarnga is west of Manado"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.81942,
+      "lon": 76.0064,
+      "name": "K\u0101ladi"
+    },
+    "point_b": {
+      "lat": -20.10667,
+      "lon": -43.04889,
+      "name": "Alvin\u00f3polis"
+    },
+    "question": "What is the cardinal direction from Alvin\u00f3polis to K\u0101ladi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "K\u0101ladi is north of Alvin\u00f3polis"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.084,
+      "lon": -76.70025,
+      "name": "Odenton"
+    },
+    "point_b": {
+      "lat": 53.19146,
+      "lon": -2.52398,
+      "name": "Winsford"
+    },
+    "question": "What is the cardinal direction from Winsford to Odenton?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Odenton is west of Winsford"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -41.13827,
+      "lon": 175.0502,
+      "name": "Upper Hutt"
+    },
+    "point_b": {
+      "lat": 5.40733,
+      "lon": -75.48749,
+      "name": "Salamina"
+    },
+    "question": "What is the cardinal direction from Salamina to Upper Hutt?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Upper Hutt is west of Salamina"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -5.56198,
+      "lon": 12.19476,
+      "name": "Cabinda"
+    },
+    "point_b": {
+      "lat": 47.90409,
+      "lon": 67.54112,
+      "name": "Satpayev"
+    },
+    "question": "What is the cardinal direction from Satpayev to Cabinda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Cabinda is west of Satpayev"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.85843,
+      "lon": -73.09955,
+      "name": "Centereach"
+    },
+    "point_b": {
+      "lat": 51.47534,
+      "lon": -0.03837,
+      "name": "New Cross"
+    },
+    "question": "What is the cardinal direction from New Cross to Centereach?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Centereach is west of New Cross"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.38983,
+      "lon": 78.09027,
+      "name": "Loh\u0101ra"
+    },
+    "point_b": {
+      "lat": 4.4557,
+      "lon": 100.6288,
+      "name": "Pantai Remis"
+    },
+    "question": "What is the cardinal direction from Pantai Remis to Loh\u0101ra?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Loh\u0101ra is west of Pantai Remis"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.56444,
+      "lon": -103.30222,
+      "name": "Las Pintitas"
+    },
+    "point_b": {
+      "lat": 41.03903,
+      "lon": 28.85671,
+      "name": "Ba\u011fc\u0131lar"
+    },
+    "question": "What is the cardinal direction from Ba\u011fc\u0131lar to Las Pintitas?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Las Pintitas is west of Ba\u011fc\u0131lar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 19.04611,
+      "lon": -98.045,
+      "name": "Amozoc de Mota"
+    },
+    "point_b": {
+      "lat": 19.39289,
+      "lon": -70.52347,
+      "name": "Moca"
+    },
+    "question": "What is the cardinal direction from Moca to Amozoc de Mota?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Amozoc de Mota is south of Moca"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.93152,
+      "lon": -23.51254,
+      "name": "Praia"
+    },
+    "point_b": {
+      "lat": 19.27127,
+      "lon": -99.45787,
+      "name": "Ocoyoacac"
+    },
+    "question": "What is the cardinal direction from Ocoyoacac to Praia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Praia is south of Ocoyoacac"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 5.93576,
+      "lon": 7.0793,
+      "name": "Uga"
+    },
+    "point_b": {
+      "lat": 56.86014,
+      "lon": 24.36544,
+      "name": "Salaspils"
+    },
+    "question": "What is the cardinal direction from Salaspils to Uga?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Uga is south of Salaspils"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 9.96188,
+      "lon": -84.07876,
+      "name": "San Juan"
+    },
+    "point_b": {
+      "lat": 57.87096,
+      "lon": 11.98054,
+      "name": "Kung\u00e4lv"
+    },
+    "question": "What is the cardinal direction from Kung\u00e4lv to San Juan?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "San Juan is west of Kung\u00e4lv"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.42949,
+      "lon": 3.81495,
+      "name": "Babana"
+    },
+    "point_b": {
+      "lat": -16.35778,
+      "lon": -49.49611,
+      "name": "Inhumas"
+    },
+    "question": "What is the cardinal direction from Inhumas to Babana?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Babana is east of Inhumas"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.55656,
+      "lon": 83.46355,
+      "name": "Pathalgaon"
+    },
+    "point_b": {
+      "lat": 11.0,
+      "lon": 36.91667,
+      "name": "Injibara"
+    },
+    "question": "What is the cardinal direction from Injibara to Pathalgaon?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Pathalgaon is east of Injibara"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.925,
+      "lon": 6.58056,
+      "name": "Aalten"
+    },
+    "point_b": {
+      "lat": 9.14943,
+      "lon": -4.60982,
+      "name": "Kong"
+    },
+    "question": "What is the cardinal direction from Kong to Aalten?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Aalten is north of Kong"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 43.33333,
+      "lon": -8.31667,
+      "name": "Oleiros"
+    },
+    "point_b": {
+      "lat": 8.03424,
+      "lon": 2.4866,
+      "name": "Sav\u00e9"
+    },
+    "question": "What is the cardinal direction from Sav\u00e9 to Oleiros?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Oleiros is north of Sav\u00e9"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.0927,
+      "lon": 23.82223,
+      "name": "N\u00e9a Erythra\u00eda"
+    },
+    "point_b": {
+      "lat": 13.6978,
+      "lon": 123.4892,
+      "name": "Goa"
+    },
+    "question": "What is the cardinal direction from Goa to N\u00e9a Erythra\u00eda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "N\u00e9a Erythra\u00eda is west of Goa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.29472,
+      "lon": 7.67337,
+      "name": "Altena"
+    },
+    "point_b": {
+      "lat": 23.57769,
+      "lon": 58.39982,
+      "name": "Bawshar"
+    },
+    "question": "What is the cardinal direction from Bawshar to Altena?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Altena is west of Bawshar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.22983,
+      "lon": 78.17337,
+      "name": "Gwalior"
+    },
+    "point_b": {
+      "lat": 31.54933,
+      "lon": -97.14667,
+      "name": "Waco"
+    },
+    "question": "What is the cardinal direction from Waco to Gwalior?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Gwalior is south of Waco"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.83861,
+      "lon": 105.66861,
+      "name": "Bayan Hot"
+    },
+    "point_b": {
+      "lat": 39.50506,
+      "lon": -76.31977,
+      "name": "Bel Air South"
+    },
+    "question": "What is the cardinal direction from Bel Air South to Bayan Hot?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Bayan Hot is west of Bel Air South"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.46186,
+      "lon": 26.12583,
+      "name": "El Daein"
+    },
+    "point_b": {
+      "lat": 33.50169,
+      "lon": -117.66255,
+      "name": "San Juan Capistrano"
+    },
+    "question": "What is the cardinal direction from San Juan Capistrano to El Daein?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "El Daein is east of San Juan Capistrano"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 42.20384,
+      "lon": -71.00215,
+      "name": "Braintree"
+    },
+    "point_b": {
+      "lat": 3.76667,
+      "lon": 9.98333,
+      "name": "Dizangu\u00e9"
+    },
+    "question": "What is the cardinal direction from Dizangu\u00e9 to Braintree?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Braintree is west of Dizangu\u00e9"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -8.85637,
+      "lon": 34.02393,
+      "name": "Chimala"
+    },
+    "point_b": {
+      "lat": -37.76667,
+      "lon": 145.0,
+      "name": "Northcote"
+    },
+    "question": "What is the cardinal direction from Northcote to Chimala?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Chimala is west of Northcote"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -33.63638,
+      "lon": -70.57361,
+      "name": "Pirque"
+    },
+    "point_b": {
+      "lat": 48.93196,
+      "lon": 9.2024,
+      "name": "Freiberg am Neckar"
+    },
+    "question": "What is the cardinal direction from Freiberg am Neckar to Pirque?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Pirque is south of Freiberg am Neckar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.46515,
+      "lon": 120.44927,
+      "name": "Donggang"
+    },
+    "point_b": {
+      "lat": 32.70328,
+      "lon": 51.15381,
+      "name": "T\u012br\u0101n"
+    },
+    "question": "What is the cardinal direction from T\u012br\u0101n to Donggang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Donggang is east of T\u012br\u0101n"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.02403,
+      "lon": 36.72848,
+      "name": "An Nabk"
+    },
+    "point_b": {
+      "lat": 10.0614,
+      "lon": 76.32631,
+      "name": "Kalamassery"
+    },
+    "question": "What is the cardinal direction from Kalamassery to An Nabk?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "An Nabk is west of Kalamassery"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 44.38534,
+      "lon": 20.2557,
+      "name": "Lazarevac"
+    },
+    "point_b": {
+      "lat": 29.58497,
+      "lon": -81.20784,
+      "name": "Palm Coast"
+    },
+    "question": "What is the cardinal direction from Palm Coast to Lazarevac?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Lazarevac is east of Palm Coast"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.09145,
+      "lon": -84.49578,
+      "name": "Newport"
+    },
+    "point_b": {
+      "lat": 14.94348,
+      "lon": 77.25494,
+      "name": "Uravakonda"
+    },
+    "question": "What is the cardinal direction from Uravakonda to Newport?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Newport is west of Uravakonda"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 3.54625,
+      "lon": -73.70687,
+      "name": "Granada"
+    },
+    "point_b": {
+      "lat": 37.26318,
+      "lon": 49.94325,
+      "name": "\u0100st\u0101neh-ye Ashraf\u012byeh"
+    },
+    "question": "What is the cardinal direction from \u0100st\u0101neh-ye Ashraf\u012byeh to Granada?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Granada is west of \u0100st\u0101neh-ye Ashraf\u012byeh"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 43.14806,
+      "lon": 45.90194,
+      "name": "Shali"
+    },
+    "point_b": {
+      "lat": -7.2,
+      "lon": 35.73333,
+      "name": "Izazi"
+    },
+    "question": "What is the cardinal direction from Izazi to Shali?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Shali is north of Izazi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 31.44268,
+      "lon": 75.49847,
+      "name": "Kart\u0101rpur"
+    },
+    "point_b": {
+      "lat": 13.09546,
+      "lon": 109.32094,
+      "name": "Tuy H\u00f2a"
+    },
+    "question": "What is the cardinal direction from Tuy H\u00f2a to Kart\u0101rpur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Kart\u0101rpur is west of Tuy H\u00f2a"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 53.82146,
+      "lon": 83.57063,
+      "name": "Tal\u2019menka"
+    },
+    "point_b": {
+      "lat": -16.3775,
+      "lon": -39.58028,
+      "name": "Eun\u00e1polis"
+    },
+    "question": "What is the cardinal direction from Eun\u00e1polis to Tal\u2019menka?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Tal\u2019menka is east of Eun\u00e1polis"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 3.25651,
+      "lon": 19.77234,
+      "name": "Gemena"
+    },
+    "point_b": {
+      "lat": 45.12902,
+      "lon": 124.82769,
+      "name": "Songyuan"
+    },
+    "question": "What is the cardinal direction from Songyuan to Gemena?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Gemena is south of Songyuan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.52073,
+      "lon": 76.48141,
+      "name": "Gudalur"
+    },
+    "point_b": {
+      "lat": -14.26667,
+      "lon": 50.16667,
+      "name": "Sambava"
+    },
+    "question": "What is the cardinal direction from Sambava to Gudalur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Gudalur is north of Sambava"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 25.61907,
+      "lon": 83.75576,
+      "name": "Muhammad\u0101b\u0101d"
+    },
+    "point_b": {
+      "lat": 19.67386,
+      "lon": 77.31149,
+      "name": "Kalamn\u016bri"
+    },
+    "question": "What is the cardinal direction from Kalamn\u016bri to Muhammad\u0101b\u0101d?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Muhammad\u0101b\u0101d is east of Kalamn\u016bri"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -16.07056,
+      "lon": -57.67889,
+      "name": "C\u00e1ceres"
+    },
+    "point_b": {
+      "lat": 55.42112,
+      "lon": 38.26188,
+      "name": "Bronnitsy"
+    },
+    "question": "What is the cardinal direction from Bronnitsy to C\u00e1ceres?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "C\u00e1ceres is west of Bronnitsy"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 31.80258,
+      "lon": 74.25772,
+      "name": "Muridke"
+    },
+    "point_b": {
+      "lat": 40.77066,
+      "lon": -74.23265,
+      "name": "Orange"
+    },
+    "question": "What is the cardinal direction from Orange to Muridke?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Muridke is east of Orange"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -23.317,
+      "lon": 17.09,
+      "name": "Rehoboth"
+    },
+    "point_b": {
+      "lat": -26.81298,
+      "lon": -65.29543,
+      "name": "Yerba Buena"
+    },
+    "question": "What is the cardinal direction from Yerba Buena to Rehoboth?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Rehoboth is north of Yerba Buena"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.23251,
+      "lon": -101.29627,
+      "name": "Minot"
+    },
+    "point_b": {
+      "lat": 30.69436,
+      "lon": -88.04305,
+      "name": "Mobile"
+    },
+    "question": "What is the cardinal direction from Mobile to Minot?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Minot is north of Mobile"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.15112,
+      "lon": -118.44925,
+      "name": "Sherman Oaks"
+    },
+    "point_b": {
+      "lat": -5.95,
+      "lon": 34.13333,
+      "name": "Mgandu"
+    },
+    "question": "What is the cardinal direction from Mgandu to Sherman Oaks?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Sherman Oaks is west of Mgandu"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 21.04606,
+      "lon": 82.3864,
+      "name": "B\u0101gbahra"
+    },
+    "point_b": {
+      "lat": 5.05127,
+      "lon": 7.9335,
+      "name": "Uyo"
+    },
+    "question": "What is the cardinal direction from Uyo to B\u0101gbahra?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "B\u0101gbahra is east of Uyo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.09294,
+      "lon": -8.63219,
+      "name": "Valadares"
+    },
+    "point_b": {
+      "lat": 41.0435,
+      "lon": 28.87619,
+      "name": "Esenler"
+    },
+    "question": "What is the cardinal direction from Esenler to Valadares?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Valadares is west of Esenler"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -33.75881,
+      "lon": 150.99292,
+      "name": "Baulkham Hills"
+    },
+    "point_b": {
+      "lat": 33.24293,
+      "lon": 130.55212,
+      "name": "Hirokawa"
+    },
+    "question": "What is the cardinal direction from Hirokawa to Baulkham Hills?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Baulkham Hills is east of Hirokawa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.92002,
+      "lon": 66.86228,
+      "name": "Chelak"
+    },
+    "point_b": {
+      "lat": 35.7279,
+      "lon": -0.7081,
+      "name": "Mers el Kebir"
+    },
+    "question": "What is the cardinal direction from Mers el Kebir to Chelak?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Chelak is east of Mers el Kebir"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 27.20583,
+      "lon": 31.19639,
+      "name": "An N\u0101\u015fir\u012byah"
+    },
+    "point_b": {
+      "lat": 45.44679,
+      "lon": -122.53037,
+      "name": "Happy Valley"
+    },
+    "question": "What is the cardinal direction from Happy Valley to An N\u0101\u015fir\u012byah?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "An N\u0101\u015fir\u012byah is east of Happy Valley"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 49.23295,
+      "lon": 31.88427,
+      "name": "Smila"
+    },
+    "point_b": {
+      "lat": 11.46186,
+      "lon": 26.12583,
+      "name": "El Daein"
+    },
+    "question": "What is the cardinal direction from El Daein to Smila?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Smila is north of El Daein"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -2.68333,
+      "lon": 33.0,
+      "name": "Usagara"
+    },
+    "point_b": {
+      "lat": -9.43215,
+      "lon": 160.00607,
+      "name": "Panatina"
+    },
+    "question": "What is the cardinal direction from Panatina to Usagara?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Usagara is west of Panatina"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -9.48333,
+      "lon": 33.9,
+      "name": "Ipinda"
+    },
+    "point_b": {
+      "lat": 30.83424,
+      "lon": 76.57677,
+      "name": "K\u016br\u0101li"
+    },
+    "question": "What is the cardinal direction from K\u016br\u0101li to Ipinda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ipinda is west of K\u016br\u0101li"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.91667,
+      "lon": 136.98333,
+      "name": "Takahama"
+    },
+    "point_b": {
+      "lat": -40.63333,
+      "lon": 175.275,
+      "name": "Levin"
+    },
+    "question": "What is the cardinal direction from Levin to Takahama?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Takahama is north of Levin"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 45.33341,
+      "lon": -79.21632,
+      "name": "Huntsville"
+    },
+    "point_b": {
+      "lat": 25.44126,
+      "lon": 74.56979,
+      "name": "M\u0101ndal"
+    },
+    "question": "What is the cardinal direction from M\u0101ndal to Huntsville?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Huntsville is west of M\u0101ndal"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 29.80147,
+      "lon": 76.92825,
+      "name": "Tir\u0101wari"
+    },
+    "point_b": {
+      "lat": 35.6833,
+      "lon": 139.43848,
+      "name": "Kunitachi"
+    },
+    "question": "What is the cardinal direction from Kunitachi to Tir\u0101wari?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tir\u0101wari is west of Kunitachi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.07506,
+      "lon": -84.44716,
+      "name": "Fort Thomas"
+    },
+    "point_b": {
+      "lat": -18.87056,
+      "lon": -48.88083,
+      "name": "Monte Alegre de Minas"
+    },
+    "question": "What is the cardinal direction from Monte Alegre de Minas to Fort Thomas?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Fort Thomas is north of Monte Alegre de Minas"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -16.4332,
+      "lon": 179.36451,
+      "name": "Labasa"
+    },
+    "point_b": {
+      "lat": -21.83611,
+      "lon": -45.40056,
+      "name": "Campanha"
+    },
+    "question": "What is the cardinal direction from Campanha to Labasa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Labasa is west of Campanha"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 5.40755,
+      "lon": -3.38023,
+      "name": "Ahigb\u00e9 Koffikro"
+    },
+    "point_b": {
+      "lat": 37.41,
+      "lon": 127.25722,
+      "name": "Gwangju"
+    },
+    "question": "What is the cardinal direction from Gwangju to Ahigb\u00e9 Koffikro?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Ahigb\u00e9 Koffikro is south of Gwangju"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.62535,
+      "lon": -81.6248,
+      "name": "Lehigh Acres"
+    },
+    "point_b": {
+      "lat": -9.34213,
+      "lon": 32.745,
+      "name": "Nakonde"
+    },
+    "question": "What is the cardinal direction from Nakonde to Lehigh Acres?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Lehigh Acres is west of Nakonde"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -22.94667,
+      "lon": -47.31583,
+      "name": "Monte Mor"
+    },
+    "point_b": {
+      "lat": 28.0199,
+      "lon": -82.77323,
+      "name": "Dunedin"
+    },
+    "question": "What is the cardinal direction from Dunedin to Monte Mor?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Monte Mor is east of Dunedin"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -38.1,
+      "lon": 145.13333,
+      "name": "Seaford"
+    },
+    "point_b": {
+      "lat": 36.15281,
+      "lon": 5.69016,
+      "name": "El Eulma"
+    },
+    "question": "What is the cardinal direction from El Eulma to Seaford?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Seaford is south of El Eulma"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 33.44001,
+      "lon": -112.05805,
+      "name": "Central City"
+    },
+    "point_b": {
+      "lat": 32.33311,
+      "lon": 74.54694,
+      "name": "Kot Ghulam Muhammad"
+    },
+    "question": "What is the cardinal direction from Kot Ghulam Muhammad to Central City?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Central City is east of Kot Ghulam Muhammad"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 1.3278,
+      "lon": 172.97696,
+      "name": "Tarawa"
+    },
+    "point_b": {
+      "lat": 42.48587,
+      "lon": -83.1052,
+      "name": "Madison Heights"
+    },
+    "question": "What is the cardinal direction from Madison Heights to Tarawa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tarawa is west of Madison Heights"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 12.88996,
+      "lon": 80.23127,
+      "name": "Sholinganallur"
+    },
+    "point_b": {
+      "lat": 43.33333,
+      "lon": -8.31667,
+      "name": "Oleiros"
+    },
+    "question": "What is the cardinal direction from Oleiros to Sholinganallur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Sholinganallur is south of Oleiros"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -27.13246,
+      "lon": 29.97635,
+      "name": "Daggakraal"
+    },
+    "point_b": {
+      "lat": 56.5046,
+      "lon": 39.67931,
+      "name": "Yur\u2019yev-Pol\u2019skiy"
+    },
+    "question": "What is the cardinal direction from Yur\u2019yev-Pol\u2019skiy to Daggakraal?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Daggakraal is west of Yur\u2019yev-Pol\u2019skiy"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.90812,
+      "lon": 30.69556,
+      "name": "Antalya"
+    },
+    "point_b": {
+      "lat": 8.55083,
+      "lon": -0.51875,
+      "name": "Salaga"
+    },
+    "question": "What is the cardinal direction from Salaga to Antalya?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Antalya is east of Salaga"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 47.34713,
+      "lon": 8.72091,
+      "name": "Uster"
+    },
+    "point_b": {
+      "lat": 27.3912,
+      "lon": 75.95956,
+      "name": "Sh\u0101hpura"
+    },
+    "question": "What is the cardinal direction from Sh\u0101hpura to Uster?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Uster is west of Sh\u0101hpura"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 15.47225,
+      "lon": -88.8407,
+      "name": "Morales"
+    },
+    "point_b": {
+      "lat": 52.18661,
+      "lon": 7.86043,
+      "name": "Lengerich"
+    },
+    "question": "What is the cardinal direction from Lengerich to Morales?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Morales is west of Lengerich"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 25.67066,
+      "lon": -80.40117,
+      "name": "The Crossings"
+    },
+    "point_b": {
+      "lat": 61.71982,
+      "lon": 75.36827,
+      "name": "Pokachi"
+    },
+    "question": "What is the cardinal direction from Pokachi to The Crossings?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "The Crossings is west of Pokachi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.7,
+      "lon": 6.33333,
+      "name": "Uromi"
+    },
+    "point_b": {
+      "lat": 43.95611,
+      "lon": 125.46611,
+      "name": "Xinglongshan"
+    },
+    "question": "What is the cardinal direction from Xinglongshan to Uromi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Uromi is west of Xinglongshan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 0.57387,
+      "lon": 32.51545,
+      "name": "Bombo"
+    },
+    "point_b": {
+      "lat": -22.83917,
+      "lon": -42.22889,
+      "name": "Iguaba Grande"
+    },
+    "question": "What is the cardinal direction from Iguaba Grande to Bombo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Bombo is north of Iguaba Grande"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 12.45389,
+      "lon": 4.1975,
+      "name": "Birnin Kebbi"
+    },
+    "point_b": {
+      "lat": 45.47927,
+      "lon": 8.99789,
+      "name": "Bareggio"
+    },
+    "question": "What is the cardinal direction from Bareggio to Birnin Kebbi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Birnin Kebbi is south of Bareggio"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 35.19869,
+      "lon": 32.99338,
+      "name": "M\u00f3rfou"
+    },
+    "point_b": {
+      "lat": 43.14322,
+      "lon": -2.96204,
+      "name": "Laudio / Llodio"
+    },
+    "question": "What is the cardinal direction from Laudio / Llodio to M\u00f3rfou?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "M\u00f3rfou is east of Laudio / Llodio"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -10.66722,
+      "lon": -39.49917,
+      "name": "Cansan\u00e7\u00e3o"
+    },
+    "point_b": {
+      "lat": 55.35417,
+      "lon": 86.10435,
+      "name": "Kemerovo"
+    },
+    "question": "What is the cardinal direction from Kemerovo to Cansan\u00e7\u00e3o?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Cansan\u00e7\u00e3o is west of Kemerovo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.50114,
+      "lon": 8.78024,
+      "name": "Jendouba"
+    },
+    "point_b": {
+      "lat": -38.03333,
+      "lon": 145.25,
+      "name": "Hampton Park"
+    },
+    "question": "What is the cardinal direction from Hampton Park to Jendouba?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Jendouba is west of Hampton Park"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.33333,
+      "lon": 139.01667,
+      "name": "Takasaki"
+    },
+    "point_b": {
+      "lat": 41.63031,
+      "lon": -87.85394,
+      "name": "Orland Park"
+    },
+    "question": "What is the cardinal direction from Orland Park to Takasaki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Takasaki is west of Orland Park"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.89672,
+      "lon": 2.25666,
+      "name": "Courbevoie"
+    },
+    "point_b": {
+      "lat": 35.68698,
+      "lon": -105.9378,
+      "name": "Santa Fe"
+    },
+    "question": "What is the cardinal direction from Santa Fe to Courbevoie?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Courbevoie is east of Santa Fe"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 37.07381,
+      "lon": 14.24038,
+      "name": "Gela"
+    },
+    "point_b": {
+      "lat": 47.79926,
+      "lon": 22.86255,
+      "name": "Satu Mare"
+    },
+    "question": "What is the cardinal direction from Satu Mare to Gela?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Gela is south of Satu Mare"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 32.64118,
+      "lon": 74.20561,
+      "name": "Jalalpur Jattan"
+    },
+    "point_b": {
+      "lat": 8.13333,
+      "lon": 81.43333,
+      "name": "Vakarai"
+    },
+    "question": "What is the cardinal direction from Vakarai to Jalalpur Jattan?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Jalalpur Jattan is west of Vakarai"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.21334,
+      "lon": -118.57203,
+      "name": "Winnetka"
+    },
+    "point_b": {
+      "lat": 15.35452,
+      "lon": 44.20646,
+      "name": "Sanaa"
+    },
+    "question": "What is the cardinal direction from Sanaa to Winnetka?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Winnetka is west of Sanaa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -51.6253,
+      "lon": -69.25229,
+      "name": "R\u00edo Gallegos"
+    },
+    "point_b": {
+      "lat": 41.27194,
+      "lon": 123.17306,
+      "name": "Liaoyang"
+    },
+    "question": "What is the cardinal direction from Liaoyang to R\u00edo Gallegos?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "R\u00edo Gallegos is east of Liaoyang"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.59181,
+      "lon": -74.18983,
+      "name": "Aracataca"
+    },
+    "point_b": {
+      "lat": 3.23333,
+      "lon": 10.73333,
+      "name": "Lolodorf"
+    },
+    "question": "What is the cardinal direction from Lolodorf to Aracataca?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Aracataca is west of Lolodorf"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.5769,
+      "lon": 16.75655,
+      "name": "Ginosa"
+    },
+    "point_b": {
+      "lat": 37.89056,
+      "lon": 34.55889,
+      "name": "Bor"
+    },
+    "question": "What is the cardinal direction from Bor to Ginosa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ginosa is west of Bor"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 4.80048,
+      "lon": 18.12747,
+      "name": "Boali"
+    },
+    "point_b": {
+      "lat": 12.29791,
+      "lon": 76.63925,
+      "name": "Mysuru"
+    },
+    "question": "What is the cardinal direction from Mysuru to Boali?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Boali is west of Mysuru"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -36.38047,
+      "lon": 145.39867,
+      "name": "Shepparton"
+    },
+    "point_b": {
+      "lat": 60.21283,
+      "lon": 24.81348,
+      "name": "Lepp\u00e4vaara"
+    },
+    "question": "What is the cardinal direction from Lepp\u00e4vaara to Shepparton?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Shepparton is east of Lepp\u00e4vaara"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.09237,
+      "lon": -1.94887,
+      "name": "Evesham"
+    },
+    "point_b": {
+      "lat": 50.99833,
+      "lon": 5.86944,
+      "name": "Sittard"
+    },
+    "question": "What is the cardinal direction from Sittard to Evesham?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Evesham is west of Sittard"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -3.16667,
+      "lon": 33.76667,
+      "name": "Shanwa"
+    },
+    "point_b": {
+      "lat": 1.89833,
+      "lon": 33.1775,
+      "name": "Dokolo"
+    },
+    "question": "What is the cardinal direction from Dokolo to Shanwa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Shanwa is east of Dokolo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 27.79449,
+      "lon": 77.4368,
+      "name": "Kosi"
+    },
+    "point_b": {
+      "lat": 33.38291,
+      "lon": 71.33733,
+      "name": "Lachi"
+    },
+    "question": "What is the cardinal direction from Lachi to Kosi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Kosi is south of Lachi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 2.56799,
+      "lon": -72.63972,
+      "name": "San Jos\u00e9 del Guaviare"
+    },
+    "point_b": {
+      "lat": 32.47126,
+      "lon": 131.65452,
+      "name": "Kadogawa"
+    },
+    "question": "What is the cardinal direction from Kadogawa to San Jos\u00e9 del Guaviare?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "San Jos\u00e9 del Guaviare is east of Kadogawa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.6,
+      "lon": 121.0333,
+      "name": "San Juan"
+    },
+    "point_b": {
+      "lat": 31.56017,
+      "lon": -91.40329,
+      "name": "Natchez"
+    },
+    "question": "What is the cardinal direction from Natchez to San Juan?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "San Juan is west of Natchez"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -25.915,
+      "lon": -53.47278,
+      "name": "Amp\u00e9re"
+    },
+    "point_b": {
+      "lat": 49.03645,
+      "lon": 2.07613,
+      "name": "Cergy"
+    },
+    "question": "What is the cardinal direction from Cergy to Amp\u00e9re?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Amp\u00e9re is south of Cergy"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 7.17826,
+      "lon": 2.0667,
+      "name": "Bohicon"
+    },
+    "point_b": {
+      "lat": -21.68528,
+      "lon": -51.0725,
+      "name": "Adamantina"
+    },
+    "question": "What is the cardinal direction from Adamantina to Bohicon?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Bohicon is east of Adamantina"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -24.56694,
+      "lon": 25.87417,
+      "name": "Mmopone"
+    },
+    "point_b": {
+      "lat": 37.48974,
+      "lon": 71.55304,
+      "name": "Khorugh"
+    },
+    "question": "What is the cardinal direction from Khorugh to Mmopone?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Mmopone is south of Khorugh"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 3.07292,
+      "lon": 101.6763,
+      "name": "Taman OUG"
+    },
+    "point_b": {
+      "lat": 43.23073,
+      "lon": -2.8429,
+      "name": "Galdakao"
+    },
+    "question": "What is the cardinal direction from Galdakao to Taman OUG?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Taman OUG is east of Galdakao"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -17.88608,
+      "lon": -39.85887,
+      "name": "Posto da Mata"
+    },
+    "point_b": {
+      "lat": -33.32711,
+      "lon": 115.64137,
+      "name": "Bunbury"
+    },
+    "question": "What is the cardinal direction from Bunbury to Posto da Mata?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Posto da Mata is north of Bunbury"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -17.72194,
+      "lon": -48.15972,
+      "name": "Ipameri"
+    },
+    "point_b": {
+      "lat": 48.16667,
+      "lon": 14.03333,
+      "name": "Wels"
+    },
+    "question": "What is the cardinal direction from Wels to Ipameri?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ipameri is west of Wels"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.73417,
+      "lon": -89.71472,
+      "name": "Sonzacate"
+    },
+    "point_b": {
+      "lat": 18.86667,
+      "lon": 73.9,
+      "name": "R\u0101jgurunagar"
+    },
+    "question": "What is the cardinal direction from R\u0101jgurunagar to Sonzacate?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Sonzacate is west of R\u0101jgurunagar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.2852,
+      "lon": -1.52,
+      "name": "Royal Leamington Spa"
+    },
+    "point_b": {
+      "lat": 49.1466,
+      "lon": 0.22925,
+      "name": "Lisieux"
+    },
+    "question": "What is the cardinal direction from Lisieux to Royal Leamington Spa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Royal Leamington Spa is north of Lisieux"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -1.13333,
+      "lon": 33.98333,
+      "name": "Shirati"
+    },
+    "point_b": {
+      "lat": 2.2654,
+      "lon": 102.2801,
+      "name": "Kampung Ayer Keroh"
+    },
+    "question": "What is the cardinal direction from Kampung Ayer Keroh to Shirati?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Shirati is west of Kampung Ayer Keroh"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 8.4115,
+      "lon": -75.58508,
+      "name": "Planeta Rica"
+    },
+    "point_b": {
+      "lat": 16.94021,
+      "lon": 43.76393,
+      "name": "Sa'dah"
+    },
+    "question": "What is the cardinal direction from Sa'dah to Planeta Rica?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Planeta Rica is west of Sa'dah"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.46667,
+      "lon": -8.46667,
+      "name": "Entroncamento"
+    },
+    "point_b": {
+      "lat": 36.86278,
+      "lon": 31.05556,
+      "name": "Belek"
+    },
+    "question": "What is the cardinal direction from Belek to Entroncamento?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Entroncamento is north of Belek"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -26.96501,
+      "lon": 30.43571,
+      "name": "Driefontein"
+    },
+    "point_b": {
+      "lat": 59.46167,
+      "lon": 40.12056,
+      "name": "Sokol"
+    },
+    "question": "What is the cardinal direction from Sokol to Driefontein?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Driefontein is south of Sokol"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.86874,
+      "lon": 6.09317,
+      "name": "Herzogenrath"
+    },
+    "point_b": {
+      "lat": 9.92638,
+      "lon": 78.15028,
+      "name": "Melmadai"
+    },
+    "question": "What is the cardinal direction from Melmadai to Herzogenrath?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Herzogenrath is west of Melmadai"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.71028,
+      "lon": 127.59833,
+      "name": "Hoeyang"
+    },
+    "point_b": {
+      "lat": -21.53667,
+      "lon": -49.85806,
+      "name": "Promiss\u00e3o"
+    },
+    "question": "What is the cardinal direction from Promiss\u00e3o to Hoeyang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Hoeyang is north of Promiss\u00e3o"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.52965,
+      "lon": 2.64003,
+      "name": "B\u00e9thune"
+    },
+    "point_b": {
+      "lat": 33.61427,
+      "lon": -85.83496,
+      "name": "Oxford"
+    },
+    "question": "What is the cardinal direction from Oxford to B\u00e9thune?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "B\u00e9thune is east of Oxford"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -28.21901,
+      "lon": 152.03438,
+      "name": "Warwick"
+    },
+    "point_b": {
+      "lat": 37.7244,
+      "lon": 15.18165,
+      "name": "Giarre"
+    },
+    "question": "What is the cardinal direction from Giarre to Warwick?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Warwick is east of Giarre"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.01325,
+      "lon": -6.83255,
+      "name": "Rabat"
+    },
+    "point_b": {
+      "lat": 22.28858,
+      "lon": 114.19417,
+      "name": "Fortress Hill"
+    },
+    "question": "What is the cardinal direction from Fortress Hill to Rabat?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Rabat is west of Fortress Hill"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 53.70326,
+      "lon": -2.32382,
+      "name": "Haslingden"
+    },
+    "point_b": {
+      "lat": -8.46887,
+      "lon": 29.66193,
+      "name": "Kaputa"
+    },
+    "question": "What is the cardinal direction from Kaputa to Haslingden?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Haslingden is west of Kaputa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 15.42977,
+      "lon": 75.62971,
+      "name": "Gadag"
+    },
+    "point_b": {
+      "lat": -13.28163,
+      "lon": -176.17453,
+      "name": "Mata-Utu"
+    },
+    "question": "What is the cardinal direction from Mata-Utu to Gadag?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Gadag is north of Mata-Utu"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 23.03333,
+      "lon": 70.21667,
+      "name": "K\u0101ndla"
+    },
+    "point_b": {
+      "lat": 50.59034,
+      "lon": 12.70657,
+      "name": "Aue"
+    },
+    "question": "What is the cardinal direction from Aue to K\u0101ndla?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "K\u0101ndla is east of Aue"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.05,
+      "lon": 23.8,
+      "name": "Maro\u00fasi"
+    },
+    "point_b": {
+      "lat": -6.9,
+      "lon": 109.08333,
+      "name": "Dukuhturi"
+    },
+    "question": "What is the cardinal direction from Dukuhturi to Maro\u00fasi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Maro\u00fasi is west of Dukuhturi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.68848,
+      "lon": -1.62443,
+      "name": "Kumasi"
+    },
+    "point_b": {
+      "lat": -20.83778,
+      "lon": -40.72194,
+      "name": "Pi\u00fama"
+    },
+    "question": "What is the cardinal direction from Pi\u00fama to Kumasi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Kumasi is east of Pi\u00fama"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -37.81667,
+      "lon": 144.75,
+      "name": "Truganina"
+    },
+    "point_b": {
+      "lat": 30.88251,
+      "lon": 31.46275,
+      "name": "As Sinbill\u0101wayn"
+    },
+    "question": "What is the cardinal direction from As Sinbill\u0101wayn to Truganina?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Truganina is east of As Sinbill\u0101wayn"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.63333,
+      "lon": 3.11667,
+      "name": "Mons-en-Bar\u0153ul"
+    },
+    "point_b": {
+      "lat": 42.45232,
+      "lon": -71.137,
+      "name": "Winchester"
+    },
+    "question": "What is the cardinal direction from Winchester to Mons-en-Bar\u0153ul?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Mons-en-Bar\u0153ul is north of Winchester"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -1.4563,
+      "lon": 36.97826,
+      "name": "Athi River"
+    },
+    "point_b": {
+      "lat": 4.60971,
+      "lon": -74.08175,
+      "name": "Bogot\u00e1"
+    },
+    "question": "What is the cardinal direction from Bogot\u00e1 to Athi River?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Athi River is east of Bogot\u00e1"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -9.74583,
+      "lon": -41.88528,
+      "name": "Sento S\u00e9"
+    },
+    "point_b": {
+      "lat": -38.13333,
+      "lon": 145.13333,
+      "name": "Frankston East"
+    },
+    "question": "What is the cardinal direction from Frankston East to Sento S\u00e9?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Sento S\u00e9 is north of Frankston East"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.98419,
+      "lon": 134.97407,
+      "name": "Nishiwaki"
+    },
+    "point_b": {
+      "lat": -9.43056,
+      "lon": 159.92103,
+      "name": "Nggosi"
+    },
+    "question": "What is the cardinal direction from Nggosi to Nishiwaki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Nishiwaki is north of Nggosi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 53.16314,
+      "lon": -2.21253,
+      "name": "Congleton"
+    },
+    "point_b": {
+      "lat": -36.88745,
+      "lon": 174.77059,
+      "name": "Epsom"
+    },
+    "question": "What is the cardinal direction from Epsom to Congleton?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Congleton is west of Epsom"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.91533,
+      "lon": 79.06378,
+      "name": "Kareli"
+    },
+    "point_b": {
+      "lat": 46.17185,
+      "lon": 1.87166,
+      "name": "Gu\u00e9ret"
+    },
+    "question": "What is the cardinal direction from Gu\u00e9ret to Kareli?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Kareli is east of Gu\u00e9ret"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.69785,
+      "lon": 21.64581,
+      "name": "Ghanzi"
+    },
+    "point_b": {
+      "lat": 39.41902,
+      "lon": 67.26118,
+      "name": "Urgut Shahri"
+    },
+    "question": "What is the cardinal direction from Urgut Shahri to Ghanzi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Ghanzi is south of Urgut Shahri"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.57943,
+      "lon": -118.11646,
+      "name": "Palmdale"
+    },
+    "point_b": {
+      "lat": 39.75895,
+      "lon": -84.19161,
+      "name": "Dayton"
+    },
+    "question": "What is the cardinal direction from Dayton to Palmdale?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Palmdale is west of Dayton"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.13546,
+      "lon": 19.40203,
+      "name": "Chrzan\u00f3w"
+    },
+    "point_b": {
+      "lat": 52.38819,
+      "lon": -2.25,
+      "name": "Kidderminster"
+    },
+    "question": "What is the cardinal direction from Kidderminster to Chrzan\u00f3w?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Chrzan\u00f3w is east of Kidderminster"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -4.16667,
+      "lon": -40.94278,
+      "name": "Carnaubal"
+    },
+    "point_b": {
+      "lat": 31.16757,
+      "lon": 31.80125,
+      "name": "M\u012bt Sals\u012bl"
+    },
+    "question": "What is the cardinal direction from M\u012bt Sals\u012bl to Carnaubal?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Carnaubal is west of M\u012bt Sals\u012bl"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.78444,
+      "lon": 10.74389,
+      "name": "Dar el Haj Ta\u00efeb"
+    },
+    "point_b": {
+      "lat": -6.22944,
+      "lon": -36.02278,
+      "name": "Santa Cruz"
+    },
+    "question": "What is the cardinal direction from Santa Cruz to Dar el Haj Ta\u00efeb?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Dar el Haj Ta\u00efeb is east of Santa Cruz"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.75471,
+      "lon": -9.16651,
+      "name": "Campo Grande"
+    },
+    "point_b": {
+      "lat": 9.21554,
+      "lon": -66.00734,
+      "name": "Valle de La Pascua"
+    },
+    "question": "What is the cardinal direction from Valle de La Pascua to Campo Grande?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Campo Grande is east of Valle de La Pascua"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 8.49664,
+      "lon": 4.54214,
+      "name": "Ilorin"
+    },
+    "point_b": {
+      "lat": -45.86256,
+      "lon": -67.494,
+      "name": "Comodoro Rivadavia"
+    },
+    "question": "What is the cardinal direction from Comodoro Rivadavia to Ilorin?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Ilorin is east of Comodoro Rivadavia"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -11.83268,
+      "lon": 16.23613,
+      "name": "Mungo"
+    },
+    "point_b": {
+      "lat": 29.55718,
+      "lon": -95.80856,
+      "name": "Rosenberg"
+    },
+    "question": "What is the cardinal direction from Rosenberg to Mungo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Mungo is east of Rosenberg"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.25394,
+      "lon": 76.03853,
+      "name": "Barw\u0101h"
+    },
+    "point_b": {
+      "lat": -21.03795,
+      "lon": 55.71546,
+      "name": "Saint-Beno\u00eet"
+    },
+    "question": "What is the cardinal direction from Saint-Beno\u00eet to Barw\u0101h?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Barw\u0101h is north of Saint-Beno\u00eet"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.9464,
+      "lon": 113.35769,
+      "name": "Shiqiao"
+    },
+    "point_b": {
+      "lat": -28.2925,
+      "lon": -53.50167,
+      "name": "Panambi"
+    },
+    "question": "What is the cardinal direction from Panambi to Shiqiao?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Shiqiao is east of Panambi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 12.50094,
+      "lon": 76.67416,
+      "name": "French Rocks"
+    },
+    "point_b": {
+      "lat": 29.70579,
+      "lon": -95.45883,
+      "name": "Bellaire"
+    },
+    "question": "What is the cardinal direction from Bellaire to French Rocks?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "French Rocks is east of Bellaire"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 31.2163,
+      "lon": 34.11074,
+      "name": "Ash Shaykh Zuwayd"
+    },
+    "point_b": {
+      "lat": 14.34062,
+      "lon": 100.86733,
+      "name": "Nong Khae"
+    },
+    "question": "What is the cardinal direction from Nong Khae to Ash Shaykh Zuwayd?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Ash Shaykh Zuwayd is north of Nong Khae"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 29.53284,
+      "lon": 108.77478,
+      "name": "Qianjiang"
+    },
+    "point_b": {
+      "lat": 36.61162,
+      "lon": -119.52707,
+      "name": "Parlier"
+    },
+    "question": "What is the cardinal direction from Parlier to Qianjiang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Qianjiang is west of Parlier"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.29414,
+      "lon": 70.43122,
+      "name": "Konibodom"
+    },
+    "point_b": {
+      "lat": 6.04089,
+      "lon": -0.45004,
+      "name": "Suhum"
+    },
+    "question": "What is the cardinal direction from Suhum to Konibodom?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Konibodom is north of Suhum"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.3831,
+      "lon": 104.48753,
+      "name": "H\u00e0 Ti\u00ean"
+    },
+    "point_b": {
+      "lat": -38.82955,
+      "lon": -68.1318,
+      "name": "Centenario"
+    },
+    "question": "What is the cardinal direction from Centenario to H\u00e0 Ti\u00ean?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "H\u00e0 Ti\u00ean is east of Centenario"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 8.97054,
+      "lon": 37.76117,
+      "name": "Guder"
+    },
+    "point_b": {
+      "lat": -6.92806,
+      "lon": -39.57232,
+      "name": "Farias Brito"
+    },
+    "question": "What is the cardinal direction from Farias Brito to Guder?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Guder is east of Farias Brito"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 2.01667,
+      "lon": 111.91667,
+      "name": "Julau"
+    },
+    "point_b": {
+      "lat": 46.66974,
+      "lon": -1.42757,
+      "name": "La Roche-sur-Yon"
+    },
+    "question": "What is the cardinal direction from La Roche-sur-Yon to Julau?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Julau is south of La Roche-sur-Yon"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -27.62329,
+      "lon": 153.04785,
+      "name": "Calamvale"
+    },
+    "point_b": {
+      "lat": 51.47903,
+      "lon": -3.70362,
+      "name": "Porthcawl"
+    },
+    "question": "What is the cardinal direction from Porthcawl to Calamvale?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Calamvale is east of Porthcawl"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 43.67089,
+      "lon": -79.52246,
+      "name": "Edenbridge-Humber Valley"
+    },
+    "point_b": {
+      "lat": -16.62306,
+      "lon": -54.47389,
+      "name": "Pedra Preta"
+    },
+    "question": "What is the cardinal direction from Pedra Preta to Edenbridge-Humber Valley?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Edenbridge-Humber Valley is west of Pedra Preta"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.33333,
+      "lon": 139.01667,
+      "name": "Takasaki"
+    },
+    "point_b": {
+      "lat": 22.79321,
+      "lon": 86.14098,
+      "name": "Bhetia"
+    },
+    "question": "What is the cardinal direction from Bhetia to Takasaki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Takasaki is east of Bhetia"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.40598,
+      "lon": 77.77501,
+      "name": "Elandakuttai"
+    },
+    "point_b": {
+      "lat": -9.82202,
+      "lon": 28.76038,
+      "name": "Mwansabombwe"
+    },
+    "question": "What is the cardinal direction from Mwansabombwe to Elandakuttai?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Elandakuttai is north of Mwansabombwe"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 55.78363,
+      "lon": 37.47137,
+      "name": "Khorosh\u00ebvo-Mnevniki"
+    },
+    "point_b": {
+      "lat": 18.4487,
+      "lon": -95.21327,
+      "name": "San Andr\u00e9s Tuxtla"
+    },
+    "question": "What is the cardinal direction from San Andr\u00e9s Tuxtla to Khorosh\u00ebvo-Mnevniki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Khorosh\u00ebvo-Mnevniki is north of San Andr\u00e9s Tuxtla"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 9.58893,
+      "lon": -11.55256,
+      "name": "Kabala"
+    },
+    "point_b": {
+      "lat": 46.71667,
+      "lon": 26.7,
+      "name": "Buhu\u015fi"
+    },
+    "question": "What is the cardinal direction from Buhu\u015fi to Kabala?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Kabala is west of Buhu\u015fi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.32611,
+      "lon": 76.22829,
+      "name": "B\u0101onl\u012b"
+    },
+    "point_b": {
+      "lat": 49.07362,
+      "lon": 27.67404,
+      "name": "Bar"
+    },
+    "question": "What is the cardinal direction from Bar to B\u0101onl\u012b?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "B\u0101onl\u012b is south of Bar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.95045,
+      "lon": 107.07336,
+      "name": "H\u1ea1 Long"
+    },
+    "point_b": {
+      "lat": 25.46872,
+      "lon": -80.47756,
+      "name": "Homestead"
+    },
+    "question": "What is the cardinal direction from Homestead to H\u1ea1 Long?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "H\u1ea1 Long is west of Homestead"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.25494,
+      "lon": -76.5393,
+      "name": "Guisa"
+    },
+    "point_b": {
+      "lat": 55.7,
+      "lon": 37.66667,
+      "name": "Kozhukhovo"
+    },
+    "question": "What is the cardinal direction from Kozhukhovo to Guisa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Guisa is west of Kozhukhovo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.66667,
+      "lon": 136.46667,
+      "name": "Hisai-motomachi"
+    },
+    "point_b": {
+      "lat": 49.9039,
+      "lon": 8.58874,
+      "name": "Weiterstadt"
+    },
+    "question": "What is the cardinal direction from Weiterstadt to Hisai-motomachi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Hisai-motomachi is east of Weiterstadt"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.38333,
+      "lon": 118.23333,
+      "name": "Wayao"
+    },
+    "point_b": {
+      "lat": -12.89444,
+      "lon": -38.32722,
+      "name": "Lauro de Freitas"
+    },
+    "question": "What is the cardinal direction from Lauro de Freitas to Wayao?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Wayao is east of Lauro de Freitas"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.92595,
+      "lon": -75.11962,
+      "name": "Camden"
+    },
+    "point_b": {
+      "lat": 56.19376,
+      "lon": 10.11283,
+      "name": "Tilst"
+    },
+    "question": "What is the cardinal direction from Tilst to Camden?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Camden is west of Tilst"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 49.20678,
+      "lon": -122.91092,
+      "name": "New Westminster"
+    },
+    "point_b": {
+      "lat": 49.18912,
+      "lon": 9.22527,
+      "name": "Neckarsulm"
+    },
+    "question": "What is the cardinal direction from Neckarsulm to New Westminster?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "New Westminster is west of Neckarsulm"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.96545,
+      "lon": 135.70415,
+      "name": "Muk\u014d"
+    },
+    "point_b": {
+      "lat": 34.20472,
+      "lon": 117.59556,
+      "name": "Shanji"
+    },
+    "question": "What is the cardinal direction from Shanji to Muk\u014d?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Muk\u014d is north of Shanji"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.48091,
+      "lon": 116.85248,
+      "name": "Fanlou"
+    },
+    "point_b": {
+      "lat": 13.65,
+      "lon": 24.08333,
+      "name": "Kabk\u0101b\u012byah"
+    },
+    "question": "What is the cardinal direction from Kabk\u0101b\u012byah to Fanlou?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Fanlou is north of Kabk\u0101b\u012byah"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.23384,
+      "lon": -111.65853,
+      "name": "Provo"
+    },
+    "point_b": {
+      "lat": 49.59701,
+      "lon": 36.52618,
+      "name": "Slobozhans\u2019ke"
+    },
+    "question": "What is the cardinal direction from Slobozhans\u2019ke to Provo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Provo is west of Slobozhans\u2019ke"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.19661,
+      "lon": 38.11674,
+      "name": "Valuyki"
+    },
+    "point_b": {
+      "lat": 31.02795,
+      "lon": 30.71493,
+      "name": "Shubr\u0101kh\u012bt"
+    },
+    "question": "What is the cardinal direction from Shubr\u0101kh\u012bt to Valuyki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Valuyki is east of Shubr\u0101kh\u012bt"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 21.35064,
+      "lon": -98.2257,
+      "name": "Tantoyuca"
+    },
+    "point_b": {
+      "lat": 34.85262,
+      "lon": -82.39401,
+      "name": "Greenville"
+    },
+    "question": "What is the cardinal direction from Greenville to Tantoyuca?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tantoyuca is west of Greenville"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 34.68473,
+      "lon": -6.00344,
+      "name": "Souk El Arbaa"
+    },
+    "point_b": {
+      "lat": 36.2,
+      "lon": 139.28333,
+      "name": "Fukayach\u014d"
+    },
+    "question": "What is the cardinal direction from Fukayach\u014d to Souk El Arbaa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Souk El Arbaa is south of Fukayach\u014d"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -0.9516,
+      "lon": 122.7875,
+      "name": "Luwuk"
+    },
+    "point_b": {
+      "lat": 26.24908,
+      "lon": 92.34764,
+      "name": "Morigaon"
+    },
+    "question": "What is the cardinal direction from Morigaon to Luwuk?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Luwuk is east of Morigaon"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -0.15667,
+      "lon": -50.38667,
+      "name": "Afu\u00e1"
+    },
+    "point_b": {
+      "lat": 40.1675,
+      "lon": 31.92111,
+      "name": "Beypazar\u0131"
+    },
+    "question": "What is the cardinal direction from Beypazar\u0131 to Afu\u00e1?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Afu\u00e1 is west of Beypazar\u0131"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -15.22611,
+      "lon": -59.33528,
+      "name": "Pontes e Lacerda"
+    },
+    "point_b": {
+      "lat": -21.06611,
+      "lon": -50.14722,
+      "name": "Buritama"
+    },
+    "question": "What is the cardinal direction from Buritama to Pontes e Lacerda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Pontes e Lacerda is north of Buritama"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.3935,
+      "lon": -3.71196,
+      "name": "Comillas"
+    },
+    "point_b": {
+      "lat": 30.20942,
+      "lon": -9.37922,
+      "name": "Tine Biougra"
+    },
+    "question": "What is the cardinal direction from Tine Biougra to Comillas?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Comillas is east of Tine Biougra"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 32.31737,
+      "lon": 121.18552,
+      "name": "Juegang"
+    },
+    "point_b": {
+      "lat": 51.04358,
+      "lon": 13.69444,
+      "name": "L\u00f6btau"
+    },
+    "question": "What is the cardinal direction from L\u00f6btau to Juegang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Juegang is east of L\u00f6btau"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.30427,
+      "lon": 36.60601,
+      "name": "Himora"
+    },
+    "point_b": {
+      "lat": 18.62828,
+      "lon": 98.89572,
+      "name": "San Pa Tong"
+    },
+    "question": "What is the cardinal direction from San Pa Tong to Himora?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Himora is west of San Pa Tong"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 29.58354,
+      "lon": 105.06216,
+      "name": "Neijiang"
+    },
+    "point_b": {
+      "lat": 47.76291,
+      "lon": 27.92854,
+      "name": "B\u0103l\u0163i"
+    },
+    "question": "What is the cardinal direction from B\u0103l\u0163i to Neijiang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Neijiang is east of B\u0103l\u0163i"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.20711,
+      "lon": 1.45418,
+      "name": "Tillab\u00e9ri"
+    },
+    "point_b": {
+      "lat": -6.7559,
+      "lon": 111.038,
+      "name": "Pati"
+    },
+    "question": "What is the cardinal direction from Pati to Tillab\u00e9ri?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Tillab\u00e9ri is north of Pati"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.39046,
+      "lon": 41.41966,
+      "name": "Hopa"
+    },
+    "point_b": {
+      "lat": 25.38327,
+      "lon": 97.39637,
+      "name": "Myitkyina"
+    },
+    "question": "What is the cardinal direction from Myitkyina to Hopa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Hopa is west of Myitkyina"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 17.64344,
+      "lon": -101.55212,
+      "name": "Ixtapa-Zihuatanejo"
+    },
+    "point_b": {
+      "lat": -5.1275,
+      "lon": -39.73222,
+      "name": "Boa Viagem"
+    },
+    "question": "What is the cardinal direction from Boa Viagem to Ixtapa-Zihuatanejo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ixtapa-Zihuatanejo is west of Boa Viagem"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -13.79841,
+      "lon": 32.88019,
+      "name": "Mchinji"
+    },
+    "point_b": {
+      "lat": -6.53389,
+      "lon": -64.38306,
+      "name": "Canutama"
+    },
+    "question": "What is the cardinal direction from Canutama to Mchinji?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Mchinji is east of Canutama"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 25.06889,
+      "lon": 91.40243,
+      "name": "Sun\u0101mganj"
+    },
+    "point_b": {
+      "lat": 40.30076,
+      "lon": -3.43722,
+      "name": "Arganda"
+    },
+    "question": "What is the cardinal direction from Arganda to Sun\u0101mganj?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sun\u0101mganj is east of Arganda"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -4.36652,
+      "lon": -70.19186,
+      "name": "Atalaia do Norte"
+    },
+    "point_b": {
+      "lat": 41.31429,
+      "lon": 16.28165,
+      "name": "Barletta"
+    },
+    "question": "What is the cardinal direction from Barletta to Atalaia do Norte?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Atalaia do Norte is west of Barletta"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.05342,
+      "lon": 139.26612,
+      "name": "Ogawamachi"
+    },
+    "point_b": {
+      "lat": -4.41594,
+      "lon": -40.90471,
+      "name": "Croat\u00e1"
+    },
+    "question": "What is the cardinal direction from Croat\u00e1 to Ogawamachi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ogawamachi is west of Croat\u00e1"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 18.00747,
+      "lon": -76.78319,
+      "name": "New Kingston"
+    },
+    "point_b": {
+      "lat": -7.16378,
+      "lon": -78.50027,
+      "name": "Cajamarca"
+    },
+    "question": "What is the cardinal direction from Cajamarca to New Kingston?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "New Kingston is east of Cajamarca"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 43.66974,
+      "lon": 39.66863,
+      "name": "Dagomys"
+    },
+    "point_b": {
+      "lat": 46.4446,
+      "lon": 134.29342,
+      "name": "Luchegorsk"
+    },
+    "question": "What is the cardinal direction from Luchegorsk to Dagomys?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Dagomys is west of Luchegorsk"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -27.03424,
+      "lon": -65.30196,
+      "name": "Bella Vista"
+    },
+    "point_b": {
+      "lat": 56.11254,
+      "lon": 69.48722,
+      "name": "Ishim"
+    },
+    "question": "What is the cardinal direction from Ishim to Bella Vista?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Bella Vista is south of Ishim"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -7.51667,
+      "lon": 31.05,
+      "name": "Namanyere"
+    },
+    "point_b": {
+      "lat": -21.13556,
+      "lon": -44.26167,
+      "name": "S\u00e3o Jo\u00e3o del Rei"
+    },
+    "question": "What is the cardinal direction from S\u00e3o Jo\u00e3o del Rei to Namanyere?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Namanyere is north of S\u00e3o Jo\u00e3o del Rei"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 12.07305,
+      "lon": 1.78838,
+      "name": "Diapaga"
+    },
+    "point_b": {
+      "lat": 41.83625,
+      "lon": 59.96661,
+      "name": "Da\u015foguz"
+    },
+    "question": "What is the cardinal direction from Da\u015foguz to Diapaga?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Diapaga is west of Da\u015foguz"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 0.85007,
+      "lon": 33.92624,
+      "name": "Busolwe"
+    },
+    "point_b": {
+      "lat": -11.08944,
+      "lon": -43.14167,
+      "name": "Barra"
+    },
+    "question": "What is the cardinal direction from Barra to Busolwe?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Busolwe is east of Barra"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 45.07873,
+      "lon": 7.56735,
+      "name": "Collegno"
+    },
+    "point_b": {
+      "lat": -4.16694,
+      "lon": -40.7475,
+      "name": "Guaraciaba do Norte"
+    },
+    "question": "What is the cardinal direction from Guaraciaba do Norte to Collegno?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Collegno is north of Guaraciaba do Norte"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -30.94478,
+      "lon": -61.5597,
+      "name": "Sunchales"
+    },
+    "point_b": {
+      "lat": 15.33021,
+      "lon": 35.59854,
+      "name": "New Halfa"
+    },
+    "question": "What is the cardinal direction from New Halfa to Sunchales?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Sunchales is south of New Halfa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 30.25079,
+      "lon": 105.90853,
+      "name": "Longxing"
+    },
+    "point_b": {
+      "lat": -21.04333,
+      "lon": -40.82444,
+      "name": "Marataizes"
+    },
+    "question": "What is the cardinal direction from Marataizes to Longxing?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Longxing is east of Marataizes"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.1595,
+      "lon": -81.44039,
+      "name": "Stow"
+    },
+    "point_b": {
+      "lat": 35.75167,
+      "lon": 10.69083,
+      "name": "Maatmeur"
+    },
+    "question": "What is the cardinal direction from Maatmeur to Stow?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Stow is north of Maatmeur"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 32.69732,
+      "lon": 128.84561,
+      "name": "Fukuech\u014d"
+    },
+    "point_b": {
+      "lat": 51.55657,
+      "lon": 7.31155,
+      "name": "Castrop-Rauxel"
+    },
+    "question": "What is the cardinal direction from Castrop-Rauxel to Fukuech\u014d?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Fukuech\u014d is south of Castrop-Rauxel"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 33.88153,
+      "lon": 135.1696,
+      "name": "Gob\u014d"
+    },
+    "point_b": {
+      "lat": 8.55083,
+      "lon": -0.51875,
+      "name": "Salaga"
+    },
+    "question": "What is the cardinal direction from Salaga to Gob\u014d?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Gob\u014d is east of Salaga"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 31.02543,
+      "lon": 109.38562,
+      "name": "Zhuyi"
+    },
+    "point_b": {
+      "lat": -36.61617,
+      "lon": -64.28991,
+      "name": "Santa Rosa"
+    },
+    "question": "What is the cardinal direction from Santa Rosa to Zhuyi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Zhuyi is east of Santa Rosa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.7661,
+      "lon": -105.07721,
+      "name": "Wheat Ridge"
+    },
+    "point_b": {
+      "lat": 40.4696,
+      "lon": 19.48379,
+      "name": "Vlor\u00eb"
+    },
+    "question": "What is the cardinal direction from Vlor\u00eb to Wheat Ridge?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Wheat Ridge is south of Vlor\u00eb"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.34204,
+      "lon": -74.16792,
+      "name": "Kiryas Joel"
+    },
+    "point_b": {
+      "lat": 23.80931,
+      "lon": 90.36093,
+      "name": "Mirpur Model Thana"
+    },
+    "question": "What is the cardinal direction from Mirpur Model Thana to Kiryas Joel?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Kiryas Joel is west of Mirpur Model Thana"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 7.05402,
+      "lon": -7.44035,
+      "name": "Gohouo"
+    },
+    "point_b": {
+      "lat": -7.58583,
+      "lon": -35.10583,
+      "name": "Condado"
+    },
+    "question": "What is the cardinal direction from Condado to Gohouo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Gohouo is east of Condado"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.81629,
+      "lon": 99.87739,
+      "name": "Ban Pong"
+    },
+    "point_b": {
+      "lat": 41.9217,
+      "lon": -87.64783,
+      "name": "Lincoln Park"
+    },
+    "question": "What is the cardinal direction from Lincoln Park to Ban Pong?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ban Pong is west of Lincoln Park"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.43522,
+      "lon": 5.23494,
+      "name": "Zuru"
+    },
+    "point_b": {
+      "lat": 32.68,
+      "lon": 109.01722,
+      "name": "Ankang"
+    },
+    "question": "What is the cardinal direction from Ankang to Zuru?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Zuru is west of Ankang"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.47438,
+      "lon": 24.28288,
+      "name": "Sokal"
+    },
+    "point_b": {
+      "lat": 38.99895,
+      "lon": -84.62661,
+      "name": "Florence"
+    },
+    "question": "What is the cardinal direction from Florence to Sokal?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sokal is east of Florence"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.4585,
+      "lon": 123.6805,
+      "name": "Tiwi"
+    },
+    "point_b": {
+      "lat": -23.61277,
+      "lon": -46.42667,
+      "name": "Iguatemi"
+    },
+    "question": "What is the cardinal direction from Iguatemi to Tiwi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Tiwi is east of Iguatemi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 28.07168,
+      "lon": -80.65339,
+      "name": "West Melbourne"
+    },
+    "point_b": {
+      "lat": -17.73111,
+      "lon": -49.09944,
+      "name": "Morrinhos"
+    },
+    "question": "What is the cardinal direction from Morrinhos to West Melbourne?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "West Melbourne is west of Morrinhos"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.43333,
+      "lon": -0.38333,
+      "name": "Hanworth"
+    },
+    "point_b": {
+      "lat": 9.36025,
+      "lon": -79.90019,
+      "name": "Col\u00f3n"
+    },
+    "question": "What is the cardinal direction from Col\u00f3n to Hanworth?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Hanworth is east of Col\u00f3n"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 17.03795,
+      "lon": 81.77597,
+      "name": "Katheru"
+    },
+    "point_b": {
+      "lat": -2.42466,
+      "lon": -79.34159,
+      "name": "La Troncal"
+    },
+    "question": "What is the cardinal direction from La Troncal to Katheru?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Katheru is east of La Troncal"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 7.43027,
+      "lon": -6.05054,
+      "name": "Zu\u00e9noula"
+    },
+    "point_b": {
+      "lat": -4.44696,
+      "lon": -49.11556,
+      "name": "Jacund\u00e1"
+    },
+    "question": "What is the cardinal direction from Jacund\u00e1 to Zu\u00e9noula?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Zu\u00e9noula is east of Jacund\u00e1"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.84232,
+      "lon": 9.23028,
+      "name": "Stuttgart M\u00fchlhausen"
+    },
+    "point_b": {
+      "lat": -25.42944,
+      "lon": -50.00639,
+      "name": "Palmeira"
+    },
+    "question": "What is the cardinal direction from Palmeira to Stuttgart M\u00fchlhausen?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Stuttgart M\u00fchlhausen is north of Palmeira"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 5.70773,
+      "lon": 6.43402,
+      "name": "Kwale"
+    },
+    "point_b": {
+      "lat": -16.32369,
+      "lon": -71.58151,
+      "name": "Cono Norte"
+    },
+    "question": "What is the cardinal direction from Cono Norte to Kwale?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Kwale is east of Cono Norte"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 5.46339,
+      "lon": 100.38144,
+      "name": "Permatang Kuching"
+    },
+    "point_b": {
+      "lat": 39.20889,
+      "lon": 45.41222,
+      "name": "Nax\u00e7\u0131van"
+    },
+    "question": "What is the cardinal direction from Nax\u00e7\u0131van to Permatang Kuching?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Permatang Kuching is south of Nax\u00e7\u0131van"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.48333,
+      "lon": -88.46667,
+      "name": "Santiago de Mar\u00eda"
+    },
+    "point_b": {
+      "lat": -2.17071,
+      "lon": -79.465,
+      "name": "Naranjito"
+    },
+    "question": "What is the cardinal direction from Naranjito to Santiago de Mar\u00eda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Santiago de Mar\u00eda is north of Naranjito"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -5.35833,
+      "lon": -42.67639,
+      "name": "Demerval Lob\u00e3o"
+    },
+    "point_b": {
+      "lat": -1.12889,
+      "lon": -47.62,
+      "name": "Igarap\u00e9-A\u00e7u"
+    },
+    "question": "What is the cardinal direction from Igarap\u00e9-A\u00e7u to Demerval Lob\u00e3o?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Demerval Lob\u00e3o is east of Igarap\u00e9-A\u00e7u"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -7.16667,
+      "lon": 112.6333,
+      "name": "Kebomas"
+    },
+    "point_b": {
+      "lat": 47.38993,
+      "lon": 35.00065,
+      "name": "Dniprorudne"
+    },
+    "question": "What is the cardinal direction from Dniprorudne to Kebomas?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Kebomas is south of Dniprorudne"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -32.83211,
+      "lon": 151.35623,
+      "name": "Cessnock"
+    },
+    "point_b": {
+      "lat": -37.58333,
+      "lon": 145.03333,
+      "name": "Wollert"
+    },
+    "question": "What is the cardinal direction from Wollert to Cessnock?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Cessnock is east of Wollert"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -26.06927,
+      "lon": 30.11489,
+      "name": "Carolina"
+    },
+    "point_b": {
+      "lat": 51.89562,
+      "lon": 11.05622,
+      "name": "Halberstadt"
+    },
+    "question": "What is the cardinal direction from Halberstadt to Carolina?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Carolina is south of Halberstadt"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.8425,
+      "lon": -43.79306,
+      "name": "Lima Duarte"
+    },
+    "point_b": {
+      "lat": -43.30031,
+      "lon": -65.10564,
+      "name": "Rawson"
+    },
+    "question": "What is the cardinal direction from Rawson to Lima Duarte?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Lima Duarte is north of Rawson"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 33.79038,
+      "lon": -84.30603,
+      "name": "North Decatur"
+    },
+    "point_b": {
+      "lat": -5.22152,
+      "lon": 145.78695,
+      "name": "Madang"
+    },
+    "question": "What is the cardinal direction from Madang to North Decatur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "North Decatur is north of Madang"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -22.73206,
+      "lon": -64.33724,
+      "name": "Bermejo"
+    },
+    "point_b": {
+      "lat": -33.68909,
+      "lon": -71.21528,
+      "name": "Melipilla"
+    },
+    "question": "What is the cardinal direction from Melipilla to Bermejo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Bermejo is north of Melipilla"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 7.15772,
+      "lon": -5.2248,
+      "name": "Ti\u00e9bissou"
+    },
+    "point_b": {
+      "lat": 36.36417,
+      "lon": 119.07694,
+      "name": "Linghe"
+    },
+    "question": "What is the cardinal direction from Linghe to Ti\u00e9bissou?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ti\u00e9bissou is west of Linghe"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.85029,
+      "lon": 2.14523,
+      "name": "La Celle-Saint-Cloud"
+    },
+    "point_b": {
+      "lat": 38.5767,
+      "lon": -92.17352,
+      "name": "Jefferson City"
+    },
+    "question": "What is the cardinal direction from Jefferson City to La Celle-Saint-Cloud?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "La Celle-Saint-Cloud is north of Jefferson City"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.65193,
+      "lon": 76.9778,
+      "name": "\u016attukuli"
+    },
+    "point_b": {
+      "lat": 28.09962,
+      "lon": -16.68102,
+      "name": "Arona"
+    },
+    "question": "What is the cardinal direction from Arona to \u016attukuli?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "\u016attukuli is east of Arona"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -3.38361,
+      "lon": -57.71861,
+      "name": "Mau\u00e9s"
+    },
+    "point_b": {
+      "lat": 55.03973,
+      "lon": -1.44713,
+      "name": "Whitley Bay"
+    },
+    "question": "What is the cardinal direction from Whitley Bay to Mau\u00e9s?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Mau\u00e9s is south of Whitley Bay"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -32.78749,
+      "lon": 26.8344,
+      "name": "Alice"
+    },
+    "point_b": {
+      "lat": 40.65844,
+      "lon": -74.29959,
+      "name": "Cranford"
+    },
+    "question": "What is the cardinal direction from Cranford to Alice?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Alice is south of Cranford"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -15.11646,
+      "lon": 39.2666,
+      "name": "Nampula"
+    },
+    "point_b": {
+      "lat": -13.07127,
+      "lon": -55.91479,
+      "name": "Lucas do Rio Verde"
+    },
+    "question": "What is the cardinal direction from Lucas do Rio Verde to Nampula?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Nampula is south of Lucas do Rio Verde"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 1.16667,
+      "lon": 108.96667,
+      "name": "Pemangkat"
+    },
+    "point_b": {
+      "lat": 3.8766,
+      "lon": 100.9328,
+      "name": "Hutan Melintang"
+    },
+    "question": "What is the cardinal direction from Hutan Melintang to Pemangkat?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Pemangkat is east of Hutan Melintang"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 47.6558,
+      "lon": 28.04734,
+      "name": "Bilicenii Vechi"
+    },
+    "point_b": {
+      "lat": 41.91886,
+      "lon": 8.73812,
+      "name": "Ajaccio"
+    },
+    "question": "What is the cardinal direction from Ajaccio to Bilicenii Vechi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Bilicenii Vechi is east of Ajaccio"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.85,
+      "lon": 104.23333,
+      "name": "Weining"
+    },
+    "point_b": {
+      "lat": 29.14408,
+      "lon": 104.67474,
+      "name": "Kongtan"
+    },
+    "question": "What is the cardinal direction from Kongtan to Weining?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Weining is south of Kongtan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 30.00043,
+      "lon": 106.95204,
+      "name": "Honghu"
+    },
+    "point_b": {
+      "lat": 5.0491,
+      "lon": -6.74477,
+      "name": "Gagny"
+    },
+    "question": "What is the cardinal direction from Gagny to Honghu?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Honghu is north of Gagny"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.00377,
+      "lon": 18.47205,
+      "name": "Wodzis\u0142aw \u015al\u0105ski"
+    },
+    "point_b": {
+      "lat": 40.6976,
+      "lon": -74.2632,
+      "name": "Union"
+    },
+    "question": "What is the cardinal direction from Union to Wodzis\u0142aw \u015al\u0105ski?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Wodzis\u0142aw \u015al\u0105ski is east of Union"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -26.17722,
+      "lon": -50.39,
+      "name": "Canoinhas"
+    },
+    "point_b": {
+      "lat": -23.65506,
+      "lon": 27.62495,
+      "name": "Marapong"
+    },
+    "question": "What is the cardinal direction from Marapong to Canoinhas?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Canoinhas is west of Marapong"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.43218,
+      "lon": 6.87967,
+      "name": "M\u00fclheim"
+    },
+    "point_b": {
+      "lat": 45.18333,
+      "lon": 124.81667,
+      "name": "Fuyu"
+    },
+    "question": "What is the cardinal direction from Fuyu to M\u00fclheim?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "M\u00fclheim is north of Fuyu"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.26061,
+      "lon": -67.79348,
+      "name": "San Joaqu\u00edn"
+    },
+    "point_b": {
+      "lat": 50.77233,
+      "lon": 29.23833,
+      "name": "Malyn"
+    },
+    "question": "What is the cardinal direction from Malyn to San Joaqu\u00edn?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "San Joaqu\u00edn is west of Malyn"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -22.45389,
+      "lon": -43.46889,
+      "name": "Miguel Pereira"
+    },
+    "point_b": {
+      "lat": 9.31168,
+      "lon": 41.44301,
+      "name": "Deder"
+    },
+    "question": "What is the cardinal direction from Deder to Miguel Pereira?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Miguel Pereira is west of Deder"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 45.71404,
+      "lon": 4.80755,
+      "name": "Oullins"
+    },
+    "point_b": {
+      "lat": 28.63124,
+      "lon": 79.80436,
+      "name": "P\u012blibh\u012bt"
+    },
+    "question": "What is the cardinal direction from P\u012blibh\u012bt to Oullins?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Oullins is west of P\u012blibh\u012bt"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.35574,
+      "lon": 85.09251,
+      "name": "Mehsi"
+    },
+    "point_b": {
+      "lat": -23.44077,
+      "lon": -46.73774,
+      "name": "Jaragu\u00e1"
+    },
+    "question": "What is the cardinal direction from Jaragu\u00e1 to Mehsi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Mehsi is east of Jaragu\u00e1"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 21.46527,
+      "lon": 83.97573,
+      "name": "Sambalpur"
+    },
+    "point_b": {
+      "lat": 0.5196,
+      "lon": 33.34687,
+      "name": "Magamaga"
+    },
+    "question": "What is the cardinal direction from Magamaga to Sambalpur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sambalpur is east of Magamaga"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 19.62201,
+      "lon": 74.65699,
+      "name": "Shrirampur"
+    },
+    "point_b": {
+      "lat": -5.42917,
+      "lon": 105.26111,
+      "name": "Bandar Lampung"
+    },
+    "question": "What is the cardinal direction from Bandar Lampung to Shrirampur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Shrirampur is west of Bandar Lampung"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.04832,
+      "lon": -0.02438,
+      "name": "Royston"
+    },
+    "point_b": {
+      "lat": -9.07786,
+      "lon": 143.20893,
+      "name": "Daru"
+    },
+    "question": "What is the cardinal direction from Daru to Royston?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Royston is west of Daru"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.53693,
+      "lon": 73.17368,
+      "name": "Dharampur"
+    },
+    "point_b": {
+      "lat": 32.75668,
+      "lon": 12.57159,
+      "name": "\u015eurm\u0101n"
+    },
+    "question": "What is the cardinal direction from \u015eurm\u0101n to Dharampur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Dharampur is south of \u015eurm\u0101n"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.1136,
+      "lon": 128.336,
+      "name": "Gumi"
+    },
+    "point_b": {
+      "lat": 33.48529,
+      "lon": 6.79693,
+      "name": "Guemar"
+    },
+    "question": "What is the cardinal direction from Guemar to Gumi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Gumi is east of Guemar"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.37058,
+      "lon": 114.18696,
+      "name": "Sun Tin Wai"
+    },
+    "point_b": {
+      "lat": -7.32861,
+      "lon": -35.3325,
+      "name": "Itabaiana"
+    },
+    "question": "What is the cardinal direction from Itabaiana to Sun Tin Wai?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sun Tin Wai is east of Itabaiana"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.08333,
+      "lon": 38.03333,
+      "name": "Kele"
+    },
+    "point_b": {
+      "lat": 49.47181,
+      "lon": 17.97113,
+      "name": "Vala\u0161sk\u00e9 Mezi\u0159\u00ed\u010d\u00ed"
+    },
+    "question": "What is the cardinal direction from Vala\u0161sk\u00e9 Mezi\u0159\u00ed\u010d\u00ed to Kele?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Kele is south of Vala\u0161sk\u00e9 Mezi\u0159\u00ed\u010d\u00ed"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.88095,
+      "lon": -77.30082,
+      "name": "Oakton"
+    },
+    "point_b": {
+      "lat": 30.15286,
+      "lon": 78.7771,
+      "name": "Pauri"
+    },
+    "question": "What is the cardinal direction from Pauri to Oakton?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Oakton is west of Pauri"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 22.69057,
+      "lon": 58.53337,
+      "name": "Ibr\u0101\u2019"
+    },
+    "point_b": {
+      "lat": 6.9909,
+      "lon": 79.883,
+      "name": "Hendala"
+    },
+    "question": "What is the cardinal direction from Hendala to Ibr\u0101\u2019?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ibr\u0101\u2019 is west of Hendala"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 27.13076,
+      "lon": -104.92391,
+      "name": "Jos\u00e9 Mariano Jim\u00e9nez"
+    },
+    "point_b": {
+      "lat": 22.42996,
+      "lon": 80.10561,
+      "name": "Nainpur"
+    },
+    "question": "What is the cardinal direction from Nainpur to Jos\u00e9 Mariano Jim\u00e9nez?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Jos\u00e9 Mariano Jim\u00e9nez is east of Nainpur"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.09167,
+      "lon": -1.08444,
+      "name": "Kaya"
+    },
+    "point_b": {
+      "lat": 13.35222,
+      "lon": -16.43389,
+      "name": "Lamin"
+    },
+    "question": "What is the cardinal direction from Lamin to Kaya?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Kaya is south of Lamin"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -0.9373,
+      "lon": 37.12275,
+      "name": "Kenol"
+    },
+    "point_b": {
+      "lat": 46.38044,
+      "lon": -116.97543,
+      "name": "Lewiston Orchards"
+    },
+    "question": "What is the cardinal direction from Lewiston Orchards to Kenol?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Kenol is east of Lewiston Orchards"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -3.74814,
+      "lon": -73.2529,
+      "name": "Iquitos"
+    },
+    "point_b": {
+      "lat": 50.93275,
+      "lon": 7.28389,
+      "name": "Overath"
+    },
+    "question": "What is the cardinal direction from Overath to Iquitos?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Iquitos is west of Overath"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.31667,
+      "lon": 8.33333,
+      "name": "Bad Essen"
+    },
+    "point_b": {
+      "lat": 4.09912,
+      "lon": -72.95647,
+      "name": "Puerto L\u00f3pez"
+    },
+    "question": "What is the cardinal direction from Puerto L\u00f3pez to Bad Essen?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Bad Essen is east of Puerto L\u00f3pez"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.57409,
+      "lon": 2.58287,
+      "name": "Savigny-le-Temple"
+    },
+    "point_b": {
+      "lat": 41.13394,
+      "lon": -81.48456,
+      "name": "Cuyahoga Falls"
+    },
+    "question": "What is the cardinal direction from Cuyahoga Falls to Savigny-le-Temple?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Savigny-le-Temple is east of Cuyahoga Falls"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 17.77844,
+      "lon": 83.21577,
+      "name": "Vepagunta"
+    },
+    "point_b": {
+      "lat": 36.11556,
+      "lon": 119.53333,
+      "name": "Baichihe"
+    },
+    "question": "What is the cardinal direction from Baichihe to Vepagunta?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Vepagunta is south of Baichihe"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -8.73204,
+      "lon": 15.37124,
+      "name": "Cazombo"
+    },
+    "point_b": {
+      "lat": 6.78611,
+      "lon": 125.21333,
+      "name": "Bansalan"
+    },
+    "question": "What is the cardinal direction from Bansalan to Cazombo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Cazombo is west of Bansalan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.83861,
+      "lon": -44.80833,
+      "name": "Cruz\u00edlia"
+    },
+    "point_b": {
+      "lat": 43.49806,
+      "lon": 43.61889,
+      "name": "Nalchik"
+    },
+    "question": "What is the cardinal direction from Nalchik to Cruz\u00edlia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Cruz\u00edlia is west of Nalchik"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 9.29687,
+      "lon": -70.67189,
+      "name": "Escuque"
+    },
+    "point_b": {
+      "lat": 36.98038,
+      "lon": -76.42975,
+      "name": "Newport News"
+    },
+    "question": "What is the cardinal direction from Newport News to Escuque?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Escuque is south of Newport News"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -8.46887,
+      "lon": 29.66193,
+      "name": "Kaputa"
+    },
+    "point_b": {
+      "lat": 52.9911,
+      "lon": 22.88422,
+      "name": "\u0141apy"
+    },
+    "question": "What is the cardinal direction from \u0141apy to Kaputa?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Kaputa is south of \u0141apy"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 46.23624,
+      "lon": 130.54642,
+      "name": "Huanan"
+    },
+    "point_b": {
+      "lat": 6.8991,
+      "lon": 1.71618,
+      "name": "Djakotom\u00e9"
+    },
+    "question": "What is the cardinal direction from Djakotom\u00e9 to Huanan?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Huanan is east of Djakotom\u00e9"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -33.75881,
+      "lon": 150.99292,
+      "name": "Baulkham Hills"
+    },
+    "point_b": {
+      "lat": 40.00033,
+      "lon": 64.50213,
+      "name": "Vobkent Shahri"
+    },
+    "question": "What is the cardinal direction from Vobkent Shahri to Baulkham Hills?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Baulkham Hills is east of Vobkent Shahri"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 43.73976,
+      "lon": 44.65157,
+      "name": "Mozdok"
+    },
+    "point_b": {
+      "lat": 22.00265,
+      "lon": 100.7697,
+      "name": "Jinghong"
+    },
+    "question": "What is the cardinal direction from Jinghong to Mozdok?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Mozdok is west of Jinghong"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 20.84158,
+      "lon": 95.1267,
+      "name": "Kyaukpadaung"
+    },
+    "point_b": {
+      "lat": -1.24627,
+      "lon": 36.66291,
+      "name": "Kikuyu"
+    },
+    "question": "What is the cardinal direction from Kikuyu to Kyaukpadaung?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Kyaukpadaung is north of Kikuyu"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.37513,
+      "lon": 8.96538,
+      "name": "Petershagen"
+    },
+    "point_b": {
+      "lat": 20.61013,
+      "lon": 72.93428,
+      "name": "Vals\u0101d"
+    },
+    "question": "What is the cardinal direction from Vals\u0101d to Petershagen?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Petershagen is west of Vals\u0101d"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 60.31821,
+      "lon": 5.35317,
+      "name": "Nesttun"
+    },
+    "point_b": {
+      "lat": 51.58417,
+      "lon": 4.31944,
+      "name": "Steenbergen"
+    },
+    "question": "What is the cardinal direction from Steenbergen to Nesttun?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Nesttun is north of Steenbergen"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 54.0249,
+      "lon": 28.0894,
+      "name": "Smaliavi\u010dy"
+    },
+    "point_b": {
+      "lat": 48.20849,
+      "lon": 16.37208,
+      "name": "Vienna"
+    },
+    "question": "What is the cardinal direction from Vienna to Smaliavi\u010dy?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Smaliavi\u010dy is north of Vienna"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -11.73584,
+      "lon": 24.42926,
+      "name": "Mwinilunga"
+    },
+    "point_b": {
+      "lat": 40.8455,
+      "lon": 14.19262,
+      "name": "Soccavo"
+    },
+    "question": "What is the cardinal direction from Soccavo to Mwinilunga?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Mwinilunga is east of Soccavo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.49206,
+      "lon": 2.36524,
+      "name": "Premi\u00e0 de Mar"
+    },
+    "point_b": {
+      "lat": -19.51361,
+      "lon": -43.745,
+      "name": "Jaboticatubas"
+    },
+    "question": "What is the cardinal direction from Jaboticatubas to Premi\u00e0 de Mar?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Premi\u00e0 de Mar is north of Jaboticatubas"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -7.35917,
+      "lon": -41.13778,
+      "name": "Jaic\u00f3s"
+    },
+    "point_b": {
+      "lat": 17.40577,
+      "lon": 78.55911,
+      "name": "Uppal Kalan"
+    },
+    "question": "What is the cardinal direction from Uppal Kalan to Jaic\u00f3s?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Jaic\u00f3s is west of Uppal Kalan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 45.60752,
+      "lon": 4.06525,
+      "name": "Montbrison"
+    },
+    "point_b": {
+      "lat": 35.33165,
+      "lon": 136.87042,
+      "name": "K\u014dnan"
+    },
+    "question": "What is the cardinal direction from K\u014dnan to Montbrison?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Montbrison is west of K\u014dnan"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -20.84889,
+      "lon": -41.11278,
+      "name": "Cachoeiro de Itapemirim"
+    },
+    "point_b": {
+      "lat": -15.81009,
+      "lon": -48.03077,
+      "name": "Vicente Pires"
+    },
+    "question": "What is the cardinal direction from Vicente Pires to Cachoeiro de Itapemirim?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Cachoeiro de Itapemirim is east of Vicente Pires"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -3.5403,
+      "lon": 118.9707,
+      "name": "Majene"
+    },
+    "point_b": {
+      "lat": 29.55718,
+      "lon": -95.80856,
+      "name": "Rosenberg"
+    },
+    "question": "What is the cardinal direction from Rosenberg to Majene?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Majene is west of Rosenberg"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -8.07361,
+      "lon": -37.26444,
+      "name": "Sert\u00e2nia"
+    },
+    "point_b": {
+      "lat": -6.75917,
+      "lon": -38.22806,
+      "name": "Sousa"
+    },
+    "question": "What is the cardinal direction from Sousa to Sert\u00e2nia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sert\u00e2nia is east of Sousa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 9.01222,
+      "lon": 27.57081,
+      "name": "Winejok"
+    },
+    "point_b": {
+      "lat": 38.88584,
+      "lon": -94.53301,
+      "name": "Grandview"
+    },
+    "question": "What is the cardinal direction from Grandview to Winejok?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Winejok is east of Grandview"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -8.7449,
+      "lon": 116.8532,
+      "name": "Taliwang"
+    },
+    "point_b": {
+      "lat": 19.89113,
+      "lon": -100.44443,
+      "name": "Maravat\u00edo de Ocampo"
+    },
+    "question": "What is the cardinal direction from Maravat\u00edo de Ocampo to Taliwang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Taliwang is west of Maravat\u00edo de Ocampo"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 29.46121,
+      "lon": 107.19703,
+      "name": "Tongle"
+    },
+    "point_b": {
+      "lat": 32.67889,
+      "lon": 12.87327,
+      "name": "Az Zahr\u0101\u2019"
+    },
+    "question": "What is the cardinal direction from Az Zahr\u0101\u2019 to Tongle?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Tongle is south of Az Zahr\u0101\u2019"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -0.40306,
+      "lon": 31.15722,
+      "name": "Lyantonde"
+    },
+    "point_b": {
+      "lat": -34.06306,
+      "lon": -60.10261,
+      "name": "Arrecifes"
+    },
+    "question": "What is the cardinal direction from Arrecifes to Lyantonde?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Lyantonde is north of Arrecifes"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.60086,
+      "lon": 3.48818,
+      "name": "Ebute Ikorodu"
+    },
+    "point_b": {
+      "lat": 10.82379,
+      "lon": 10.77221,
+      "name": "Dukku"
+    },
+    "question": "What is the cardinal direction from Dukku to Ebute Ikorodu?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ebute Ikorodu is west of Dukku"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.58333,
+      "lon": 3.06667,
+      "name": "Faches-Thumesnil"
+    },
+    "point_b": {
+      "lat": 44.51916,
+      "lon": -88.01983,
+      "name": "Green Bay"
+    },
+    "question": "What is the cardinal direction from Green Bay to Faches-Thumesnil?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Faches-Thumesnil is north of Green Bay"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.8293,
+      "lon": -75.03346,
+      "name": "Juan de Acosta"
+    },
+    "point_b": {
+      "lat": -5.10917,
+      "lon": 31.04194,
+      "name": "Nguruka"
+    },
+    "question": "What is the cardinal direction from Nguruka to Juan de Acosta?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Juan de Acosta is west of Nguruka"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 35.27306,
+      "lon": 7.75194,
+      "name": "Cheria"
+    },
+    "point_b": {
+      "lat": 52.68333,
+      "lon": 0.93333,
+      "name": "East Dereham"
+    },
+    "question": "What is the cardinal direction from East Dereham to Cheria?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Cheria is south of East Dereham"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.03686,
+      "lon": 27.81242,
+      "name": "Drochia"
+    },
+    "point_b": {
+      "lat": -37.92845,
+      "lon": 145.17708,
+      "name": "Mulgrave"
+    },
+    "question": "What is the cardinal direction from Mulgrave to Drochia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Drochia is west of Mulgrave"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.85093,
+      "lon": -73.97014,
+      "name": "Fort Lee"
+    },
+    "point_b": {
+      "lat": 53.14515,
+      "lon": -2.36251,
+      "name": "Sandbach"
+    },
+    "question": "What is the cardinal direction from Sandbach to Fort Lee?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Fort Lee is west of Sandbach"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 49.96528,
+      "lon": 16.97061,
+      "name": "\u0160umperk"
+    },
+    "point_b": {
+      "lat": 25.9812,
+      "lon": -80.14838,
+      "name": "Hallandale Beach"
+    },
+    "question": "What is the cardinal direction from Hallandale Beach to \u0160umperk?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "\u0160umperk is east of Hallandale Beach"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -3.73222,
+      "lon": -40.99167,
+      "name": "Tiangu\u00e1"
+    },
+    "point_b": {
+      "lat": 43.30513,
+      "lon": 44.89949,
+      "name": "Karabulak"
+    },
+    "question": "What is the cardinal direction from Karabulak to Tiangu\u00e1?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tiangu\u00e1 is west of Karabulak"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -13.23251,
+      "lon": 30.23522,
+      "name": "Serenje"
+    },
+    "point_b": {
+      "lat": 27.2872,
+      "lon": 68.50623,
+      "name": "Ranipur"
+    },
+    "question": "What is the cardinal direction from Ranipur to Serenje?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Serenje is west of Ranipur"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 42.97213,
+      "lon": 126.74107,
+      "name": "Huadian"
+    },
+    "point_b": {
+      "lat": 40.94926,
+      "lon": -74.15375,
+      "name": "Hawthorne"
+    },
+    "question": "What is the cardinal direction from Hawthorne to Huadian?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Huadian is west of Hawthorne"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 30.17582,
+      "lon": 106.48624,
+      "name": "Laitan"
+    },
+    "point_b": {
+      "lat": -34.52381,
+      "lon": -56.28215,
+      "name": "Canelones"
+    },
+    "question": "What is the cardinal direction from Canelones to Laitan?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Laitan is east of Canelones"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.38917,
+      "lon": -42.69667,
+      "name": "Cataguases"
+    },
+    "point_b": {
+      "lat": 20.07806,
+      "lon": 105.86028,
+      "name": "B\u1ec9m S\u01a1n"
+    },
+    "question": "What is the cardinal direction from B\u1ec9m S\u01a1n to Cataguases?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Cataguases is west of B\u1ec9m S\u01a1n"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 36.48,
+      "lon": 102.41639,
+      "name": "Nianbo"
+    },
+    "point_b": {
+      "lat": -16.735,
+      "lon": -43.86167,
+      "name": "Montes Claros"
+    },
+    "question": "What is the cardinal direction from Montes Claros to Nianbo?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Nianbo is east of Montes Claros"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.53667,
+      "lon": -49.85806,
+      "name": "Promiss\u00e3o"
+    },
+    "point_b": {
+      "lat": 43.68278,
+      "lon": -79.43833,
+      "name": "Oakwood Village"
+    },
+    "question": "What is the cardinal direction from Oakwood Village to Promiss\u00e3o?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Promiss\u00e3o is east of Oakwood Village"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.1814,
+      "lon": 31.38514,
+      "name": "Alapl\u0131"
+    },
+    "point_b": {
+      "lat": 0.46588,
+      "lon": 34.09221,
+      "name": "Busia"
+    },
+    "question": "What is the cardinal direction from Busia to Alapl\u0131?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Alapl\u0131 is north of Busia"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.07937,
+      "lon": 77.03709,
+      "name": "K\u0101lappatti"
+    },
+    "point_b": {
+      "lat": 26.79404,
+      "lon": -80.26749,
+      "name": "The Acreage"
+    },
+    "question": "What is the cardinal direction from The Acreage to K\u0101lappatti?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "K\u0101lappatti is east of The Acreage"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -34.57973,
+      "lon": -58.46829,
+      "name": "Villa Ort\u00fazar"
+    },
+    "point_b": {
+      "lat": 31.1245,
+      "lon": 76.11613,
+      "name": "Nawanshahr"
+    },
+    "question": "What is the cardinal direction from Nawanshahr to Villa Ort\u00fazar?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Villa Ort\u00fazar is west of Nawanshahr"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -33.8178,
+      "lon": 151.00348,
+      "name": "Parramatta"
+    },
+    "point_b": {
+      "lat": 52.56667,
+      "lon": -1.81667,
+      "name": "Sutton Coldfield"
+    },
+    "question": "What is the cardinal direction from Sutton Coldfield to Parramatta?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Parramatta is east of Sutton Coldfield"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.07889,
+      "lon": 126.375,
+      "name": "Sijung"
+    },
+    "point_b": {
+      "lat": 54.6988,
+      "lon": -1.60229,
+      "name": "Spennymoor"
+    },
+    "question": "What is the cardinal direction from Spennymoor to Sijung?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sijung is east of Spennymoor"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 26.25722,
+      "lon": 50.61194,
+      "name": "Al Muharraq"
+    },
+    "point_b": {
+      "lat": 48.74792,
+      "lon": 2.39253,
+      "name": "Orly"
+    },
+    "question": "What is the cardinal direction from Orly to Al Muharraq?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Al Muharraq is east of Orly"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 52.48333,
+      "lon": 4.65694,
+      "name": "Beverwijk"
+    },
+    "point_b": {
+      "lat": 42.13615,
+      "lon": -0.4087,
+      "name": "Huesca"
+    },
+    "question": "What is the cardinal direction from Huesca to Beverwijk?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Beverwijk is north of Huesca"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.30125,
+      "lon": -65.99053,
+      "name": "San Jos\u00e9 de Barlovento"
+    },
+    "point_b": {
+      "lat": -24.15667,
+      "lon": -54.09694,
+      "name": "Terra Roxa"
+    },
+    "question": "What is the cardinal direction from Terra Roxa to San Jos\u00e9 de Barlovento?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "San Jos\u00e9 de Barlovento is west of Terra Roxa"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -33.9205,
+      "lon": 151.25522,
+      "name": "Coogee"
+    },
+    "point_b": {
+      "lat": 27.61638,
+      "lon": -80.41308,
+      "name": "Vero Beach South"
+    },
+    "question": "What is the cardinal direction from Vero Beach South to Coogee?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Coogee is south of Vero Beach South"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.38896,
+      "lon": 2.16179,
+      "name": "Eixample"
+    },
+    "point_b": {
+      "lat": 28.07184,
+      "lon": 76.58312,
+      "name": "B\u0101wal"
+    },
+    "question": "What is the cardinal direction from B\u0101wal to Eixample?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Eixample is west of B\u0101wal"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -11.84722,
+      "lon": -40.79139,
+      "name": "Tapiramut\u00e1"
+    },
+    "point_b": {
+      "lat": 37.01083,
+      "lon": 127.27028,
+      "name": "Anseong"
+    },
+    "question": "What is the cardinal direction from Anseong to Tapiramut\u00e1?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tapiramut\u00e1 is west of Anseong"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 48.57422,
+      "lon": 35.09702,
+      "name": "Pidhorodne"
+    },
+    "point_b": {
+      "lat": 36.46667,
+      "lon": 140.1,
+      "name": "Mashiko"
+    },
+    "question": "What is the cardinal direction from Mashiko to Pidhorodne?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Pidhorodne is west of Mashiko"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 45.65008,
+      "lon": -74.08251,
+      "name": "Mirabel"
+    },
+    "point_b": {
+      "lat": 47.87536,
+      "lon": -3.91896,
+      "name": "Concarneau"
+    },
+    "question": "What is the cardinal direction from Concarneau to Mirabel?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Mirabel is west of Concarneau"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 50.85882,
+      "lon": 12.76165,
+      "name": "Limbach-Oberfrohna"
+    },
+    "point_b": {
+      "lat": 2.1,
+      "lon": 112.15,
+      "name": "Kanowit"
+    },
+    "question": "What is the cardinal direction from Kanowit to Limbach-Oberfrohna?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Limbach-Oberfrohna is west of Kanowit"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 14.7502,
+      "lon": 78.54813,
+      "name": "Proddat\u016br"
+    },
+    "point_b": {
+      "lat": 39.4696,
+      "lon": 3.14831,
+      "name": "Felanitx"
+    },
+    "question": "What is the cardinal direction from Felanitx to Proddat\u016br?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Proddat\u016br is east of Felanitx"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.69788,
+      "lon": -72.72371,
+      "name": "Newington"
+    },
+    "point_b": {
+      "lat": 1.35083,
+      "lon": 103.87083,
+      "name": "Serangoon New Town"
+    },
+    "question": "What is the cardinal direction from Serangoon New Town to Newington?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Newington is west of Serangoon New Town"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 15.85409,
+      "lon": 78.01481,
+      "name": "M\u0101mid\u0101lap\u0101du"
+    },
+    "point_b": {
+      "lat": 6.19824,
+      "lon": 6.73187,
+      "name": "Asaba"
+    },
+    "question": "What is the cardinal direction from Asaba to M\u0101mid\u0101lap\u0101du?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "M\u0101mid\u0101lap\u0101du is north of Asaba"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 37.29583,
+      "lon": 127.63389,
+      "name": "Yeoju"
+    },
+    "point_b": {
+      "lat": -11.06667,
+      "lon": 37.35,
+      "name": "Tunduru"
+    },
+    "question": "What is the cardinal direction from Tunduru to Yeoju?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Yeoju is east of Tunduru"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 42.17114,
+      "lon": -87.84451,
+      "name": "Deerfield"
+    },
+    "point_b": {
+      "lat": 39.26733,
+      "lon": -76.79831,
+      "name": "Ellicott City"
+    },
+    "question": "What is the cardinal direction from Ellicott City to Deerfield?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Deerfield is west of Ellicott City"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 38.87206,
+      "lon": -9.07805,
+      "name": "Vialonga"
+    },
+    "point_b": {
+      "lat": 48.54964,
+      "lon": -123.36931,
+      "name": "Saanich"
+    },
+    "question": "What is the cardinal direction from Saanich to Vialonga?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Vialonga is east of Saanich"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 10.65,
+      "lon": 36.21667,
+      "name": "Dibate"
+    },
+    "point_b": {
+      "lat": 27.55642,
+      "lon": 30.81057,
+      "name": "Dayr\u016b\u0163"
+    },
+    "question": "What is the cardinal direction from Dayr\u016b\u0163 to Dibate?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Dibate is south of Dayr\u016b\u0163"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 51.95917,
+      "lon": 5.56806,
+      "name": "Rhenen"
+    },
+    "point_b": {
+      "lat": 26.23939,
+      "lon": 68.40369,
+      "name": "Nawabshah"
+    },
+    "question": "What is the cardinal direction from Nawabshah to Rhenen?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Rhenen is west of Nawabshah"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 5.69188,
+      "lon": -76.65835,
+      "name": "Quibd\u00f3"
+    },
+    "point_b": {
+      "lat": 34.97705,
+      "lon": -3.37902,
+      "name": "Driouch"
+    },
+    "question": "What is the cardinal direction from Driouch to Quibd\u00f3?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Quibd\u00f3 is west of Driouch"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -1.85439,
+      "lon": 29.96238,
+      "name": "Shyorongi"
+    },
+    "point_b": {
+      "lat": 21.19594,
+      "lon": 72.83023,
+      "name": "Surat"
+    },
+    "question": "What is the cardinal direction from Surat to Shyorongi?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Shyorongi is south of Surat"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -12.59694,
+      "lon": -52.19972,
+      "name": "Quer\u00eancia"
+    },
+    "point_b": {
+      "lat": 25.54895,
+      "lon": 82.0895,
+      "name": "Phulpur"
+    },
+    "question": "What is the cardinal direction from Phulpur to Quer\u00eancia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Quer\u00eancia is south of Phulpur"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.36733,
+      "lon": -76.79525,
+      "name": "Randallstown"
+    },
+    "point_b": {
+      "lat": 36.58839,
+      "lon": 3.77445,
+      "name": "Tizi Gheniff"
+    },
+    "question": "What is the cardinal direction from Tizi Gheniff to Randallstown?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Randallstown is west of Tizi Gheniff"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 39.11417,
+      "lon": -94.62746,
+      "name": "Kansas City"
+    },
+    "point_b": {
+      "lat": -0.1181,
+      "lon": -67.08527,
+      "name": "S\u00e3o Gabriel da Cachoeira"
+    },
+    "question": "What is the cardinal direction from S\u00e3o Gabriel da Cachoeira to Kansas City?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Kansas City is north of S\u00e3o Gabriel da Cachoeira"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 16.25705,
+      "lon": -3.40126,
+      "name": "Dir\u00e9"
+    },
+    "point_b": {
+      "lat": -34.04368,
+      "lon": 22.22574,
+      "name": "Groot-Brakrivier"
+    },
+    "question": "What is the cardinal direction from Groot-Brakrivier to Dir\u00e9?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Dir\u00e9 is north of Groot-Brakrivier"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -40.57395,
+      "lon": -73.13348,
+      "name": "Osorno"
+    },
+    "point_b": {
+      "lat": -21.01111,
+      "lon": -40.83389,
+      "name": "Itapemirim"
+    },
+    "question": "What is the cardinal direction from Itapemirim to Osorno?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Osorno is west of Itapemirim"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -37.60075,
+      "lon": 145.09555,
+      "name": "Mernda"
+    },
+    "point_b": {
+      "lat": 53.38333,
+      "lon": -0.76667,
+      "name": "Gainsborough"
+    },
+    "question": "What is the cardinal direction from Gainsborough to Mernda?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Mernda is east of Gainsborough"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.9,
+      "lon": 14.26667,
+      "name": "Secondigliano"
+    },
+    "point_b": {
+      "lat": 9.00098,
+      "lon": -71.92683,
+      "name": "San Carlos del Zulia"
+    },
+    "question": "What is the cardinal direction from San Carlos del Zulia to Secondigliano?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Secondigliano is north of San Carlos del Zulia"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -6.83667,
+      "lon": -79.93417,
+      "name": "Pimentel"
+    },
+    "point_b": {
+      "lat": 40.76844,
+      "lon": -73.77708,
+      "name": "Bayside"
+    },
+    "question": "What is the cardinal direction from Bayside to Pimentel?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Pimentel is south of Bayside"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 9.535,
+      "lon": -13.68778,
+      "name": "Camayenne"
+    },
+    "point_b": {
+      "lat": 41.3799,
+      "lon": 2.18971,
+      "name": "la Barceloneta"
+    },
+    "question": "What is the cardinal direction from la Barceloneta to Camayenne?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Camayenne is south of la Barceloneta"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 3.86781,
+      "lon": 17.98923,
+      "name": "Mba\u00efki"
+    },
+    "point_b": {
+      "lat": 50.61385,
+      "lon": 5.74679,
+      "name": "Soumagne"
+    },
+    "question": "What is the cardinal direction from Soumagne to Mba\u00efki?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Mba\u00efki is south of Soumagne"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -37.73333,
+      "lon": 145.15,
+      "name": "Eltham"
+    },
+    "point_b": {
+      "lat": 42.00864,
+      "lon": -87.66672,
+      "name": "Rogers Park"
+    },
+    "question": "What is the cardinal direction from Rogers Park to Eltham?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Eltham is west of Rogers Park"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.92006,
+      "lon": 14.19339,
+      "name": "Villaricca"
+    },
+    "point_b": {
+      "lat": -38.09968,
+      "lon": 145.17248,
+      "name": "Carrum Downs"
+    },
+    "question": "What is the cardinal direction from Carrum Downs to Villaricca?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Villaricca is west of Carrum Downs"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 24.66094,
+      "lon": 72.91401,
+      "name": "Bhauri"
+    },
+    "point_b": {
+      "lat": 11.3,
+      "lon": 23.88333,
+      "name": "Rahad al Bardi"
+    },
+    "question": "What is the cardinal direction from Rahad al Bardi to Bhauri?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Bhauri is east of Rahad al Bardi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 11.19033,
+      "lon": 75.82833,
+      "name": "Cheruvannur"
+    },
+    "point_b": {
+      "lat": 18.44599,
+      "lon": -73.08957,
+      "name": "Mirago\u00e2ne"
+    },
+    "question": "What is the cardinal direction from Mirago\u00e2ne to Cheruvannur?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Cheruvannur is east of Mirago\u00e2ne"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -35.41647,
+      "lon": 149.06954,
+      "name": "Tuggeranong Administrative District"
+    },
+    "point_b": {
+      "lat": 10.46167,
+      "lon": -74.61621,
+      "name": "Pivijay"
+    },
+    "question": "What is the cardinal direction from Pivijay to Tuggeranong Administrative District?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Tuggeranong Administrative District is west of Pivijay"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.66312,
+      "lon": -73.76221,
+      "name": "Springfield Gardens"
+    },
+    "point_b": {
+      "lat": -8.51444,
+      "lon": -35.37778,
+      "name": "Ribeir\u00e3o"
+    },
+    "question": "What is the cardinal direction from Ribeir\u00e3o to Springfield Gardens?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Springfield Gardens is north of Ribeir\u00e3o"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.09344,
+      "lon": -74.96795,
+      "name": "Parkwood Manor"
+    },
+    "point_b": {
+      "lat": 13.93244,
+      "lon": 120.81327,
+      "name": "Calaca"
+    },
+    "question": "What is the cardinal direction from Calaca to Parkwood Manor?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Parkwood Manor is east of Calaca"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 60.15896,
+      "lon": 24.86797,
+      "name": "Lauttasaari"
+    },
+    "point_b": {
+      "lat": 31.66818,
+      "lon": 20.25205,
+      "name": "Qaryat Sul\u016bq"
+    },
+    "question": "What is the cardinal direction from Qaryat Sul\u016bq to Lauttasaari?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Lauttasaari is north of Qaryat Sul\u016bq"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -5.61278,
+      "lon": -38.76694,
+      "name": "Jaguaretama"
+    },
+    "point_b": {
+      "lat": 26.98333,
+      "lon": 87.33333,
+      "name": "Dhankut\u0101"
+    },
+    "question": "What is the cardinal direction from Dhankut\u0101 to Jaguaretama?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Jaguaretama is west of Dhankut\u0101"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -12.78234,
+      "lon": 45.22878,
+      "name": "Mamoudzou"
+    },
+    "point_b": {
+      "lat": 41.88975,
+      "lon": -87.98895,
+      "name": "Villa Park"
+    },
+    "question": "What is the cardinal direction from Villa Park to Mamoudzou?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Mamoudzou is south of Villa Park"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 1.31953,
+      "lon": 103.88689,
+      "name": "Geylang"
+    },
+    "point_b": {
+      "lat": 45.71404,
+      "lon": 4.80755,
+      "name": "Oullins"
+    },
+    "question": "What is the cardinal direction from Oullins to Geylang?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Geylang is east of Oullins"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -21.37583,
+      "lon": -46.52556,
+      "name": "Muzambinho"
+    },
+    "point_b": {
+      "lat": 35.1053,
+      "lon": 136.73378,
+      "name": "Yatomi"
+    },
+    "question": "What is the cardinal direction from Yatomi to Muzambinho?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Muzambinho is east of Yatomi"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 37.16911,
+      "lon": 10.03478,
+      "name": "El Alia"
+    },
+    "point_b": {
+      "lat": 27.44671,
+      "lon": -80.32561,
+      "name": "Fort Pierce"
+    },
+    "question": "What is the cardinal direction from Fort Pierce to El Alia?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "El Alia is north of Fort Pierce"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.51115,
+      "lon": 1.82831,
+      "name": "S\u00e9"
+    },
+    "point_b": {
+      "lat": 30.15395,
+      "lon": 76.19851,
+      "name": "Sam\u0101na"
+    },
+    "question": "What is the cardinal direction from Sam\u0101na to S\u00e9?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "S\u00e9 is west of Sam\u0101na"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 41.00244,
+      "lon": 29.23187,
+      "name": "Sancaktepe"
+    },
+    "point_b": {
+      "lat": 51.09954,
+      "lon": 14.66738,
+      "name": "L\u00f6bau"
+    },
+    "question": "What is the cardinal direction from L\u00f6bau to Sancaktepe?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Sancaktepe is east of L\u00f6bau"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 6.53891,
+      "lon": 3.3742,
+      "name": "Shomolu"
+    },
+    "point_b": {
+      "lat": 35.13333,
+      "lon": 136.8,
+      "name": "Kanie"
+    },
+    "question": "What is the cardinal direction from Kanie to Shomolu?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Shomolu is west of Kanie"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -36.84853,
+      "lon": 174.76349,
+      "name": "Auckland"
+    },
+    "point_b": {
+      "lat": 5.62611,
+      "lon": 10.25421,
+      "name": "Mbouda"
+    },
+    "question": "What is the cardinal direction from Mbouda to Auckland?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Auckland is east of Mbouda"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 49.40768,
+      "lon": 8.69079,
+      "name": "Heidelberg"
+    },
+    "point_b": {
+      "lat": 31.29443,
+      "lon": 30.52248,
+      "name": "Mu\u0163\u016bbas"
+    },
+    "question": "What is the cardinal direction from Mu\u0163\u016bbas to Heidelberg?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Heidelberg is west of Mu\u0163\u016bbas"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 19.87444,
+      "lon": -98.93472,
+      "name": "Don Antonio"
+    },
+    "point_b": {
+      "lat": 31.24193,
+      "lon": 30.94504,
+      "name": "Ar Riy\u0101\u1e11"
+    },
+    "question": "What is the cardinal direction from Ar Riy\u0101\u1e11 to Don Antonio?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "South",
+      "explanation": "Don Antonio is south of Ar Riy\u0101\u1e11"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 40.43293,
+      "lon": -3.81338,
+      "name": "Pozuelo de Alarc\u00f3n"
+    },
+    "point_b": {
+      "lat": 8.31223,
+      "lon": 80.41306,
+      "name": "Anuradhapura"
+    },
+    "question": "What is the cardinal direction from Anuradhapura to Pozuelo de Alarc\u00f3n?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Pozuelo de Alarc\u00f3n is west of Anuradhapura"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": -16.28333,
+      "lon": 27.48333,
+      "name": "Monze"
+    },
+    "point_b": {
+      "lat": -24.62694,
+      "lon": 25.86556,
+      "name": "Mogoditshane"
+    },
+    "question": "What is the cardinal direction from Mogoditshane to Monze?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Monze is east of Mogoditshane"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 49.75594,
+      "lon": 16.46829,
+      "name": "Svitavy"
+    },
+    "point_b": {
+      "lat": 30.6798,
+      "lon": 30.94364,
+      "name": "Tal\u0101"
+    },
+    "question": "What is the cardinal direction from Tal\u0101 to Svitavy?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "North",
+      "explanation": "Svitavy is north of Tal\u0101"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 13.75514,
+      "lon": 79.70143,
+      "name": "Srikalahasti"
+    },
+    "point_b": {
+      "lat": 48.81003,
+      "lon": 2.35403,
+      "name": "Croulebarbe"
+    },
+    "question": "What is the cardinal direction from Croulebarbe to Srikalahasti?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "East",
+      "explanation": "Srikalahasti is east of Croulebarbe"
+    }
+  },
+  {
+    "task": "relative_position",
+    "subtask": "cardinal_direction_mcq",
+    "point_a": {
+      "lat": 18.01031,
+      "lon": -66.62398,
+      "name": "Ponce"
+    },
+    "point_b": {
+      "lat": 5.12569,
+      "lon": -6.81483,
+      "name": "Dagadji"
+    },
+    "question": "What is the cardinal direction from Dagadji to Ponce?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "ground_truth": {
+      "answer": "West",
+      "explanation": "Ponce is west of Dagadji"
+    }
+  }
+]

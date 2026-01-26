@@ -1,0 +1,19 @@
+{
+  "task": "task3_name_disambiguation",
+  "task_type": "name_disambiguation",
+  "split_strategy": "geographic",
+  "split_ratios": null,
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2883,
+    "dev": 311,
+    "test": 1020
+  },
+  "files": {
+    "train": "task3_name_disambiguation_train.json",
+    "dev": "task3_name_disambiguation_dev.json",
+    "test": "task3_name_disambiguation_test.json"
+  },
+  "_canonical_sync": "Synced from GPT-4.1 canonical results"
+}

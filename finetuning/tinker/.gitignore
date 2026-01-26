@@ -1,0 +1,49 @@
+# API Keys and Secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Training outputs
+outputs/
+checkpoints/
+*.pth
+*.bin
+*.safetensors
+
+# Logs
+*.log
+logs/
+wandb/
+
+# Hydra
+.hydra/
+outputs/
+multirun/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Model files (too large for git)
+*.model
+*.ckpt
+models/

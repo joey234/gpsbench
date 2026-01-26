@@ -1,0 +1,22 @@
+{
+  "task": "task8_bounding_box",
+  "task_type": "bounding_box",
+  "split_strategy": "random_stratified",
+  "split_ratios": {
+    "train": 0.6,
+    "dev": 0.1,
+    "test": 0.3
+  },
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2040,
+    "dev": 340,
+    "test": 1020
+  },
+  "files": {
+    "train": "task8_bounding_box_train.json",
+    "dev": "task8_bounding_box_dev.json",
+    "test": "task8_bounding_box_test.json"
+  }
+}

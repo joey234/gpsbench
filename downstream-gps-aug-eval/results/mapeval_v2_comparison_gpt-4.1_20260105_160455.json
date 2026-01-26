@@ -1,0 +1,75 @@
+{
+  "model": "gpt-4.1",
+  "timestamp": "20260105_160455",
+  "data_version": "v2",
+  "num_samples": 300,
+  "base": {
+    "total_samples": 300,
+    "correct": 225,
+    "accuracy": 0.75,
+    "errors": 0,
+    "unparsed": 0,
+    "by_classification": {
+      "trip": {
+        "total": 67,
+        "correct": 55,
+        "accuracy": 0.8208955223880597
+      },
+      "routing": {
+        "total": 66,
+        "correct": 48,
+        "accuracy": 0.7272727272727273
+      },
+      "nearby": {
+        "total": 83,
+        "correct": 66,
+        "accuracy": 0.7951807228915663
+      },
+      "poi": {
+        "total": 64,
+        "correct": 50,
+        "accuracy": 0.78125
+      },
+      "unanswerable": {
+        "total": 20,
+        "correct": 6,
+        "accuracy": 0.3
+      }
+    }
+  },
+  "augmented": {
+    "total_samples": 300,
+    "correct": 217,
+    "accuracy": 0.7233333333333334,
+    "errors": 0,
+    "unparsed": 0,
+    "by_classification": {
+      "trip": {
+        "total": 67,
+        "correct": 53,
+        "accuracy": 0.7910447761194029
+      },
+      "routing": {
+        "total": 66,
+        "correct": 48,
+        "accuracy": 0.7272727272727273
+      },
+      "nearby": {
+        "total": 83,
+        "correct": 61,
+        "accuracy": 0.7349397590361446
+      },
+      "poi": {
+        "total": 64,
+        "correct": 51,
+        "accuracy": 0.796875
+      },
+      "unanswerable": {
+        "total": 20,
+        "correct": 4,
+        "accuracy": 0.2
+      }
+    }
+  },
+  "improvement": -2.666666666666657
+}

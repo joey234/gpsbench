@@ -1,0 +1,36 @@
+{
+  "total_samples": 300,
+  "unique_places": 2287,
+  "unique_places_geocoded": 1588,
+  "total_place_mentions": 3893,
+  "total_geocoded_mentions": 3052,
+  "geocode_success_rate": 0.6943594228246611,
+  "cache_size": 3050,
+  "by_classification": {
+    "trip": {
+      "count": 67,
+      "avg_places": 3.970149253731343,
+      "avg_geocoded": 3.716417910447761
+    },
+    "routing": {
+      "count": 66,
+      "avg_places": 21.62121212121212,
+      "avg_geocoded": 19.893939393939394
+    },
+    "nearby": {
+      "count": 83,
+      "avg_places": 16.96385542168675,
+      "avg_geocoded": 10.44578313253012
+    },
+    "poi": {
+      "count": 64,
+      "avg_places": 3.5,
+      "avg_geocoded": 3.125
+    },
+    "unanswerable": {
+      "count": 20,
+      "avg_places": 28.4,
+      "avg_geocoded": 21.15
+    }
+  }
+}

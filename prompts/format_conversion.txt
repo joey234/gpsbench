@@ -1,0 +1,7 @@
+Convert the coordinate from {source_format} to {target_format}.
+
+Source coordinate ({source_format}): {source_string}
+
+Provide the converted coordinate in {target_format} format.
+
+FINAL ANSWER: [converted coordinate]

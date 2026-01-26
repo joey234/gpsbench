@@ -1,0 +1,23 @@
+# Core ML libraries
+torch>=2.0.0
+transformers>=4.36.0
+datasets>=2.14.0
+accelerate>=0.24.0
+
+# LoRA and quantization
+peft>=0.7.0
+bitsandbytes>=0.41.0
+
+# Utilities
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+tqdm>=4.65.0
+
+# Training monitoring (optional)
+tensorboard>=2.14.0
+wandb>=0.15.0
+
+# Model specific
+sentencepiece>=0.1.99
+protobuf>=3.20.0

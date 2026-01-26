@@ -1,0 +1,22 @@
+{
+  "task": "task11_missing_data",
+  "task_type": "missing_data_handling",
+  "split_strategy": "random_stratified",
+  "split_ratios": {
+    "train": 0.6,
+    "dev": 0.1,
+    "test": 0.3
+  },
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2040,
+    "dev": 340,
+    "test": 1020
+  },
+  "files": {
+    "train": "task11_missing_data_train.json",
+    "dev": "task11_missing_data_dev.json",
+    "test": "task11_missing_data_test.json"
+  }
+}

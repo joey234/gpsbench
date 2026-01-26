@@ -1,0 +1,7 @@
+Calculate the bounding box (minimum rectangle) containing these {num_points} points:
+
+{points}
+
+Provide the bounding box as: min_lat, max_lat, min_lon, max_lon
+
+FINAL ANSWER: [min_lat], [max_lat], [min_lon], [max_lon]

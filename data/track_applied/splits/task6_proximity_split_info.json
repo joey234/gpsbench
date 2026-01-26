@@ -1,0 +1,18 @@
+{
+  "task": "task6_proximity",
+  "task_type": "proximity",
+  "split_strategy": "geographic",
+  "split_ratios": null,
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2040,
+    "dev": 340,
+    "test": 1020
+  },
+  "files": {
+    "train": "task6_proximity_train.json",
+    "dev": "task6_proximity_dev.json",
+    "test": "task6_proximity_test.json"
+  }
+}

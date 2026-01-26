@@ -1,0 +1,7 @@
+Analyze this route:
+
+{points}
+
+Question: {question}
+
+FINAL ANSWER: [your answer]

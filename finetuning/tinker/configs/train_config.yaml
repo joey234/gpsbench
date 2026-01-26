@@ -1,0 +1,64 @@
+# Tinker Training Configuration for GPSBench
+# Based on tinker_cookbook supervised learning recipes
+
+# Model configuration
+model_name: "Qwen/Qwen2.5-3B"  # Base model to fine-tune
+
+# Dataset configuration
+dataset: "gpsbench"  # Options: gpsbench, gpsbench_multitask
+data_path: "../data"  # Path to training data
+max_samples: null  # Maximum training samples (null for all)
+max_eval_samples: null  # Maximum eval samples (null for all)
+
+# Training hyperparameters (following Tinker cookbook recommendations)
+learning_rate: 5e-4  # Learning rate (5e-4 works well for most tasks)
+batch_size: 64  # Batch size (increase if GPU memory allows)
+num_epochs: 3  # Number of training epochs (null to use max_steps instead)
+max_steps: null  # Maximum training steps (null to use num_epochs)
+
+# LoRA configuration (Low-Rank Adaptation for efficient fine-tuning)
+lora_rank: 64  # LoRA rank (higher = more capacity, more memory)
+lora_alpha: 128  # LoRA alpha (typically 2x rank)
+
+# Evaluation and saving
+eval_every: 500  # Evaluate every N steps
+save_every: 500  # Save checkpoint every N steps
+
+# Output configuration
+output_dir: "./outputs/gpsbench_lora"  # Directory for checkpoints and final model
+wandb_project: null  # Weights & Biases project name (null to disable)
+
+# Alternative configurations for different scenarios
+
+# Quick test configuration (for testing the pipeline)
+quick_test:
+  max_samples: 100
+  max_eval_samples: 20
+  batch_size: 4
+  eval_every: 10
+  save_every: 20
+  max_steps: 50
+
+# Small model configuration (for limited GPU memory)
+small_model:
+  model_name: "Qwen/Qwen2.5-0.5B"
+  batch_size: 32
+  lora_rank: 32
+  lora_alpha: 64
+
+# Large scale configuration (for production training)
+large_scale:
+  model_name: "Qwen/Qwen2.5-8B"
+  learning_rate: 3e-4
+  batch_size: 128
+  lora_rank: 128
+  lora_alpha: 256
+  num_epochs: 5
+
+# Multi-task configuration (training on all GPSBench tasks)
+multitask:
+  dataset: "gpsbench_multitask"
+  learning_rate: 3e-4
+  batch_size: 64
+  lora_rank: 64
+  num_epochs: 4

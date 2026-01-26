@@ -1,0 +1,7 @@
+Calculate the area of the polygon formed by these coordinates:
+
+{vertices}
+
+Use spherical geometry (Earth radius ≈ 6371 km).
+
+FINAL ANSWER: [area] km²

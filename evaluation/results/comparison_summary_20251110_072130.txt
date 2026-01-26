@@ -1,0 +1,66 @@
+================================================================================
+GPSBench: Base Model vs Fine-Tuned Model Comparison
+================================================================================
+
+Base Model: Qwen/Qwen3-1.7B
+LoRA Path: ../finetuning/models/qwen3-1.7b-lora
+Evaluation Date: 2025-11-10T07:04:32.551841
+
+--------------------------------------------------------------------------------
+Track: PURE_GPS
+--------------------------------------------------------------------------------
+
+Base Model (Zero-Shot):
+  Overall Accuracy: 0.00%
+  Correct: 0 / 0
+
+Fine-Tuned Model:
+  Overall Accuracy: 0.00%
+  Correct: 0 / 0
+
+Improvement: +0.00%
+
+Task-by-Task Results:
+
+Task                                     Base       Fine-Tuned Δ         
+----------------------------------------------------------------------
+format_conversion                           0.0%       0.0%      +0.0%
+precision_understanding                     0.0%       0.0%      +0.0%
+distance_calculation                        0.0%       0.0%      +0.0%
+bearing_computation                         0.0%       0.0%      +0.0%
+interpolation                               0.0%       0.0%      +0.0%
+area_perimeter                              0.0%       0.0%      +0.0%
+coordinate_matching                         0.0%       0.0%      +0.0%
+missing_data                                0.0%       0.0%      +0.0%
+
+--------------------------------------------------------------------------------
+Track: APPLIED
+--------------------------------------------------------------------------------
+
+Base Model (Zero-Shot):
+  Overall Accuracy: 0.00%
+  Correct: 0 / 0
+
+Fine-Tuned Model:
+  Overall Accuracy: 0.00%
+  Correct: 0 / 0
+
+Improvement: +0.00%
+
+Task-by-Task Results:
+
+Task                                     Base       Fine-Tuned Δ         
+----------------------------------------------------------------------
+place_association                           0.0%       0.0%      +0.0%
+semantic_validation                         0.0%       0.0%      +0.0%
+regional_knowledge                          0.0%       0.0%      +0.0%
+context_grounding                           0.0%       0.0%      +0.0%
+relative_position                           0.0%       0.0%      +0.0%
+proximity                                   0.0%       0.0%      +0.0%
+route_analysis                              0.0%       0.0%      +0.0%
+boundary_analysis                           0.0%       0.0%      +0.0%
+spatial_patterns                            0.0%       0.0%      +0.0%
+consistency                                 0.0%       0.0%      +0.0%
+hallucination_detection                     0.0%       0.0%      +0.0%
+unit_confusion                              0.0%       0.0%      +0.0%
+

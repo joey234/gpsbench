@@ -1,0 +1,363 @@
+{
+  "metadata": {
+    "title": "Distortions in Judged Spatial Relations in Large Language Models",
+    "source": "arXiv:2401.04218",
+    "authors": [
+      "Nir Fulman",
+      "Abdulkadir Memduhoğlu",
+      "Alexander Zipf"
+    ],
+    "institution": "Heidelberg University, Germany",
+    "published": "2024-01-08",
+    "revised": "2024-06-04",
+    "journal": "The Professional Geographer",
+    "doi": "10.1080/00330124.2024.2372792",
+    "description": "Benchmark for assessing LLM capability to discern intercardinal directions between geographic locations, evaluating hierarchical spatial bias similar to humans."
+  },
+  "benchmark_info": {
+    "total_questions": 22,
+    "bias_types": ["hierarchical", "proximity", "rotation", "alignment"],
+    "models_tested": ["GPT-3.5", "GPT-4", "Llama-2", "Gemini 1.0 Pro"],
+    "methodology": "Each question posed 10 times independently in zero-shot mode"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Portland, OR",
+      "city_b": "Toronto, Canada",
+      "correct_answer": "Southeast",
+      "suspect_bias": true,
+      "bias_explanation": "Canada is generally north of the US, leading to incorrect assumption that Toronto is north of Portland",
+      "model_scores": {
+        "GPT-4": 0,
+        "GPT-3.5": 0,
+        "Gemini": 0,
+        "Llama-2": 0
+      }
+    },
+    {
+      "id": 2,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Tijuana, Mexico",
+      "city_b": "San Antonio, TX",
+      "correct_answer": "Southeast",
+      "suspect_bias": true,
+      "bias_explanation": "Mexico is generally south of the US, potentially influencing directional judgment",
+      "model_scores": {
+        "GPT-4": 3,
+        "GPT-3.5": 5,
+        "Gemini": 0,
+        "Llama-2": 0
+      }
+    },
+    {
+      "id": 3,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Northeast",
+      "suspect_bias": true,
+      "bias_explanation": "State-level orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 10,
+        "Llama-2": 5
+      }
+    },
+    {
+      "id": 4,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "San Diego, CA",
+      "city_b": "Reno, NV",
+      "correct_answer": "Northwest",
+      "suspect_bias": true,
+      "bias_explanation": "State boundaries and west coast orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 2,
+        "GPT-3.5": 8,
+        "Gemini": 0,
+        "Llama-2": 0
+      }
+    },
+    {
+      "id": 5,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Memphis, TN",
+      "city_b": "Milwaukee, WI",
+      "correct_answer": "Northeast",
+      "suspect_bias": true,
+      "bias_explanation": "State-level geographic orientation may influence judgment",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 7,
+        "Llama-2": 0
+      }
+    },
+    {
+      "id": 6,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Santo Domingo, Dominican Republic",
+      "city_b": "Miami, FL",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - less susceptible to hierarchical categorization",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 0,
+        "Llama-2": 10
+      }
+    },
+    {
+      "id": 7,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Minneapolis, MN",
+      "city_b": "Chicago, IL",
+      "correct_answer": "Southeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - straightforward geographic relationship",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 9,
+        "Llama-2": 10
+      }
+    },
+    {
+      "id": 8,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Dallas, TX",
+      "city_b": "San Antonio, TX",
+      "correct_answer": "Southwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both cities in same state",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 10,
+        "Llama-2": 10
+      }
+    },
+    {
+      "id": 9,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "Havana, Cuba",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Northeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - clear geographic relationship",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 0,
+        "Gemini": 10,
+        "Llama-2": 8
+      }
+    },
+    {
+      "id": 10,
+      "bias_type": "hierarchical",
+      "prompt_template": "What is the intercardinal direction from [City A] to [City B]?",
+      "city_a": "San Antonio, TX",
+      "city_b": "Houston, TX",
+      "correct_answer": "Northeast",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both cities in same state",
+      "model_scores": {
+        "GPT-4": 10,
+        "GPT-3.5": 10,
+        "Gemini": 9,
+        "Llama-2": 4
+      }
+    },
+    {
+      "id": 11,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Philadelphia, PA",
+      "city_a": "Pittsburgh, PA",
+      "city_b": "New Haven, CT",
+      "correct_answer": "New Haven",
+      "suspect_bias": true,
+      "bias_explanation": "Tendency to perceive in-state distances as shorter than cross-state distances. Pittsburgh is ~450km, New Haven is ~250km from Philadelphia.",
+      "model_scores": {
+        "GPT-4": 0
+      }
+    },
+    {
+      "id": 12,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Dallas, TX",
+      "city_a": "Houston, TX",
+      "city_b": "Oklahoma City, OK",
+      "correct_answer": "Oklahoma City",
+      "suspect_bias": true,
+      "bias_explanation": "Tendency to perceive in-state distances as shorter than cross-state distances",
+      "model_scores": {
+        "GPT-4": 0
+      }
+    },
+    {
+      "id": 13,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Dallas, TX",
+      "city_a": "Houston, TX",
+      "city_b": "Austin, TX",
+      "correct_answer": "Austin",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - all cities in same state",
+      "model_scores": {
+        "GPT-4": 10
+      }
+    },
+    {
+      "id": 14,
+      "bias_type": "proximity",
+      "prompt_template": "Which is closer to [City X]: [City A] or [City B]?",
+      "city_x": "Philadelphia, PA",
+      "city_a": "Johnstown, PA",
+      "city_b": "Pittsburgh, PA",
+      "correct_answer": "Johnstown",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - all cities in same state, Johnstown is ~390km from Philadelphia",
+      "model_scores": {
+        "GPT-4": 10
+      }
+    },
+    {
+      "id": 15,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "San Diego, CA",
+      "city_b": "Fresno, CA",
+      "correct_answer": "Fresno",
+      "suspect_bias": true,
+      "bias_explanation": "West coast curvature - San Diego is commonly assumed to be furthest west due to being on the coast",
+      "model_scores": {
+        "GPT-4": 0
+      }
+    },
+    {
+      "id": 16,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Jacksonville, NC",
+      "correct_answer": "Wilmington",
+      "suspect_bias": true,
+      "bias_explanation": "East coast curvature simplification leads to errors",
+      "model_scores": {
+        "GPT-4": 2
+      }
+    },
+    {
+      "id": 17,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Wilmington, NC",
+      "city_b": "Morehead City, NC",
+      "correct_answer": "Wilmington",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - both coastal cities, common geographical feature forces more precise comparisons",
+      "model_scores": {
+        "GPT-4": 10
+      }
+    },
+    {
+      "id": 18,
+      "bias_type": "rotation",
+      "prompt_template": "Which city is further west, [City A] or [City B]?",
+      "city_a": "Los Angeles, CA",
+      "city_b": "San Francisco, CA",
+      "correct_answer": "San Francisco",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - well-known California cities",
+      "model_scores": {
+        "GPT-4": 5
+      }
+    },
+    {
+      "id": 19,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Monaco",
+      "city_b": "Chicago, IL",
+      "correct_answer": "Southwest",
+      "suspect_bias": true,
+      "bias_explanation": "Common misconception that North America and Europe align on the same east-west axis, while Europe is predominantly north of the United States",
+      "model_scores": {
+        "GPT-4": 0
+      }
+    },
+    {
+      "id": 20,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Rome, Italy",
+      "city_b": "Philadelphia, PA",
+      "correct_answer": "Southwest",
+      "suspect_bias": true,
+      "bias_explanation": "Europe-North America alignment misconception",
+      "model_scores": {
+        "GPT-4": 0
+      }
+    },
+    {
+      "id": 21,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Lisbon, Portugal",
+      "city_b": "New York City, NY",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - Lisbon is indeed south of New York City, straightforward relationship",
+      "model_scores": {
+        "GPT-4": 10
+      }
+    },
+    {
+      "id": 22,
+      "bias_type": "alignment",
+      "prompt_template": "What are the intercardinal directions from [City A] to [City B]?",
+      "city_a": "Madrid, Spain",
+      "city_b": "Boston, MA",
+      "correct_answer": "Northwest",
+      "suspect_bias": false,
+      "bias_explanation": "Control question - clear geographic relationship",
+      "model_scores": {
+        "GPT-4": 10
+      }
+    }
+  ],
+  "results_summary": {
+    "overall_accuracy": {
+      "non_bias_questions": "87%",
+      "bias_susceptible_questions": "24%"
+    },
+    "hierarchical_bias_accuracy": {
+      "GPT-4": "75%",
+      "GPT-3.5": "53%",
+      "Gemini": "55%",
+      "Llama-2": "47%"
+    },
+    "key_findings": [
+      "LLMs exhibit hierarchical spatial bias similar to humans",
+      "Models showed significantly reduced accuracy on tasks with suspected hierarchical bias",
+      "GPT-4 performed best overall but still showed substantial bias effects",
+      "Models identified the nearest cardinal direction in most cases, reflecting associative learning"
+    ]
+  }
+}

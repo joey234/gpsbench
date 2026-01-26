@@ -1,0 +1,22 @@
+{
+  "task": "task4_distance_calculation",
+  "task_type": "distance_calculation",
+  "split_strategy": "random_stratified",
+  "split_ratios": {
+    "train": 0.6,
+    "dev": 0.1,
+    "test": 0.3
+  },
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2040,
+    "dev": 340,
+    "test": 1020
+  },
+  "files": {
+    "train": "task4_distance_calculation_train.json",
+    "dev": "task4_distance_calculation_dev.json",
+    "test": "task4_distance_calculation_test.json"
+  }
+}

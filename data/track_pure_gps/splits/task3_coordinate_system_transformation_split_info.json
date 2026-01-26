@@ -1,0 +1,22 @@
+{
+  "task": "task3_coordinate_system_transformation",
+  "task_type": "coordinate_system_transformation",
+  "split_strategy": "random_stratified",
+  "split_ratios": {
+    "train": 0.6,
+    "dev": 0.1,
+    "test": 0.3
+  },
+  "seed": 42,
+  "total_examples": 3400,
+  "splits": {
+    "train": 2039,
+    "dev": 339,
+    "test": 1022
+  },
+  "files": {
+    "train": "task3_coordinate_system_transformation_train.json",
+    "dev": "task3_coordinate_system_transformation_dev.json",
+    "test": "task3_coordinate_system_transformation_test.json"
+  }
+}

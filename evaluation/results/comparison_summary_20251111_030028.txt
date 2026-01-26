@@ -1,0 +1,66 @@
+================================================================================
+GPSBench: Base Model vs Fine-Tuned Model Comparison
+================================================================================
+
+Base Model: meta-llama/Llama-3.1-8B-Instruct
+LoRA Path: ../finetuning/models/meta-llama-llama-3.1-8b-instruct-lora
+Evaluation Date: 2025-11-11T02:28:21.699604
+
+--------------------------------------------------------------------------------
+Track: PURE_GPS
+--------------------------------------------------------------------------------
+
+Base Model (Zero-Shot):
+  Overall Accuracy: 35.09%
+  Correct: 1114 / 3175
+
+Fine-Tuned Model:
+  Overall Accuracy: 19.28%
+  Correct: 612 / 3175
+
+Improvement: -15.81%
+
+Task-by-Task Results:
+
+Task                                     Base       Fine-Tuned Δ         
+----------------------------------------------------------------------
+format_conversion                           0.0%       0.0%      +0.0%
+precision_understanding                     0.0%       0.0%      +0.0%
+distance_calculation                        0.0%       0.0%      +0.0%
+bearing_computation                         0.0%       0.0%      +0.0%
+interpolation                               0.0%       0.0%      +0.0%
+area_perimeter                              0.0%       0.0%      +0.0%
+coordinate_matching                         0.0%       0.0%      +0.0%
+missing_data                                0.0%       0.0%      +0.0%
+
+--------------------------------------------------------------------------------
+Track: APPLIED
+--------------------------------------------------------------------------------
+
+Base Model (Zero-Shot):
+  Overall Accuracy: 51.13%
+  Correct: 2553 / 4993
+
+Fine-Tuned Model:
+  Overall Accuracy: 44.96%
+  Correct: 2245 / 4993
+
+Improvement: -6.17%
+
+Task-by-Task Results:
+
+Task                                     Base       Fine-Tuned Δ         
+----------------------------------------------------------------------
+place_association                           0.0%       0.0%      +0.0%
+semantic_validation                         0.0%       0.0%      +0.0%
+regional_knowledge                          0.0%       0.0%      +0.0%
+context_grounding                           0.0%       0.0%      +0.0%
+relative_position                           0.0%       0.0%      +0.0%
+proximity                                   0.0%       0.0%      +0.0%
+route_analysis                              0.0%       0.0%      +0.0%
+boundary_analysis                           0.0%       0.0%      +0.0%
+spatial_patterns                            0.0%       0.0%      +0.0%
+consistency                                 0.0%       0.0%      +0.0%
+hallucination_detection                     0.0%       0.0%      +0.0%
+unit_confusion                              0.0%       0.0%      +0.0%
+

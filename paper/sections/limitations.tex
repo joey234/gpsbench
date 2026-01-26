@@ -1,0 +1,20 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{City Name Ambiguity.}
+Many city names appear in multiple countries or regions (e.g., ``Rye'' exists in England, Australia, and the United States; ``Springfield'' appears in 30+ US states). Our benchmark uses coordinates as the authoritative identifier, but models may interpret ambiguous names based on prominence bias, defaulting to well-known locations. This conflates geographic knowledge errors with name disambiguation failures, as seen in Spatial Patterns where models misidentify Rye, Australia as the English town.
+
+\paragraph{Point-Based City Representation.}
+GeoNames provides a single reference coordinate per city, but cities are geographic areas spanning many square kilometers. A coordinate near a city boundary might reasonably map to multiple cities, yet our evaluation treats the GeoNames reference point as definitive. This is particularly problematic for Place Association, where a model answering with an adjacent city may have valid geographic reasoning but receives zero credit.
+
+\paragraph{Geodetic Approximations.}
+Our ground truth calculations use the Haversine formula assuming a spherical Earth (radius 6,371 km), but Earth is an oblate spheroid. This introduces up to 0.5\% error for long distances. Similarly, L'Huilier's theorem for spherical polygon area does not account for ellipsoidal corrections. While these approximations are standard in geographic applications, they mean our ``ground truth'' is itself approximate.
+
+\paragraph{Distance-Dependent Tolerances.}
+We use percentage-based tolerances (e.g., $\pm$5\% for distance), but this treats all scales equivalently. A 5\% error on a 100 km distance (5 km) has different practical implications than 5\% on 10,000 km (500 km). Navigation applications may require meter-level precision for local routing but tolerate kilometer-level errors for continental distances.
+
+\paragraph{Training Data Contamination.}
+GeoNames is a publicly available database that may appear in LLM training corpora. While our noise robustness analysis suggests models have not memorized exact coordinate-place mappings, we cannot fully rule out that models have seen GeoNames entries or derived datasets. This could inflate performance on Place Association relative to truly novel coordinates.
+
+\paragraph{Evaluation Scope.}
+We evaluate text-only LLMs with zero-shot prompting; multimodal models with map imagery, chain-of-thought prompting, or retrieval-augmented approaches may perform differently. All prompts use English place names, though models may encode different geographic knowledge when queried in local languages or scripts.

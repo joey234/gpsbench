@@ -1,0 +1,8 @@
+Analyze the precision of this coordinate: {coordinate_string}
+
+Location: {location}
+
+What level of precision does this coordinate have (in decimal places), and approximately how accurate is it in meters?
+Also, what would be an appropriate use case for this level of precision (e.g., country-level, city-level, street-level, building-level)?
+
+FINAL ANSWER: [decimal_places] decimal places, approximately [accuracy] meters, [use_case] use case

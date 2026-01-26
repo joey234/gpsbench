@@ -1,0 +1,11 @@
+Calculate the bearing (initial direction) from Point A to Point B:
+
+Point A: {point_a_name}
+Coordinates: {point_a_lat}, {point_a_lon}
+
+Point B: {point_b_name}
+Coordinates: {point_b_lat}, {point_b_lon}
+
+Provide the bearing in degrees (0-360°, where 0° is North, 90° is East, etc.).
+
+FINAL ANSWER: [bearing]°

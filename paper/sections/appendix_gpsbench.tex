@@ -1,0 +1,280 @@
+%==============================================================================
+\section{Model Details}
+\label{app:model_details}
+%==============================================================================
+
+Table~\ref{tab:model_details} provides details of the 14 models evaluated in GPSBench.
+
+\begin{table*}[h]
+\centering
+\caption{Model details for GPSBench evaluation. Temperature 0 used where supported.}
+\label{tab:model_details}
+\small
+\begin{tabular}{lllll}
+\toprule
+\textbf{Model} & \textbf{Endpoint / Model ID} & \textbf{Params} & \textbf{Type} & \textbf{Provider} \\
+\midrule
+GPT-5.1 & gpt-5.1 & undisclosed & Reasoning & OpenAI \\
+GPT-4.1 & gpt-4.1 & undisclosed & Non-reasoning & OpenAI \\
+GPT-5-mini & gpt-5-mini-2025-08-07 & undisclosed & Reasoning & OpenAI \\
+GPT-4.1-mini & gpt-4.1-mini & undisclosed & Non-reasoning & OpenAI \\
+GPT-5-nano & gpt-5-nano-2025-08-07 & undisclosed & Reasoning & OpenAI \\
+Gemini-2.5-Pro & gemini-2.5-pro & undisclosed & Reasoning & Google \\
+Gemini-2.5-Flash & gemini-2.5-flash & undisclosed & Non-reasoning & Google \\
+Claude-Haiku-4.5 & anthropic/claude-haiku-4.5 & undisclosed & Non-reasoning & Anthropic \\
+Qwen3-235B & qwen/qwen3-235b-a22b-2507 & 235B (22B active) & Reasoning (MoE) & Alibaba \\
+Qwen3-30B & qwen/qwen3-30b-a3b-instruct-2507 & 30B (3B active) & Reasoning (MoE) & Alibaba \\
+Qwen3-14B & qwen/qwen3-14b & 14B & Non-reasoning & Alibaba \\
+Qwen3-8B & qwen/qwen3-8b & 8B & Non-reasoning & Alibaba \\
+Mistral-Large & mistralai/mistral-large-2512 & $\sim$123B & Non-reasoning & Mistral AI \\
+Mistral-Small-24B & mistralai/mistral-small-24b-instruct-2501 & 24B & Non-reasoning & Mistral AI \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Inference Settings.} All evaluations use temperature 0 for deterministic outputs where supported. Maximum output tokens set to 8192. For reasoning models, we set \texttt{reasoning\_effort=low} (OpenAI) or \texttt{thinking\_budget=0} (Google) to minimize overhead.
+
+%==============================================================================
+\section{Data Generation Details}
+\label{app:data_generation}
+%==============================================================================
+
+This section provides detailed per-task sample generation procedures. All generation uses a fixed random seed (42) for reproducibility.
+
+\subsection{Pure GPS Track Generation}
+
+\paragraph{Format Conversion.}
+For each sample: (1) Select a random city from GeoNames. (2) Extract its decimal coordinates. (3) Randomly choose conversion direction (Decimal $\leftrightarrow$ DMS). (4) Apply the conversion formula and store both representations. Ground truth is computed programmatically using standard conversion: degrees = floor(decimal), minutes = floor((decimal - degrees) $\times$ 60), seconds = remainder $\times$ 60.
+
+\paragraph{Coordinate Transformation.}
+For each sample: (1) Select a random city. (2) Randomly choose transformation type (WGS84 $\rightarrow$ UTM, WGS84 $\rightarrow$ Web Mercator, or reverse). (3) Compute the target coordinates using standard projection formulas. UTM zone is computed as $\lfloor(\lambda + 180)/6\rfloor + 1$. Tolerances: UTM $\pm$10m, Web Mercator $\pm$100m.
+
+\paragraph{Distance Calculation.}
+For each sample: (1) Select 2 cities using global balanced sampling with minimum 50~km separation. (2) Compute Haversine distance. (3) Store distance in both kilometers and miles. Tolerance: max(5~km, 5\% of distance).
+
+\paragraph{Bearing Computation.}
+For each sample: (1) Select 2 globally balanced cities with minimum 100~km separation. (2) Compute initial bearing using spherical trigonometry. (3) Map bearing to 8 cardinal directions (N, NE, E, SE, S, SW, W, NW) using 45° sectors. Tolerance: $\pm$5°.
+
+\paragraph{Interpolation.}
+For each sample: (1) Select 2 globally balanced cities with minimum 500~km separation. (2) Randomly choose interpolation fraction from \{0.25, 0.5, 0.75\}. (3) Compute intermediate point using spherical linear interpolation (slerp): convert to 3D unit vectors, interpolate along great circle arc, convert back to lat/lon. Tolerance: $\pm$0.01°.
+
+\paragraph{Area \& Perimeter.}
+For each sample: (1) Select 3--6 cities from the same continent using regional sampling (50--2,000~km range). (2) Sort vertices by angle from centroid to form a valid polygon. (3) Compute area using L'Huilier's theorem via triangulation from first vertex. (4) Compute perimeter as sum of Haversine distances between consecutive vertices. Tolerance: $\pm$5\%.
+
+\paragraph{Bounding Box.}
+For each sample: (1) Select 3--8 globally balanced cities. (2) Compute min/max latitude and longitude. (3) Calculate center as midpoint of bounds. (4) Calculate centroid as arithmetic mean of all coordinates. (5) Compute diagonal distance using Haversine.
+
+\paragraph{Route Geometry.}
+For each sample: (1) Generate a path of 8--15 waypoints along a route. (2) Apply Douglas-Peucker simplification with randomly chosen epsilon (0.5--2.0~km). (3) Store original points and indices of retained points after simplification.
+
+\paragraph{Relative Position (Pure GPS).}
+For each sample: (1) Select 2 globally balanced cities with minimum 100~km separation. This ensures cities are typically on different continents, making direction obvious from hemisphere. (2) Compute bearing and map to cardinal direction. Note: This task is intentionally easier than Applied Relative Position.
+
+\subsection{Applied Track Generation}
+
+\paragraph{Place Association.}
+For each sample: (1) Select a random city from GeoNames. (2) Apply Gaussian noise to coordinates with $\sigma$ randomly chosen from \{0, 10, 50, 100, 500, 1000\}~m, cycling through levels for balanced distribution ($\sim$17\% each). Noise is converted to degrees: $\sigma_\phi = \sigma_m / 111000$, $\sigma_\lambda = \sigma_m / (111000 \cdot \cos\phi)$. (3) Assign difficulty based on population: easy ($>$500K), medium (100K--500K), hard ($<$100K). Ground truth is the original city name and any GeoNames alternate spellings.
+
+\paragraph{Name Disambiguation.}
+For each sample: (1) Identify city names that appear 4+ times globally in GeoNames (847 unique name groups, e.g., ``Springfield'' with 34 instances). (2) Select 4 candidate cities sharing the same name from different countries/regions. (3) Choose one as the answer and add Gaussian noise (100--500~m) to its coordinates to prevent exact coordinate matching as a shortcut. (4) Present candidates as multiple choice options with country identifiers.
+
+\paragraph{Relative Position (Applied).}
+For each sample: (1) Select 2 cities from the \textit{same continent} using regional sampling. (2) Enforce distance constraints by cycling through ranges: 200--500~km (hardest), 500--1,000~km, 1,000--2,000~km, 2,000--3,000~km. This creates genuinely challenging questions (e.g., ``Is Lyon east of Paris?'') unlike Pure GPS where different continents make direction trivial. (3) Present using city names only (no coordinates), requiring geographic knowledge.
+
+\paragraph{Proximity.}
+For each sample: (1) Select 5 globally balanced cities with minimum 100~km separation. (2) Designate first city as reference point. (3) Compute Haversine distances to remaining 4 candidates. (4) Ground truth is the candidate with minimum distance. All distances are stored for evaluation.
+
+\paragraph{Route Analysis.}
+For each sample: (1) Select 3 globally balanced cities (start, end, waypoint) with minimum 200~km separation. (2) Compute direct great-circle distance (start $\rightarrow$ end). (3) Compute via-waypoint distance (start $\rightarrow$ waypoint $\rightarrow$ end). (4) Calculate detour percentage: $(d_{via} - d_{direct}) / d_{direct}$. (5) Label as ``on route'' if detour $<$10\%.
+
+\paragraph{Boundary Analysis.}
+For each sample: (1) Select 4--6 globally balanced cities. (2) Retrieve country and continent from GeoNames metadata. (3) Create grouping task (e.g., ``Group by continent'') with ground truth derived from ISO 3166 country-to-continent mapping.
+
+\paragraph{Spatial Patterns (Outlier Detection).}
+For each sample: (1) Define 6 geographic regions (Europe, Asia, Africa, North America, South America, Oceania). (2) Randomly select a main region and a different outlier region. (3) Sample 4 cities from main region and 1 from outlier region. (4) Compute centroid and each city's distance to it. (5) Validate that exactly one city (the outlier) has distance $>2\times$ the median distance, with clarity ratio (furthest/second-furthest) $>$1.3 to ensure unambiguous answers.
+
+\paragraph{Terrain Classification.}
+For each sample: (1) Select coordinates from curated geographic locations with unambiguous terrain types. (2) Categories: Urban (major city centers), Coastal (within 5~km of coastline), Mountain (elevation $>$2000m), Desert (arid regions like Sahara, Gobi), Forest (tropical/temperate forest regions), Agricultural (major farming regions). (3) Labels validated against OpenStreetMap Nominatim and satellite imagery.
+
+\subsection{Train/Dev/Test Splitting}
+
+Each task's 3,400 samples are split deterministically: Train (60\%, 2,040 samples), Dev (10\%, 340 samples), Test (30\%, 1,020 samples). Splits are stratified to preserve difficulty distribution and geographic balance. Zero overlap is verified programmatically by checking sample IDs across splits.
+
+%==============================================================================
+\section{Ground Truth Computation Formulas}
+\label{app:ground_truth_formulas}
+%==============================================================================
+
+All ground truth values use standard geodetic formulas on the WGS84 ellipsoid approximated as a sphere with radius $R = 6371$~km.
+
+\subsection{Haversine Distance}
+The great-circle distance between points $(\phi_1, \lambda_1)$ and $(\phi_2, \lambda_2)$:
+\begin{equation}
+d = 2R \arcsin\sqrt{\sin^2\!\left(\frac{\Delta\phi}{2}\right) + \cos\phi_1 \cos\phi_2 \sin^2\!\left(\frac{\Delta\lambda}{2}\right)}
+\end{equation}
+
+\subsection{Initial Bearing}
+The forward azimuth from point $P_1$ to $P_2$:
+\begin{equation}
+\theta = \text{atan2}\left(\sin\Delta\lambda \cos\phi_2,\, \cos\phi_1 \sin\phi_2 - \sin\phi_1 \cos\phi_2 \cos\Delta\lambda\right)
+\end{equation}
+Normalized to $[0°, 360°)$ and mapped to 8 cardinal directions (N, NE, E, SE, S, SW, W, NW).
+
+\subsection{Great Circle Interpolation}
+An intermediate point at fraction $f \in [0,1]$ using spherical linear interpolation:
+\begin{equation}
+\mathbf{p}_f = \frac{\sin((1-f)\delta)}{\sin\delta} \mathbf{p}_1 + \frac{\sin(f\delta)}{\sin\delta} \mathbf{p}_2
+\end{equation}
+where $\delta$ is the angular distance and $\mathbf{p}$ are 3D unit vectors.
+
+\subsection{Spherical Polygon Area}
+Using L'Huilier's theorem via triangulation. For each spherical triangle with sides $a, b, c$ (angular distances) and semi-perimeter $s = (a+b+c)/2$, the spherical excess $E$ is:
+\begin{equation}
+\tan\!\left(\frac{E}{4}\right) = \sqrt{\tan\!\left(\frac{s}{2}\right) \tan\!\left(\frac{s-a}{2}\right) \tan\!\left(\frac{s-b}{2}\right) \tan\!\left(\frac{s-c}{2}\right)}
+\end{equation}
+Total polygon area: $A = R^2 \left|\sum_{i=1}^{n-2} E_i\right|$ where $n$ is the number of vertices.
+
+\subsection{Coordinate Transformations}
+\textbf{UTM:} Zone = $\lfloor(\lambda + 180)/6\rfloor + 1$, with scale factor $k_0 = 0.9996$ and false easting 500,000~m.
+
+\textbf{Web Mercator (EPSG:3857):} $x = R\lambda$, $y = R \ln(\tan(\pi/4 + \phi/2))$
+
+\subsection{Gaussian Noise Model}
+Noise standard deviation $\sigma_m$ (meters) converted to degrees:
+\begin{equation}
+\sigma_\phi = \frac{\sigma_m}{111000}, \quad \sigma_\lambda = \frac{\sigma_m}{111000 \cdot \cos\phi}
+\end{equation}
+
+\subsection{Knowledge-Based Task Ground Truth (Applied Track)}
+
+Unlike geometric tasks with mathematical formulas, Applied Track tasks derive ground truth from authoritative geographic databases:
+
+\paragraph{Place Association.}
+Ground truth is the city name from GeoNames at the sampled coordinate. Evaluation accepts the canonical city name or any of its alternate spellings (3--5 variants per city in GeoNames).
+
+\paragraph{Name Disambiguation.}
+For cities with duplicate names globally (e.g., ``Springfield''), GeoNames provides distinct entries with unique coordinates. Ground truth is the option whose GeoNames coordinates match the query coordinates (within 500m tolerance to account for coordinate noise).
+
+\paragraph{Proximity.}
+Ground truth is determined by computing Haversine distances from the reference city to all candidate cities and selecting the minimum. The correct answer is deterministic given the GeoNames coordinates.
+
+\paragraph{Spatial Patterns (Outlier Detection).}
+For each set of 5 cities, we compute the centroid and measure each city's distance to it. The outlier is the city with the maximum distance, required to have a ratio $>1.3\times$ the second-farthest city to ensure unambiguous answers.
+
+\paragraph{Boundary Analysis.}
+Country and continent assignments come directly from GeoNames metadata fields (\texttt{country\_code}, mapped to continents via ISO 3166).
+
+\paragraph{Relative Position (Applied).}
+Given two city names, we retrieve their GeoNames coordinates and compute the bearing using the formula in Section~\ref{app:ground_truth_formulas}. The bearing is mapped to 8 cardinal directions.
+
+\paragraph{Route Analysis.}
+Given start, end, and query cities, we compute whether the query city lies within a corridor around the great-circle path. A city is ``on route'' if its perpendicular distance to the path is $<$500km and it lies between the start/end latitudes (with tolerance).
+
+\paragraph{Terrain Classification.}
+Coordinates are sampled from well-known geographic locations with unambiguous terrain types (e.g., Brisbane for Urban, Sahara coordinates for Desert, Himalayan coordinates for Mountain). Labels are validated against OpenStreetMap Nominatim and cross-referenced with satellite imagery and geographic databases.
+
+%==============================================================================
+\section{Sampling Strategy Details}
+\label{app:sampling_details}
+%==============================================================================
+
+\subsection{Global Balanced Sampling}
+Target continental proportions: Africa 20\%, Asia 25\%, Europe 20\%, North America 15\%, South America 15\%, Oceania 5\%. All samples enforce 100~km minimum separation.
+
+\subsection{Regional Sampling}
+For polygon tasks, vertices are constrained to same-continent cities within 50--2,000~km of an anchor city, producing realistic sub-continental regions.
+
+\subsection{Difficulty Stratification}
+\textbf{Place Association:} Easy ($\geq$500k pop), Medium (100k--500k), Hard ($<$100k).
+
+\textbf{Applied Relative Position:} Distance ranges 200--500km (hardest), 500--1000km, 1000--2000km, 2000--3000km.
+
+\textbf{Name Disambiguation:} Cities with $\geq$4 global duplicates (847 name groups). Noise 100--500~m to prevent coordinate matching shortcuts.
+
+\subsection{Quality Assurance}
+\label{app:quality_assurance}
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+    \item Coordinate validation: $\phi \in [-90°, 90°]$, $\lambda \in [-180°, 180°]$
+    \item Distance constraints: 100~km global, 50~km regional
+    \item Polygon validity: vertices sorted by angle from centroid
+    \item Outlier clarity: ratio $>1.3$ required
+    \item Reproducibility: fixed seed (42)
+\end{itemize}
+
+%==============================================================================
+\section{Task Prompts}
+\label{app:task_prompts}
+%==============================================================================
+
+\subsection{System Prompt}
+\begin{quote}\ttfamily\small
+You are an expert in GPS coordinates, geographic information systems, and spatial reasoning. Provide accurate, precise answers based on the given coordinates and geographic data. You may show your reasoning, but you MUST always end with: FINAL ANSWER: [your answer]
+\end{quote}
+
+\subsection{Pure GPS Track Prompts}
+
+\paragraph{Format Conversion}
+\begin{quote}\ttfamily\small
+Convert the coordinate from DMS to decimal\_degrees.\\
+Source coordinate (DMS): 43°55'31.8"N, 81°24'43.6"E\\
+FINAL ANSWER: [converted coordinate]
+\end{quote}
+
+\paragraph{Distance Calculation}
+\begin{quote}\ttfamily\small
+Calculate the distance between these two points:\\
+Point A: Djenné (13.90608, -4.55332)\\
+Point B: Parbhani (19.26855, 76.77081)\\
+FINAL ANSWER: [distance] km
+\end{quote}
+
+\paragraph{Bearing Computation}
+\begin{quote}\ttfamily\small
+Calculate the initial bearing from Point A to Point B:\\
+Point A: Tokyo (35.6762, 139.6503)\\
+Point B: Sydney (-33.8688, 151.2093)\\
+FINAL ANSWER: [bearing]°
+\end{quote}
+
+\paragraph{Coordinate Interpolation}
+\begin{quote}\ttfamily\small
+Find the coordinates of the point that is 30\% of the way from Point A to Point B along the geodesic path:\\
+Point A: London (51.5074, -0.1278)\\
+Point B: New York (40.7128, -74.0060)\\
+FINAL ANSWER: [latitude], [longitude]
+\end{quote}
+
+\subsection{Applied Track Prompts}
+
+\paragraph{Place Association}
+\begin{quote}\ttfamily\small
+What city is located at coordinates 48.8566, 2.3522?\\
+FINAL ANSWER: [city name]
+\end{quote}
+
+\paragraph{Name Disambiguation}
+\begin{quote}\ttfamily\small
+There are multiple cities named "Springfield". Which Springfield is located at coordinates 39.7817, -89.6501?\\
+A) Springfield, Massachusetts\\
+B) Springfield, Illinois\\
+C) Springfield, Missouri\\
+D) Springfield, Ohio\\
+FINAL ANSWER: [letter]
+\end{quote}
+
+\paragraph{Proximity}
+\begin{quote}\ttfamily\small
+Which of these cities is closest to Paris (48.8566, 2.3522)?\\
+A) London (51.5074, -0.1278)\\
+B) Berlin (52.5200, 13.4050)\\
+C) Brussels (50.8503, 4.3517)\\
+D) Amsterdam (52.3676, 4.9041)\\
+FINAL ANSWER: [letter]
+\end{quote}
+
+\paragraph{Spatial Patterns}
+\begin{quote}\ttfamily\small
+Which location is the geographic outlier among: Gdańsk, Castlereagh, Vostryakovo, Shchëkino, Chiconcuac?\\
+FINAL ANSWER: [city name]
+\end{quote}
+

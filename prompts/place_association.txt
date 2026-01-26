@@ -1,0 +1,5 @@
+What location/place is at coordinates {coordinate_string}?
+
+Provide the specific location name (city, landmark, region, or country depending on context).
+
+FINAL ANSWER: [location name]

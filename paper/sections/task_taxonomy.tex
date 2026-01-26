@@ -1,0 +1,109 @@
+% Task Taxonomy Diagram for GPSBench
+% Include in your document with: \input{sections/task_taxonomy.tex}
+% Requires: \usepackage{tikz}
+%           \usetikzlibrary{shapes, arrows.meta, positioning, calc, shadows}
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[
+    % Node styles
+    root/.style={
+        rectangle, rounded corners=8pt,
+        fill=blue!20, draw=blue!60, line width=1.5pt,
+        minimum width=3.5cm, minimum height=1cm,
+        font=\large\bfseries, text=blue!80!black,
+        drop shadow={shadow xshift=1pt, shadow yshift=-1pt, opacity=0.3}
+    },
+    track/.style={
+        rectangle, rounded corners=6pt,
+        minimum width=2.8cm, minimum height=0.9cm,
+        font=\bfseries, text=white,
+        drop shadow={shadow xshift=1pt, shadow yshift=-1pt, opacity=0.3}
+    },
+    pure/.style={track, fill=teal!80, draw=teal!90, line width=1pt},
+    applied/.style={track, fill=orange!80, draw=orange!90, line width=1pt},
+    task/.style={
+        rectangle, rounded corners=4pt,
+        minimum width=2.4cm, minimum height=0.65cm,
+        font=\small, text=black,
+        draw=gray!50, line width=0.5pt
+    },
+    puretask/.style={task, fill=teal!15},
+    appliedtask/.style={task, fill=orange!15},
+    % Arrow style
+    arrow/.style={-{Stealth[length=2.5mm]}, line width=0.8pt, draw=gray!60},
+    bracket/.style={decorate, decoration={brace, amplitude=5pt, raise=2pt}, line width=0.8pt}
+]
+
+% Root node
+\node[root] (gpsbench) at (0, 0) {GPSBench};
+
+% Track nodes
+\node[pure] (puregps) at (-5, -1.8) {Pure GPS Track};
+\node[applied] (appliedtrack) at (5, -1.8) {Applied Track};
+
+% Arrows from root to tracks
+\draw[arrow] (gpsbench.south) -- ++(0, -0.4) -| (puregps.north);
+\draw[arrow] (gpsbench.south) -- ++(0, -0.4) -| (appliedtrack.north);
+
+% Pure GPS Tasks (left side)
+\node[puretask] (t1) at (-7.5, -3.3) {Format Conversion};
+\node[puretask] (t2) at (-7.5, -4.1) {Coord. Transform};
+\node[puretask] (t3) at (-7.5, -4.9) {Distance Calc.};
+\node[puretask] (t4) at (-7.5, -5.7) {Bearing Comp.};
+\node[puretask] (t5) at (-7.5, -6.5) {Interpolation};
+
+\node[puretask] (t6) at (-3.0, -3.3) {Area \& Perimeter};
+\node[puretask] (t7) at (-3.0, -4.1) {Bounding Box};
+\node[puretask] (t8) at (-3.0, -4.9) {Route Geometry};
+\node[puretask] (t9) at (-3.0, -5.7) {Relative Position};
+
+% Arrows to Pure GPS tasks
+\draw[arrow] (puregps.south) -- ++(0, -0.3) -| (t1.north);
+\draw[arrow] (puregps.south) -- ++(0, -0.3) -| (t6.north);
+
+\foreach \i in {2,3,4,5} {
+    \draw[gray!40, line width=0.5pt] (t1.south) -- (t\i.north);
+}
+\draw[gray!40, line width=0.5pt] (t6.south) -- (t7.north);
+\draw[gray!40, line width=0.5pt] (t7.south) -- (t8.north);
+\draw[gray!40, line width=0.5pt] (t8.south) -- (t9.north);
+
+% Applied Tasks (right side)
+\node[appliedtask] (a1) at (3.0, -3.3) {Place Association};
+\node[appliedtask] (a2) at (3.0, -4.1) {Name Disambig.};
+\node[appliedtask] (a3) at (3.0, -4.9) {Relative Position};
+\node[appliedtask] (a4) at (3.0, -5.7) {Proximity};
+\node[appliedtask] (a5) at (3.0, -6.5) {Route Analysis};
+
+\node[appliedtask] (a6) at (7.5, -3.3) {Spatial Patterns};
+\node[appliedtask] (a7) at (7.5, -4.1) {Boundary Analysis};
+\node[appliedtask] (a8) at (7.5, -4.9) {Terrain Class.};
+
+% Arrows to Applied tasks
+\draw[arrow] (appliedtrack.south) -- ++(0, -0.3) -| (a1.north);
+\draw[arrow] (appliedtrack.south) -- ++(0, -0.3) -| (a6.north);
+
+\foreach \i in {2,3,4,5} {
+    \draw[gray!40, line width=0.5pt] (a1.south) -- (a\i.north);
+}
+\draw[gray!40, line width=0.5pt] (a6.south) -- (a7.north);
+\draw[gray!40, line width=0.5pt] (a7.south) -- (a8.north);
+
+% Statistics annotations
+\node[font=\footnotesize, text=teal!70!black] at (-5, -7.2) {9 tasks $\times$ 3,400 = 30,600 samples};
+\node[font=\footnotesize, text=orange!70!black] at (5, -7.2) {8 tasks $\times$ 3,400 = 27,200 samples};
+
+% Category labels
+\node[font=\scriptsize\itshape, text=gray] at (-7.5, -2.9) {Coordinate Operations};
+\node[font=\scriptsize\itshape, text=gray] at (-3.0, -2.9) {Spatial Analysis};
+\node[font=\scriptsize\itshape, text=gray] at (3.0, -2.9) {Geographic Knowledge};
+\node[font=\scriptsize\itshape, text=gray] at (7.5, -2.9) {Complex Reasoning};
+
+% Total
+\node[font=\small\bfseries, text=blue!70!black] at (0, -7.8) {Total: 17 Tasks, 57,800 Samples};
+
+\end{tikzpicture}
+\caption{GPSBench task taxonomy. The benchmark is organized into two tracks: \textbf{Pure GPS} (teal) tests fundamental coordinate operations without external knowledge, while \textbf{Applied} (orange) requires geographic knowledge and reasoning. Each task contains 3,400 samples.}
+\label{fig:task_taxonomy}
+\end{figure*}
