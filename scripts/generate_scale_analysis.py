@@ -2,6 +2,14 @@
 """Generate scale analysis figure for GPSBench paper."""
 
 import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
+plt.rcParams['figure.dpi'] = 150
 import numpy as np
 from scipy import stats
 
@@ -71,7 +79,7 @@ for i, (name, tp, ap, pure, moe) in enumerate(zip(names, total_params, active_pa
     elif name == "Qwen3-30B":
         offset_x = 1.15
         offset_y = 1.5
-    ax1.annotate(name, (tp, pure), xytext=(tp*offset_x, pure+offset_y), fontsize=8)
+    ax1.annotate(name, (tp, pure), xytext=(tp*offset_x, pure+offset_y), fontsize=11)
 
 # Regression line
 slope, intercept, _, _, _ = stats.linregress(log_total, pure_gps_acc)
@@ -80,10 +88,10 @@ y_line = slope * np.log10(x_line) + intercept
 ax1.plot(x_line, y_line, 'k--', alpha=0.5, label=f'Fit (r={r_total_pure:.2f})')
 
 ax1.set_xscale('log')
-ax1.set_xlabel('Total Parameters (B)', fontsize=11)
-ax1.set_ylabel('Pure GPS Accuracy (%)', fontsize=11)
-ax1.set_title('Model Scale vs Pure GPS Performance', fontsize=12)
-ax1.legend(loc='lower right', fontsize=9)
+ax1.set_xlabel('Total Parameters (B)', fontsize=14)
+ax1.set_ylabel('Pure GPS Accuracy (%)', fontsize=14)
+ax1.set_title('Model Scale vs Pure GPS Performance', fontsize=15)
+ax1.legend(loc='lower right', fontsize=12)
 ax1.grid(True, alpha=0.3)
 ax1.set_xlim(5, 300)
 ax1.set_ylim(35, 60)
@@ -107,7 +115,7 @@ for i, (name, tp, ap, pure, moe) in enumerate(zip(names, total_params, active_pa
         offset_y = -2.5
     elif name == "Qwen3-30B":
         offset_x = 1.15
-    ax2.annotate(name, (ap, pure), xytext=(ap*offset_x, pure+offset_y), fontsize=8)
+    ax2.annotate(name, (ap, pure), xytext=(ap*offset_x, pure+offset_y), fontsize=11)
 
 # Regression line
 slope_active, intercept_active, _, _, _ = stats.linregress(log_active, pure_gps_acc)
@@ -116,10 +124,10 @@ y_line_active = slope_active * np.log10(x_line_active) + intercept_active
 ax2.plot(x_line_active, y_line_active, 'k--', alpha=0.5, label=f'Fit (r={r_active_pure:.2f})')
 
 ax2.set_xscale('log')
-ax2.set_xlabel('Active Parameters (B)', fontsize=11)
-ax2.set_ylabel('Pure GPS Accuracy (%)', fontsize=11)
-ax2.set_title('Active Parameters vs Pure GPS Performance', fontsize=12)
-ax2.legend(loc='lower right', fontsize=9)
+ax2.set_xlabel('Active Parameters (B)', fontsize=14)
+ax2.set_ylabel('Pure GPS Accuracy (%)', fontsize=14)
+ax2.set_title('Active Parameters vs Pure GPS Performance', fontsize=15)
+ax2.legend(loc='lower right', fontsize=12)
 ax2.grid(True, alpha=0.3)
 ax2.set_xlim(2, 150)
 ax2.set_ylim(35, 60)

@@ -3,6 +3,9 @@
 
 We investigate whether task-specific finetuning can improve GPS reasoning by comparing a finetuned Qwen3-30B model against its zero-shot baseline.
 
+\paragraph{Finetuning Setup.}
+We finetune Qwen3-30B-A3B-Instruct (a 30B-total, 3B-active MoE model) using LoRA \cite{hu2022lora} on the GPSBench training split. Training uses both the Pure GPS and Applied tracks with chain-of-thought reasoning included in the target outputs: each training example contains step-by-step reasoning followed by a final answer, encouraging the model to learn intermediate computation steps rather than shortcut to answers. We use the Tinker platform for distributed finetuning with the following hyperparameters: learning rate $2 \times 10^{-5}$ with linear decay, batch size 32, LoRA rank 64, maximum sequence length 16{,}384 tokens, and 2 training epochs. The low learning rate is chosen to mitigate catastrophic forgetting of pretrained knowledge. Training data consists of the standard 60\% train split (2{,}040 samples per task $\times$ 17 tasks = 34{,}680 total samples). Evaluation is performed on the 30\% held-out test split. The Missing Data Inference task is excluded from evaluation and reserved as a memorization probe (Section~\ref{sec:rq2_granularity_robustness}).
+
 \paragraph{Overall Results.}
 Table~\ref{tab:finetuning_overall} shows that finetuning improves overall performance (+1.5\%), with Pure GPS gaining (+4.3\%) while Applied slightly degrades ($-$1.6\%).
 

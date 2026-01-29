@@ -222,8 +222,8 @@ def plot_subregion_heatmap(results, output_path):
 
     ax.set_xticks(np.arange(len(subregions)))
     ax.set_yticks(np.arange(len(models)))
-    ax.set_xticklabels(subregions, fontsize=9)
-    ax.set_yticklabels(models, fontsize=9)
+    ax.set_xticklabels(subregions, fontsize=12)
+    ax.set_yticklabels(models, fontsize=12)
 
     plt.setp(ax.get_xticklabels(), rotation=45, ha='right', rotation_mode='anchor')
 
@@ -232,7 +232,7 @@ def plot_subregion_heatmap(results, output_path):
             if not np.isnan(acc_matrix[i, j]):
                 text_color = 'white' if acc_matrix[i, j] < 15 else 'black'
                 ax.text(j, i, f'{acc_matrix[i, j]:.0f}',
-                       ha='center', va='center', fontsize=7, color=text_color)
+                       ha='center', va='center', fontsize=10, color=text_color)
 
     cbar = fig.colorbar(im, ax=ax, shrink=0.8, pad=0.02)
     cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom')
@@ -241,10 +241,10 @@ def plot_subregion_heatmap(results, output_path):
     for x in [2.5, 6.5, 10.5]:
         ax.axvline(x, color='white', linewidth=2)
 
-    ax.text(1, -1.5, 'Americas', ha='center', fontsize=10, fontweight='bold', color=CONTINENT_COLORS['Americas'])
-    ax.text(4.5, -1.5, 'Europe', ha='center', fontsize=10, fontweight='bold', color=CONTINENT_COLORS['Europe'])
-    ax.text(8.5, -1.5, 'Asia', ha='center', fontsize=10, fontweight='bold', color=CONTINENT_COLORS['Asia'])
-    ax.text(12, -1.5, 'Africa', ha='center', fontsize=10, fontweight='bold', color=CONTINENT_COLORS['Africa'])
+    ax.text(1, -1.5, 'Americas', ha='center', fontsize=13, fontweight='bold', color=CONTINENT_COLORS['Americas'])
+    ax.text(4.5, -1.5, 'Europe', ha='center', fontsize=13, fontweight='bold', color=CONTINENT_COLORS['Europe'])
+    ax.text(8.5, -1.5, 'Asia', ha='center', fontsize=13, fontweight='bold', color=CONTINENT_COLORS['Asia'])
+    ax.text(12, -1.5, 'Africa', ha='center', fontsize=13, fontweight='bold', color=CONTINENT_COLORS['Africa'])
 
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
@@ -286,7 +286,7 @@ def plot_subregion_bar(results, output_path):
         width = bar.get_width()
         ax.text(width + 0.3, bar.get_y() + bar.get_height()/2.,
                 f'{acc:.1f}% (n={total})',
-                ha='left', va='center', fontsize=9)
+                ha='left', va='center', fontsize=12)
 
     ax.set_yticks(y_pos)
     ax.set_yticklabels(regions)

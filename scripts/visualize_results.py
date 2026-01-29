@@ -121,12 +121,12 @@ def create_radar_chart_by_track(results, track: str, output_file: str, min_sampl
 
     # Set labels
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(tasks, size=9)
+    ax.set_xticklabels(tasks, size=12)
 
     # Set y-axis
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=8)
+    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=11)
 
     # Title and legend
     track_name = track.replace('_', ' ').title()
@@ -134,7 +134,7 @@ def create_radar_chart_by_track(results, track: str, output_file: str, min_sampl
                  size=14, fontweight='bold', pad=20)
 
     # Place legend outside
-    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=9)
+    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=12)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')
@@ -201,14 +201,14 @@ def create_overall_radar_chart(results, output_file: str, min_samples: int = 500
         ax.fill(angles, values, alpha=0.1, color=colors[idx])
 
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(categories, size=9)
+    ax.set_xticklabels(categories, size=12)
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=8)
+    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=11)
 
     ax.set_title('GPSBench Overall Model Comparison\n(Key Metrics)',
                  size=14, fontweight='bold', pad=20)
-    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=9)
+    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=12)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')
@@ -273,17 +273,17 @@ def create_combined_radar_chart(results, output_file: str, min_samples: int = 50
                 short_tasks.append(t)
 
         ax.set_xticks(angles[:-1])
-        ax.set_xticklabels(short_tasks, size=8)
+        ax.set_xticklabels(short_tasks, size=11)
         ax.set_ylim(0, 100)
         ax.set_yticks([25, 50, 75, 100])
-        ax.set_yticklabels(['25%', '50%', '75%', '100%'], size=7)
+        ax.set_yticklabels(['25%', '50%', '75%', '100%'], size=10)
 
         track_name = track.replace('_', ' ').title()
-        ax.set_title(f'{track_name} Track', size=12, fontweight='bold', pad=15)
+        ax.set_title(f'{track_name} Track', size=15, fontweight='bold', pad=15)
 
     # Single legend for both
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc='lower center', ncol=4, fontsize=9, bbox_to_anchor=(0.5, -0.02))
+    fig.legend(handles, labels, loc='lower center', ncol=4, fontsize=12, bbox_to_anchor=(0.5, -0.02))
 
     fig.suptitle('GPSBench Model Comparison by Track', size=14, fontweight='bold', y=1.02)
     plt.tight_layout()
@@ -336,14 +336,14 @@ def create_error_metrics_radar(results, output_file: str, min_samples: int = 500
         ax.fill(angles, values, alpha=0.1, color=colors[idx])
 
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(categories, size=9)
+    ax.set_xticklabels(categories, size=12)
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=8)
+    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=11)
 
     ax.set_title('GPSBench Error Metrics - Accuracy at Tolerance\n(Numerical Tasks: Distance, Bearing, Area)',
                  size=14, fontweight='bold', pad=20)
-    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=9)
+    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=12)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')
@@ -399,7 +399,7 @@ def create_error_metrics_comparison(results, output_file: str, min_samples: int 
         # Add value labels
         for bar, mape in zip(bars, mapes):
             ax.text(bar.get_width() + 1, bar.get_y() + bar.get_height()/2,
-                   f'{mape:.1f}%', va='center', fontsize=8)
+                   f'{mape:.1f}%', va='center', fontsize=11)
 
     fig.suptitle('Mean Absolute Percentage Error (MAPE) by Task\n(Lower is Better)',
                  size=14, fontweight='bold')
@@ -473,16 +473,16 @@ def create_comprehensive_radar(results, output_file: str, min_samples: int = 500
         ax.fill(angles, values, alpha=0.1, color=colors[idx])
 
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(categories, size=9)
+    ax.set_xticklabels(categories, size=12)
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=8)
+    ax.set_yticklabels(['20%', '40%', '60%', '80%', '100%'], size=11)
 
     title = 'GPSBench Comprehensive Model Comparison'
     if use_error_metrics:
         title += '\n(Numerical tasks use accuracy@tolerance from error metrics)'
     ax.set_title(title, size=14, fontweight='bold', pad=20)
-    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=9)
+    ax.legend(loc='upper left', bbox_to_anchor=(1.15, 1.0), fontsize=12)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')

@@ -149,13 +149,14 @@ Qwen3-8B & 47.1 & 33.3 & +13.8 \\
 \end{tabular}
 \end{table}
 
+\paragraph{Overall Gap Distribution.}
+Table~\ref{tab:track_gap} reveals that 12 of 14 models score higher on the Applied Track than on the Pure GPS Track, with gaps ranging from +0.8\% (Qwen3-30B) to +18.2\% (Mistral-Large). The two exceptions are GPT-5.1 ($-$12.4\%) and Gemini-2.5-Pro ($-$5.0\%), both flagship reasoning models whose Pure GPS scores surpass their Applied scores. The mean gap across all 14 models is +9.9\%, confirming that world knowledge encoded during pretraining provides a substantial advantage over raw coordinate-level computation for the majority of current LLMs.
+
 \paragraph{Model Family Patterns.}
-\begin{itemize}[leftmargin=*, itemsep=2pt]
-    \item \textbf{GPT} (n=5): Leads on Applied tasks (70.7\%) and Pure GPS (66.0\%). GPT-5.1 achieves highest Polygon Area 1-MAPE (43\%).
-    \item \textbf{Gemini} (n=2): Gemini-2.5-Pro achieves highest Place Association (23.0\%) and strong Polygon Area (54\%).
-    \item \textbf{Mistral} (n=2): Largest Applied-Pure GPS gap (+17.9\%), indicating world knowledge that does not transfer to coordinate computation.
-    \item \textbf{Qwen} (n=4): Performance scales with model size (8B: 40.2\%, 14B: 42.9\%, 30B: 53.5\%, 235B: 62.5\% overall), with consistent gaps favoring Applied track across all sizes.
-\end{itemize}
+The \textbf{GPT family} (5 models) leads both tracks, averaging 70.7\% on Applied and 66.0\% on Pure GPS. A clear split emerges within this family: the reasoning models GPT-5.1 and GPT-5-mini show near-balanced or reversed gaps ($-$12.4\% and +1.1\%), while the non-reasoning GPT-4.1 and GPT-4.1-mini exhibit large positive gaps (+12.3\% and +13.9\%). The \textbf{Gemini family} (2 models) mirrors this pattern: Gemini-2.5-Pro (reasoning) achieves a $-$5.0\% gap while Gemini-2.5-Flash shows +14.9\%. The \textbf{Mistral family} (2 models) exhibits the largest average gap (+17.9\%), with both models showing nearly identical gaps (+18.2\% and +17.7\%) despite a 5$\times$ difference in parameter count, suggesting this reflects a training-data characteristic rather than a scale-dependent phenomenon. The \textbf{Qwen family} (4 models) provides the most granular scaling view: overall accuracy increases from 40.2\% (8B) to 62.5\% (235B), with the Applied--Pure GPS gap narrowing for MoE models. Notably, Qwen3-30B (3B active parameters) achieves a near-zero gap of +0.8\%, suggesting MoE architectures may allocate specialized experts to geometric computation.
+
+\paragraph{Reasoning vs.\ Non-Reasoning Models.}
+Across families, the three reasoning models above the $y = x$ diagonal in Figure~\ref{fig:scatter} (GPT-5.1, GPT-5-mini, Gemini-2.5-Pro) have a mean gap of $-$5.4\%, while the remaining 11 models average +13.4\%. This 18.8-percentage-point difference suggests that chain-of-thought reasoning is particularly beneficial for multi-step geodetic calculations that require maintaining numerical precision across sequential computation steps.
 
 %% =============================================================================
 \subsection{Geographic Granularity Results}
@@ -402,7 +403,7 @@ Rel. Pos. (Pure) & 45.9 & 53.9 & 56.9 & 46.5 & 52.3 & \textbf{61.4} & 57.3 & 57.
 \subsection{Qualitative Error Analysis}
 \label{app:error_analysis}
 
-We analyze model outputs across tasks to identify systematic error patterns. Table~\ref{tab:error_patterns} summarizes the dominant failure modes for each task category.
+We analyze model outputs across tasks to identify systematic error patterns. Table~\ref{tab:error_patterns} summarizes the dominant failure modes for a subset of tasks where clear patterns emerge.
 
 \begin{table}[htbp]
 \centering
@@ -416,10 +417,10 @@ We analyze model outputs across tasks to identify systematic error patterns. Tab
 Place Association & Nearby city substitution \\
 Polygon Area & Formula stated but not executed \\
 Interpolation & Cumulative numerical errors \\
-Coord. Transform & Digit/precision errors \\
+Coord. Transform & Nonlinear projection arithmetic \\
 Bearing/Distance & Computational approximations \\
 Spatial Patterns & Heuristic-based reasoning \\
-Format Conversion & Minor formatting discrepancies \\
+Format Conversion & Precision mismatch \& hemisphere swaps \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -479,15 +480,15 @@ When the geographic outlier is obvious (e.g., one city on a different continent)
 \textbf{Analysis:} Model incorrectly identifies Rye as the English town rather than Rye, Victoria, Australia. Uses ``farthest east'' heuristic instead of computing centroid distances, selecting Atkarsk (Russia, 3,068 km) over the true outlier.
 \end{quote}
 
-\paragraph{Coordinate System Transformation: Digit and Precision Errors.}
-UTM conversions exhibit systematic errors where models produce values that differ by 10--25 km from ground truth, and occasionally drop digits entirely:
+\paragraph{Coordinate System Transformation: Nonlinear Projection Arithmetic.}
+Error rates track projection complexity. UTM (Transverse Mercator) fails far more often than Web Mercator, and within Web Mercator, the linear $x$-formula ($x = R\lambda$) is usually correct while the nonlinear $y$-formula involving \texttt{tan} and \texttt{ln} accounts for nearly all errors. This suggests models can handle linear arithmetic but struggle with chains of transcendental functions. Southern-hemisphere UTM is especially error-prone, as models sometimes truncate the 10-million-meter false northing offset:
 
 \begin{quote}
 \small
 \textbf{Input:} Convert WGS84 coordinates for Ngong, Kenya (-1.3527°, 36.6699°) to UTM Zone 37S.\\
 \textbf{Ground Truth:} Easting: 240,718 m, Northing: 9,850,361 m\\
 \textbf{GPT-4.1:} Easting: 266,222 m, Northing: 985,045 m\\
-\textbf{Analysis:} Easting error of 25 km, and Northing is missing a digit (985K instead of 9.85M), placing the point 8,865 km north.
+\textbf{Analysis:} Easting is off by 25 km, and Northing drops a digit (985K instead of 9.85M), omitting the southern-hemisphere false northing.
 \end{quote}
 
 \paragraph{Distance and Bearing: Computational Approximations.}
@@ -501,16 +502,16 @@ While models correctly identify formulas (Haversine, forward azimuth), multi-ste
 \textbf{Analysis:} Correct Haversine approach but 7.5\% underestimate, likely from intermediate rounding in the angular distance calculation.
 \end{quote}
 
-\paragraph{Format Conversion: Minor Formatting Discrepancies.}
-Format conversion errors are typically minor: spacing differences between degrees and hemisphere indicators, or precision variations in decimal places. These represent parsing challenges rather than fundamental misunderstanding:
+\paragraph{Format Conversion: Precision Mismatch and Hemisphere Swaps.}
+Most format conversion errors fall into two categories. The majority are \textit{precision mismatches}: the model outputs correct values but with extra or missing decimal places (e.g., ``30.43\arcsec'' vs.\ the expected ``30.4\arcsec''). A smaller class involves \textit{hemisphere label swaps}, where the N/S and E/W indicators are transposed between latitude and longitude:
 
 \begin{quote}
 \small
-\textbf{Input:} Convert -0.858330°, -48.141670° to DMS format.\\
-\textbf{Ground Truth:} 0°51'30.0"S, 48°8'30.0"W\\
-\textbf{GPT-4.1:} 0°51'30" S, 48°8'30" W\\
-\textbf{Analysis:} Correct conversion but spacing before hemisphere indicator and missing decimal in seconds cause string mismatch.
+\textbf{Input:} Convert 2.408500°, 42.977100° to DMS format.\\
+\textbf{Ground Truth:} 2°24'30.6"N, 42°58'37.6"E\\
+\textbf{GPT-4.1:} 2°24'30.6"E, 42°58'37.6"N\\
+\textbf{Analysis:} Numerical conversion is exact, but N and E labels are swapped, producing an invalid coordinate.
 \end{quote}
 
 \paragraph{Summary.}
-Error analysis reveals that failures stem from three distinct causes: (1) \textbf{knowledge gaps}: missing dense coordinate-to-city mappings for Place Association, where models default to nearby prominent cities; (2) \textbf{computational complexity}: multi-step calculations accumulate numerical errors in Polygon Area, Interpolation, and Coordinate Transformation, with models often producing approximations rather than exact calculations; (3) \textbf{heuristic reasoning}: Spatial Patterns errors arise when models apply simple geographic heuristics (e.g., ``farthest east'') instead of computing centroid distances. Scaling model parameters may address (1), but targeted training on geodetic computation with numerical precision is needed for (2).
+Error analysis reveals three distinct failure causes: (1) \textbf{knowledge gaps}, where models lack dense coordinate-to-city mappings and default to nearby prominent cities; (2) \textbf{nonlinear arithmetic}, where models state correct geodetic formulas but fail to evaluate transcendental functions (sin, tan, ln) needed for projections and spherical geometry; and (3) \textbf{heuristic reasoning}, where models apply geographic shortcuts (e.g., ``farthest east'') instead of computing distances. Scaling may address (1), but (2) points to a limitation of autoregressive generation for precise numerical computation.

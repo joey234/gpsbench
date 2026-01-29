@@ -547,9 +547,9 @@ def plot_all_tasks_regional(task_results, subregions, output_path):
             val = matrix[i, j]
             if not np.isnan(val):
                 color = 'white' if val < 50 else 'black'
-                ax.text(j, i, f'{val:.0f}', ha='center', va='center', color=color, fontsize=8)
+                ax.text(j, i, f'{val:.0f}', ha='center', va='center', color=color, fontsize=11)
             else:
-                ax.text(j, i, '--', ha='center', va='center', color='gray', fontsize=8)
+                ax.text(j, i, '--', ha='center', va='center', color='gray', fontsize=11)
 
     # Colorbar
     cbar = ax.figure.colorbar(im, ax=ax)

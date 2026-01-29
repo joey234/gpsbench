@@ -12,6 +12,14 @@ import json
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
+plt.rcParams['figure.dpi'] = 150
 from pathlib import Path
 from typing import Dict, List
 from math import pi
@@ -108,16 +116,16 @@ def create_radar_plot(models_data: List[Dict], task_names: List[str],
     # Set the labels
     short_names = [get_short_task_name(t) for t in task_names]
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(short_names, size=9)
+    ax.set_xticklabels(short_names, size=12)
 
     # Set y-axis
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.set_yticklabels(['20', '40', '60', '80', '100'], size=8)
+    ax.set_yticklabels(['20', '40', '60', '80', '100'], size=11)
 
     # Add title and legend
     ax.set_title(title, size=14, fontweight='bold', pad=20)
-    ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1), fontsize=9)
+    ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1), fontsize=12)
 
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')

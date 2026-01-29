@@ -1,3 +1,24 @@
+% Requires in preamble: \usepackage{tcolorbox}
+\tcbset{
+  promptbox/.style={
+    colback=blue!5!white, colframe=blue!40!black,
+    fonttitle=\bfseries, title={#1},
+    boxrule=0.5pt, arc=2pt, left=4pt, right=4pt, top=2pt, bottom=2pt,
+    fontupper=\ttfamily\small
+  },
+  systembox/.style={
+    colback=gray!10!white, colframe=gray!60!black,
+    fonttitle=\bfseries, title={System Prompt},
+    boxrule=0.5pt, arc=2pt, left=4pt, right=4pt, top=2pt, bottom=2pt,
+    fontupper=\ttfamily\small
+  },
+  goldbox/.style={
+    colback=green!5!white, colframe=green!40!black,
+    fonttitle=\bfseries, title={Gold Answer},
+    boxrule=0.5pt, arc=2pt, left=4pt, right=4pt, top=2pt, bottom=2pt
+  }
+}
+
 %==============================================================================
 \section{Model Details}
 \label{app:model_details}
@@ -219,6 +240,7 @@ Convert the coordinate from DMS to decimal\_degrees.\\
 Source coordinate (DMS): 43°55'31.8"N, 81°24'43.6"E\\
 FINAL ANSWER: [converted coordinate]
 \end{quote}
+\textbf{Gold Answer:} 43.92550, 81.41211
 
 \paragraph{Distance Calculation}
 \begin{quote}\ttfamily\small
@@ -227,6 +249,7 @@ Point A: Djenné (13.90608, -4.55332)\\
 Point B: Parbhani (19.26855, 76.77081)\\
 FINAL ANSWER: [distance] km
 \end{quote}
+\textbf{Gold Answer:} 8,610.5 km
 
 \paragraph{Bearing Computation}
 \begin{quote}\ttfamily\small
@@ -235,6 +258,7 @@ Point A: Tokyo (35.6762, 139.6503)\\
 Point B: Sydney (-33.8688, 151.2093)\\
 FINAL ANSWER: [bearing]°
 \end{quote}
+\textbf{Gold Answer:} 169.83\textdegree
 
 \paragraph{Coordinate Interpolation}
 \begin{quote}\ttfamily\small
@@ -243,6 +267,77 @@ Point A: London (51.5074, -0.1278)\\
 Point B: New York (40.7128, -74.0060)\\
 FINAL ANSWER: [latitude], [longitude]
 \end{quote}
+\textbf{Gold Answer:} 53.7722, -24.7404
+
+\paragraph{Coordinate System Transformation}
+\begin{quote}\ttfamily\small
+Convert the following coordinates from WGS84 (EPSG:4326) to UTM Zone 46N:\\
+\\
+Location: Myaydo\\
+Latitude: 19.36838\\
+Longitude: 95.21512\\
+\\
+FINAL ANSWER: [converted coordinates]
+\end{quote}
+\textbf{Gold Answer:} 732668.82 E, 2143080.82 N (UTM Zone 46N)
+
+\paragraph{Polygon Area}
+\begin{quote}\ttfamily\small
+Calculate the area of the polygon formed by these coordinates:\\
+\\
+~~Vertex 1: El Mansouria (33.74643, -7.30194)\\
+~~Vertex 2: Beni Enzar (35.26, -2.93)\\
+~~Vertex 3: Menzel Abderhaman (37.23737, 9.86313)\\
+\\
+Use spherical geometry (Earth radius $\approx$ 6371 km).\\
+\\
+FINAL ANSWER: [area] km\textsuperscript{2}
+\end{quote}
+\textbf{Gold Answer:} 30,829.07 km\textsuperscript{2}
+
+\paragraph{Bounding Box}
+\begin{quote}\ttfamily\small
+Calculate the bounding box (minimum rectangle) containing these 7 points:\\
+\\
+~~- Misungwi (-2.85, 33.08333)\\
+~~- Chalthan (21.15421, 72.96141)\\
+~~- Yongchuan (29.35376, 105.89392)\\
+~~- Shchuchyn (53.6014, 24.7465)\\
+~~- Avon (41.80982, -72.83065)\\
+~~- Coruripe (-10.12556, -36.17556)\\
+~~- Whakatane (-37.95855, 176.98545)\\
+\\
+Provide the bounding box as: min\_lat, max\_lat, min\_lon, max\_lon\\
+\\
+FINAL ANSWER: [min\_lat], [max\_lat], [min\_lon], [max\_lon]
+\end{quote}
+\textbf{Gold Answer:} -37.95855, 53.6014, -72.83065, 176.98545
+
+\paragraph{Route Geometry}
+\begin{quote}\ttfamily\small
+Analyze this route with 12 waypoints:\\
+\\
+~~Waypoint 1: (14.78333, -16.96667)\\
+~~Waypoint 2: (14.770326, -16.98198)\\
+~~Waypoint 3: (14.744601, -16.975185)\\
+~~...\\
+~~Waypoint 12: (14.15, -16.55)\\
+\\
+Calculate the total route length by summing distances between consecutive waypoints, then use it to answer the question.\\
+\\
+FINAL ANSWER: [your answer]
+\end{quote}
+\textbf{Gold Answer:} A (points kept: [0, 1, 4, 5, 6, 7, 11])
+
+\paragraph{Relative Position (Pure GPS)}
+\begin{quote}\ttfamily\small
+What is the cardinal direction from Point A (0.0607, 34.28806) to Point B (40.24678, -8.39402)?\\
+\\
+A) North ~~B) South ~~C) East ~~D) West\\
+\\
+FINAL ANSWER: [letter]
+\end{quote}
+\textbf{Gold Answer:} D) West
 
 \subsection{Applied Track Prompts}
 
@@ -251,6 +346,7 @@ FINAL ANSWER: [latitude], [longitude]
 What city is located at coordinates 48.8566, 2.3522?\\
 FINAL ANSWER: [city name]
 \end{quote}
+\textbf{Gold Answer:} Paris, France
 
 \paragraph{Name Disambiguation}
 \begin{quote}\ttfamily\small
@@ -261,6 +357,7 @@ C) Springfield, Missouri\\
 D) Springfield, Ohio\\
 FINAL ANSWER: [letter]
 \end{quote}
+\textbf{Gold Answer:} B) Springfield, Illinois
 
 \paragraph{Proximity}
 \begin{quote}\ttfamily\small
@@ -271,10 +368,49 @@ C) Brussels (50.8503, 4.3517)\\
 D) Amsterdam (52.3676, 4.9041)\\
 FINAL ANSWER: [letter]
 \end{quote}
+\textbf{Gold Answer:} C) Brussels
+
+\paragraph{Relative Position (Applied)}
+\begin{quote}\ttfamily\small
+What is the cardinal direction from Mikkeli to Sosnovka?\\
+\\
+A) North ~~B) South ~~C) East ~~D) West\\
+\\
+FINAL ANSWER: [letter]
+\end{quote}
+\textbf{Gold Answer:} B) South
+
+\paragraph{Route Analysis}
+\begin{quote}\ttfamily\small
+Is Canberra approximately on the direct path from Gr\"{o}benzell to Dois Irm\~{a}os?\\
+\\
+FINAL ANSWER: [Yes/No]
+\end{quote}
+\textbf{Gold Answer:} No (detour: 170.4\%)
+
+\paragraph{Boundary Analysis}
+\begin{quote}\ttfamily\small
+Group these cities by continent: Corroios, Wimbledon, Toms River, Santa Ana\\
+\\
+FINAL ANSWER: [grouping]
+\end{quote}
+\textbf{Gold Answer:} Europe: \{Corroios, Wimbledon\}, North America: \{Toms River, Santa Ana\}
 
 \paragraph{Spatial Patterns}
 \begin{quote}\ttfamily\small
-Which location is the geographic outlier among: Gdańsk, Castlereagh, Vostryakovo, Shchëkino, Chiconcuac?\\
+Which location is the geographic outlier among: Gda\'{n}sk, Castlereagh, Vostryakovo, Shch\"{e}kino, Chiconcuac?\\
 FINAL ANSWER: [city name]
 \end{quote}
+\textbf{Gold Answer:} Chiconcuac (located in Mexico; other four cities are in Europe)
+
+\paragraph{Terrain Classification}
+\begin{quote}\ttfamily\small
+What type of terrain/environment is at coordinates -27.4698, 153.0251?\\
+\\
+A) Urban ~~B) Arctic/Ice ~~C) Ocean/Sea\\
+D) Mountain ~~E) River/Lake ~~F) Desert\\
+\\
+FINAL ANSWER: [letter]
+\end{quote}
+\textbf{Gold Answer:} A) Urban (Brisbane, Australia)
 

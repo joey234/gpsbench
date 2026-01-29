@@ -17,10 +17,12 @@ import seaborn as sns
 # Set style
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'DejaVu Sans'
-plt.rcParams['font.size'] = 10
-plt.rcParams['axes.labelsize'] = 11
-plt.rcParams['axes.titlesize'] = 12
-plt.rcParams['legend.fontsize'] = 9
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
 plt.rcParams['figure.dpi'] = 150
 
 OUTPUT_DIR = Path('paper/figures')
@@ -134,14 +136,14 @@ def plot_overall_accuracy(models):
         ax.annotate(f'{height:.1f}',
                    xy=(bar.get_x() + bar.get_width()/2, height),
                    xytext=(0, 3), textcoords="offset points",
-                   ha='center', va='bottom', fontsize=8)
+                   ha='center', va='bottom', fontsize=11)
 
     for bar in bars2:
         height = bar.get_height()
         ax.annotate(f'{height:.1f}',
                    xy=(bar.get_x() + bar.get_width()/2, height),
                    xytext=(0, 3), textcoords="offset points",
-                   ha='center', va='bottom', fontsize=8)
+                   ha='center', va='bottom', fontsize=11)
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'main_results_overall.pdf', bbox_inches='tight')
@@ -282,21 +284,21 @@ def plot_task_difficulty_average(models):
     # Add difficulty tier lines
     ax.axhline(y=95, color='green', linestyle='--', alpha=0.7, linewidth=1.5)
     ax.axhline(y=25, color='red', linestyle='--', alpha=0.7, linewidth=1.5)
-    ax.text(len(x)-0.5, 97, 'Solved (>95%)', ha='right', fontsize=9, color='green', fontweight='bold')
-    ax.text(len(x)-0.5, 27, 'Unsolved (<25%)', ha='right', fontsize=9, color='red', fontweight='bold')
+    ax.text(len(x)-0.5, 97, 'Solved (>95%)', ha='right', fontsize=12, color='green', fontweight='bold')
+    ax.text(len(x)-0.5, 27, 'Unsolved (<25%)', ha='right', fontsize=12, color='red', fontweight='bold')
 
-    ax.set_xlabel('Task', fontsize=11)
-    ax.set_ylabel('Accuracy (%)', fontsize=11)
-    ax.set_title('Task Difficulty: Mean Accuracy Across 14 LLMs (±1 std)', fontsize=12)
+    ax.set_xlabel('Task', fontsize=14)
+    ax.set_ylabel('Accuracy (%)', fontsize=14)
+    ax.set_title('Task Difficulty: Mean Accuracy Across 14 LLMs (±1 std)', fontsize=15)
     ax.set_xticks(x)
-    ax.set_xticklabels(all_task_names, fontsize=9)
+    ax.set_xticklabels(all_task_names, fontsize=12)
     ax.set_ylim(0, 110)
 
     # Legend
     from matplotlib.patches import Patch
     legend_elements = [Patch(facecolor='#4472C4', label='Applied Track'),
                        Patch(facecolor='#ED7D31', label='Pure GPS Track')]
-    ax.legend(handles=legend_elements, loc='upper right', fontsize=9)
+    ax.legend(handles=legend_elements, loc='upper right', fontsize=12)
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'task_difficulty_average.pdf', bbox_inches='tight')
@@ -345,22 +347,22 @@ def plot_combined_heatmap(models):
     sns.heatmap(applied_data, annot=True, fmt='.0f', cmap='RdYlGn',
                 xticklabels=applied_task_names, yticklabels=model_names,
                 vmin=0, vmax=100, ax=ax1, cbar=False,
-                annot_kws={'size': 9})
-    ax1.set_title('(a) Applied Track', fontsize=12, fontweight='bold')
+                annot_kws={'size': 12})
+    ax1.set_title('(a) Applied Track', fontsize=15, fontweight='bold')
     ax1.set_xlabel('')
     ax1.set_ylabel('')
-    ax1.tick_params(axis='x', labelsize=9)
-    ax1.tick_params(axis='y', labelsize=10)
+    ax1.tick_params(axis='x', labelsize=12)
+    ax1.tick_params(axis='y', labelsize=13)
 
     # Pure GPS track heatmap
     sns.heatmap(pure_gps_data, annot=True, fmt='.0f', cmap='RdYlGn',
                 xticklabels=pure_gps_task_names, yticklabels=[],
                 vmin=0, vmax=100, ax=ax2, cbar_kws={'label': 'Accuracy (%)'},
-                annot_kws={'size': 9})
-    ax2.set_title('(b) Pure GPS Track', fontsize=12, fontweight='bold')
+                annot_kws={'size': 12})
+    ax2.set_title('(b) Pure GPS Track', fontsize=15, fontweight='bold')
     ax2.set_xlabel('')
     ax2.set_ylabel('')
-    ax2.tick_params(axis='x', labelsize=9)
+    ax2.tick_params(axis='x', labelsize=12)
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'per_task_heatmap_combined.pdf', bbox_inches='tight')
@@ -441,7 +443,7 @@ def plot_radar_chart(models):
         ax.fill(angles, values, alpha=0.1, color=colors[i])
 
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(task_names, size=9)
+    ax.set_xticklabels(task_names, size=12)
     ax.set_ylim(0, 100)
     ax.set_title('GPSBench Applied Track: Model Comparison', size=14, y=1.08)
     ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))
@@ -485,47 +487,47 @@ def plot_track_comparison_scatter(models):
 
     # Add diagonal line
     ax.plot([30, 95], [30, 95], 'k--', alpha=0.3, linewidth=1.5)
-    ax.text(82, 84, 'y=x', fontsize=9, alpha=0.5)
+    ax.text(76, 78, 'y=x', fontsize=15, alpha=0.5, rotation=45)
 
-    ax.set_xlabel('Applied Track Accuracy (%)', fontsize=11)
-    ax.set_ylabel('Pure GPS Track Accuracy (%)', fontsize=11)
-    ax.set_title('GPSBench: Applied vs Pure GPS Track Performance', fontsize=12)
-    ax.set_xlim(42, 80)
-    ax.set_ylim(32, 90)
+    ax.set_xlabel('Applied Track Accuracy (%)')
+    ax.set_ylabel('Pure GPS Track Accuracy (%)')
+    ax.set_title('GPSBench: Applied vs Pure GPS Track Performance')
+    ax.set_xlim(42, 82)
+    ax.set_ylim(32, 92)
     ax.grid(True, alpha=0.3)
 
     # Add annotations with full model names and smart positioning
-    # Carefully tuned offsets to avoid all overlaps
+    # Carefully tuned offsets to avoid all overlaps with larger fonts
     label_offsets = {
-        'GPT-5.1': (10, 3),
-        'GPT-5-mini': (10, 3),
-        'GPT-5-nano': (10, -8),
-        'GPT-4.1': (10, -10),
-        'GPT-4.1-mini': (-90, 8),
-        'Gemini-2.5-Pro': (-100, 5),
-        'Gemini-2.5-Flash': (10, -8),
-        'Claude-Haiku-4.5': (10, 5),
-        'Mistral-Large': (-90, -10),
-        'Mistral-Small-24B': (-115, 5),
-        'Qwen3-235B': (10, 5),
-        'Qwen3-30B': (-80, -12),
-        'Qwen3-14b': (10, 5),
-        'Qwen3-8b': (-70, -10),
+        'GPT-5.1': (12, 5),
+        'GPT-5-mini': (12, 5),
+        'GPT-5-nano': (12, -12),
+        'GPT-4.1': (12, -12),
+        'GPT-4.1-mini': (-130, 12),
+        'Gemini-2.5-pro': (-140, 5),
+        'Gemini-2.5-flash': (12, -12),
+        'Claude-haiku-4.5': (12, 8),
+        'Mistral-large': (12, -14),
+        'Mistral-small-24b-instruct': (-180, -14),
+        'Qwen3-235b-a22b-2507': (-180, 10),
+        'Qwen3-30b-a3b-instruct-2507': (-200, -14),
+        'Qwen3-14b': (12, -14),
+        'Qwen3-8b': (12, 8),
     }
 
     for a, p, n in zip(applied, pure_gps, names):
-        offset = label_offsets.get(n, (10, 0))
+        offset = label_offsets.get(n, (12, 0))
         ax.annotate(n, (a, p), xytext=offset,
-                   textcoords='offset points', fontsize=9,
+                   textcoords='offset points', fontsize=14,
                    alpha=0.9,
                    arrowprops=dict(arrowstyle='-', color='gray', alpha=0.4, lw=0.5) if abs(offset[0]) > 50 else None)
 
     # Add legend for model families
     from matplotlib.lines import Line2D
     legend_elements = [Line2D([0], [0], marker='o', color='w',
-                              markerfacecolor=color, markersize=10, label=family)
+                              markerfacecolor=color, markersize=12, label=family)
                        for family, color in family_colors.items()]
-    ax.legend(handles=legend_elements, loc='lower right', fontsize=9, title='Model Family')
+    ax.legend(handles=legend_elements, loc='lower right', title='Model Family')
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'main_results_scatter.pdf', bbox_inches='tight')

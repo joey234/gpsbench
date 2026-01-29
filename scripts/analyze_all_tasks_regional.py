@@ -277,7 +277,7 @@ def plot_combined_regional(all_task_results, output_path):
         for bar, acc in zip(bars, accs):
             if acc > 0:
                 ax.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 1,
-                       f'{acc:.0f}', ha='center', va='bottom', fontsize=8)
+                       f'{acc:.0f}', ha='center', va='bottom', fontsize=11)
 
     ax.set_ylabel('Accuracy (%)')
     ax.set_xlabel('Continent')

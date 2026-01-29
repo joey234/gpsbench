@@ -14,10 +14,12 @@ import seaborn as sns
 # Set style
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'DejaVu Sans'
-plt.rcParams['font.size'] = 10
-plt.rcParams['axes.labelsize'] = 11
-plt.rcParams['axes.titlesize'] = 12
-plt.rcParams['legend.fontsize'] = 9
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
 plt.rcParams['figure.dpi'] = 150
 
 OUTPUT_DIR = Path('paper/figures')
@@ -142,7 +144,7 @@ def plot_single_task_bar(models, task_name, track, output_name, task_display_nam
     ax.set_ylabel('Accuracy (%)')
     ax.set_title(f'{display_name}')
     ax.set_xticks(range(len(model_names)))
-    ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=9)
+    ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=12)
     ax.set_ylim(0, 105)
 
     # Add value labels
@@ -151,12 +153,12 @@ def plot_single_task_bar(models, task_name, track, output_name, task_display_nam
         ax.annotate(f'{acc:.1f}',
                    xy=(bar.get_x() + bar.get_width()/2, height),
                    xytext=(0, 3), textcoords="offset points",
-                   ha='center', va='bottom', fontsize=8)
+                   ha='center', va='bottom', fontsize=11)
 
     # Add mean line
     mean_acc = np.mean(accuracies)
     ax.axhline(y=mean_acc, color='gray', linestyle='--', linewidth=1, alpha=0.7)
-    ax.text(len(model_names)-0.5, mean_acc+2, f'Mean: {mean_acc:.1f}%', fontsize=8, color='gray')
+    ax.text(len(model_names)-0.5, mean_acc+2, f'Mean: {mean_acc:.1f}%', fontsize=11, color='gray')
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / f'{output_name}.pdf', bbox_inches='tight')
@@ -202,11 +204,11 @@ def plot_applied_tasks_grid(models):
                 colors.append('#e74c3c')
 
         ax.bar(range(len(model_names)), accuracies, color=colors, edgecolor='black', linewidth=0.3)
-        ax.set_title(display_name, fontsize=10, fontweight='bold')
+        ax.set_title(display_name, fontsize=13, fontweight='bold')
         ax.set_xticks(range(len(model_names)))
-        ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=7)
+        ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=10)
         ax.set_ylim(0, 105)
-        ax.set_ylabel('Accuracy (%)', fontsize=8)
+        ax.set_ylabel('Accuracy (%)', fontsize=11)
 
         mean_acc = np.mean(accuracies)
         ax.axhline(y=mean_acc, color='gray', linestyle='--', linewidth=0.8, alpha=0.7)
@@ -255,7 +257,7 @@ def plot_pure_gps_tasks_grid(models):
 
         if not models_with_task:
             ax.text(0.5, 0.5, 'No data', ha='center', va='center', transform=ax.transAxes)
-            ax.set_title(display_name, fontsize=10, fontweight='bold')
+            ax.set_title(display_name, fontsize=13, fontweight='bold')
             continue
 
         model_names = [m['name'].split('-')[0] for m in models_with_task]
@@ -273,11 +275,11 @@ def plot_pure_gps_tasks_grid(models):
                 colors.append('#e74c3c')
 
         ax.bar(range(len(model_names)), accuracies, color=colors, edgecolor='black', linewidth=0.3)
-        ax.set_title(display_name, fontsize=10, fontweight='bold')
+        ax.set_title(display_name, fontsize=13, fontweight='bold')
         ax.set_xticks(range(len(model_names)))
-        ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=7)
+        ax.set_xticklabels(model_names, rotation=45, ha='right', fontsize=10)
         ax.set_ylim(0, 105)
-        ax.set_ylabel('Accuracy (%)', fontsize=8)
+        ax.set_ylabel('Accuracy (%)', fontsize=11)
 
         mean_acc = np.mean(accuracies)
         ax.axhline(y=mean_acc, color='gray', linestyle='--', linewidth=0.8, alpha=0.7)

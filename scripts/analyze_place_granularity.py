@@ -354,14 +354,14 @@ def create_chart(all_results, output_file):
 
         for bar, acc in zip(bars, accs):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                   f'{acc:.0f}%', ha='center', va='bottom', fontsize=6, rotation=90)
+                   f'{acc:.0f}%', ha='center', va='bottom', fontsize=9, rotation=90)
 
-    ax.set_xlabel('Model', fontsize=12)
-    ax.set_ylabel('Accuracy (%)', fontsize=12)
+    ax.set_xlabel('Model', fontsize=15)
+    ax.set_ylabel('Accuracy (%)', fontsize=15)
     ax.set_title('Place Association: Accuracy by Granularity Level\n(Continent → Country → Region → City)',
                  fontsize=14, fontweight='bold')
     ax.set_xticks(x + width * 2)
-    ax.set_xticklabels(models, fontsize=9, rotation=15, ha='right')
+    ax.set_xticklabels(models, fontsize=12, rotation=15, ha='right')
     ax.set_ylim(0, 110)
     ax.legend(loc='upper right')
     ax.grid(axis='y', alpha=0.3)

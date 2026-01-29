@@ -5,6 +5,14 @@ Scaling analysis for GPSBench using Mistral and Qwen models with known parameter
 
 import pandas as pd
 import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
+plt.rcParams['figure.dpi'] = 150
 import numpy as np
 import json
 
@@ -152,13 +160,13 @@ def plot_scaling(results_df):
                            textcoords="offset points",
                            xytext=(0, 8),
                            ha='center',
-                           fontsize=7)
+                           fontsize=10)
 
         ax.set_xlabel('Parameters (B)')
         ax.set_ylabel('Accuracy (%)')
         ax.set_title(title)
         ax.set_xscale('log')
-        ax.legend(fontsize=8, loc='lower right')
+        ax.legend(fontsize=11, loc='lower right')
         ax.grid(True, alpha=0.3)
         ax.set_ylim(35, 85)
 

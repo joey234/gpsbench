@@ -1,0 +1,186 @@
+================================================================================
+MODEL STRENGTHS & WEAKNESSES
+================================================================================
+
+
+mistral-large-2512
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Bounding Box (pure_gps): 99.71%
+  2. Name Disambiguation (applied): 99.41%
+  3. Spatial Patterns (applied): 90.10%
+
+Top Weaknesses:
+  1. Bearing Computation (pure_gps): 21.86%
+  2. Place Association (applied): 10.59%
+  3. Coordinate Interpolation (pure_gps): 0.69%
+
+qwen3-30b-a3b-instruct-2507
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Bounding Box (pure_gps): 100.00%
+  2. Name Disambiguation (applied): 99.71%
+  3. Boundary Analysis (applied): 99.71%
+
+Top Weaknesses:
+  1. Spatial Patterns (applied): 8.14%
+  2. Coordinate Interpolation (pure_gps): 6.37%
+  3. Place Association (applied): 0.78%
+
+gpt-4.1
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Bounding Box (pure_gps): 100.00%
+  2. Name Disambiguation (applied): 100.00%
+  3. Bearing Computation (pure_gps): 97.75%
+
+Top Weaknesses:
+  1. Boundary Analysis (applied): 45.20%
+  2. Place Association (applied): 16.76%
+  3. Coordinate Interpolation (pure_gps): 11.37%
+
+gpt-5.1
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 100.00%
+  2. Bearing Computation (pure_gps): 99.12%
+  3. Bounding Box (pure_gps): 97.45%
+
+Top Weaknesses:
+  1. Coordinate Interpolation (pure_gps): 54.12%
+  2. Relative Position (pure_gps): 46.57%
+  3. Place Association (applied): 12.94%
+
+qwen3-235b-a22b-2507
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 99.90%
+  2. Bounding Box (pure_gps): 99.71%
+  3. Distance Calculation (pure_gps): 96.57%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 21.33%
+  2. Coordinate Interpolation (pure_gps): 11.86%
+  3. Place Association (applied): 2.84%
+
+gpt-4.1-mini
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 100.00%
+  2. Bounding Box (pure_gps): 99.90%
+  3. Distance Calculation (pure_gps): 94.02%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 16.34%
+  2. Coordinate Interpolation (pure_gps): 9.12%
+  3. Place Association (applied): 4.71%
+
+mistral-small-24b-instruct-2501
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 99.12%
+  2. Boundary Analysis (applied): 97.84%
+  3. Format Conversion (pure_gps): 89.80%
+
+Top Weaknesses:
+  1. Place Association (applied): 2.65%
+  2. Proximity & Nearest Neighbor (applied): 0.59%
+  3. Coordinate Interpolation (pure_gps): 0.10%
+
+gemini-2.5-flash
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Bounding Box (pure_gps): 100.00%
+  2. Name Disambiguation (applied): 99.12%
+  3. Spatial Patterns (applied): 92.06%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 36.11%
+  2. Place Association (applied): 17.06%
+  3. Coordinate Interpolation (pure_gps): 2.75%
+
+qwen3-8b
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Boundary Analysis (applied): 97.16%
+  2. Name Disambiguation (applied): 96.37%
+  3. Bounding Box (pure_gps): 94.90%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 10.86%
+  2. Place Association (applied): 0.98%
+  3. Coordinate Interpolation (pure_gps): 0.88%
+
+qwen3-14b
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 96.18%
+  2. Boundary Analysis (applied): 88.04%
+  3. Format Conversion (pure_gps): 83.14%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 5.97%
+  2. Place Association (applied): 2.16%
+  3. Coordinate Interpolation (pure_gps): 1.57%
+
+gpt-5-nano-2025-08-07
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 99.90%
+  2. Boundary Analysis (applied): 98.53%
+  3. Bounding Box (pure_gps): 97.45%
+
+Top Weaknesses:
+  1. Route Geometry (pure_gps): 26.37%
+  2. Place Association (applied): 1.27%
+  3. Coordinate Interpolation (pure_gps): 0.29%
+
+gpt-5-mini-2025-08-07
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Distance Calculation (pure_gps): 100.00%
+  2. Bearing Computation (pure_gps): 99.71%
+  3. Bounding Box (pure_gps): 99.71%
+
+Top Weaknesses:
+  1. Missing Data Inference (applied): 69.90%
+  2. Relative Position (applied): 58.53%
+  3. Place Association (applied): 2.45%
+
+claude-haiku-4.5
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Name Disambiguation (applied): 100.00%
+  2. Bounding Box (pure_gps): 99.31%
+  3. Boundary Analysis (applied): 97.65%
+
+Top Weaknesses:
+  1. Coordinate System Transformation (pure_gps): 20.74%
+  2. Place Association (applied): 3.63%
+  3. Coordinate Interpolation (pure_gps): 2.65%
+
+gemini-2.5-pro
+--------------------------------------------------------------------------------
+
+Top Strengths:
+  1. Bounding Box (pure_gps): 100.00%
+  2. Distance Calculation (pure_gps): 99.90%
+  3. Name Disambiguation (applied): 99.90%
+
+Top Weaknesses:
+  1. Route Geometry (pure_gps): 43.63%
+  2. Place Association (applied): 23.04%
+  3. Boundary Analysis (applied): 21.47%

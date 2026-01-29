@@ -1,0 +1,18 @@
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Number of models evaluated: 14
+Best overall accuracy: 77.57%
+Worst overall accuracy: 46.72%
+Average overall accuracy: 61.68%
+
+PURE_GPS Track:
+  Best: 83.13%
+  Worst: 33.66%
+  Average: 55.65%
+
+APPLIED Track:
+  Best: 74.13%
+  Worst: 53.88%
+  Average: 67.71%

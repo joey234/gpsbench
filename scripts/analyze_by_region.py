@@ -427,22 +427,22 @@ def create_region_heatmap(all_results, output_file):
 
     ax.set_xticks(np.arange(len(regions)))
     ax.set_yticks(np.arange(len(tasks)))
-    ax.set_xticklabels(regions, fontsize=10, rotation=45, ha='right')
-    ax.set_yticklabels(tasks, fontsize=9)
+    ax.set_xticklabels(regions, fontsize=13, rotation=45, ha='right')
+    ax.set_yticklabels(tasks, fontsize=12)
 
     # Add value annotations
     for i in range(len(tasks)):
         for j in range(len(regions)):
             if not np.isnan(data[i, j]):
                 text = ax.text(j, i, f'{data[i, j]:.0f}%',
-                              ha='center', va='center', fontsize=8,
+                              ha='center', va='center', fontsize=11,
                               color='white' if data[i, j] < 50 else 'black')
 
     ax.set_title(f'Accuracy by Region - {best_model}\n(Green = Better, Gray = Insufficient Data)',
                  fontsize=14, fontweight='bold')
 
     cbar = ax.figure.colorbar(im, ax=ax)
-    cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=11)
+    cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=14)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')
@@ -481,16 +481,16 @@ def create_region_comparison_chart(all_results, output_file):
         for bar, acc in zip(bars, accs):
             if acc > 0:
                 ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                       f'{acc:.0f}%', ha='center', va='bottom', fontsize=7, rotation=45)
+                       f'{acc:.0f}%', ha='center', va='bottom', fontsize=10, rotation=45)
 
-    ax.set_xlabel('Region', fontsize=12)
-    ax.set_ylabel('Average Accuracy (%)', fontsize=12)
+    ax.set_xlabel('Region', fontsize=15)
+    ax.set_ylabel('Average Accuracy (%)', fontsize=15)
     ax.set_title('Average Accuracy by Geographic Region (All Tasks)',
                  fontsize=14, fontweight='bold')
     ax.set_xticks(x)
-    ax.set_xticklabels(regions, fontsize=11)
+    ax.set_xticklabels(regions, fontsize=14)
     ax.set_ylim(0, 110)
-    ax.legend(loc='upper right', fontsize=9)
+    ax.legend(loc='upper right', fontsize=12)
     ax.grid(axis='y', alpha=0.3)
 
     plt.tight_layout()

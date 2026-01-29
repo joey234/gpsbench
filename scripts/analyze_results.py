@@ -1235,14 +1235,14 @@ class ResultsAnalyzer:
         colors = plt.cm.viridis(np.linspace(0.2, 0.8, len(models)))
         bars = ax.barh(models[::-1], accuracies[::-1], color=colors[::-1])
 
-        ax.set_xlabel('Accuracy (%)', fontsize=12)
+        ax.set_xlabel('Accuracy (%)', fontsize=15)
         ax.set_title('GPSBench Overall Model Comparison', fontsize=14, fontweight='bold')
         ax.set_xlim(0, 100)
 
         # Add value labels
         for bar, acc in zip(bars, accuracies[::-1]):
             ax.text(bar.get_width() + 1, bar.get_y() + bar.get_height()/2,
-                   f'{acc:.1f}%', va='center', fontsize=10)
+                   f'{acc:.1f}%', va='center', fontsize=13)
 
         plt.tight_layout()
         chart_path = output_dir / 'chart_overall_comparison.png'
@@ -1274,12 +1274,12 @@ class ResultsAnalyzer:
         bars1 = ax.bar(x - width/2, pure_gps, width, label='Pure GPS', color='steelblue')
         bars2 = ax.bar(x + width/2, applied, width, label='Applied', color='coral')
 
-        ax.set_ylabel('Accuracy (%)', fontsize=12)
+        ax.set_ylabel('Accuracy (%)', fontsize=15)
         ax.set_title('GPSBench Track Comparison (Pure GPS vs Applied)', fontsize=14, fontweight='bold')
         ax.set_xticks(x)
-        ax.set_xticklabels(models, rotation=45, ha='right', fontsize=10)
+        ax.set_xticklabels(models, rotation=45, ha='right', fontsize=13)
         ax.set_ylim(0, 105)
-        ax.legend(fontsize=11)
+        ax.legend(fontsize=14)
         ax.grid(axis='y', alpha=0.3)
 
         plt.tight_layout()
@@ -1342,19 +1342,19 @@ class ResultsAnalyzer:
 
         ax.set_xticks(np.arange(len(regions)))
         ax.set_yticks(np.arange(len(models)))
-        ax.set_xticklabels(regions, fontsize=11)
-        ax.set_yticklabels(models, fontsize=10)
+        ax.set_xticklabels(regions, fontsize=14)
+        ax.set_yticklabels(models, fontsize=13)
 
         # Add value annotations
         for i in range(len(models)):
             for j in range(len(regions)):
                 color = 'white' if data[i, j] < 50 else 'black'
                 ax.text(j, i, f'{data[i, j]:.1f}%', ha='center', va='center',
-                       fontsize=9, color=color)
+                       fontsize=12, color=color)
 
         ax.set_title('GPSBench Accuracy by Geographic Region', fontsize=14, fontweight='bold')
         cbar = ax.figure.colorbar(im, ax=ax)
-        cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=11)
+        cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=14)
 
         plt.tight_layout()
         chart_path = output_dir / 'chart_regional_heatmap.png'
@@ -1740,13 +1740,13 @@ class ResultsAnalyzer:
             offset = (i - len(models)/2 + 0.5) * width
             ax.bar(x + offset, accuracies, width, label=model, color=colors[i])
 
-        ax.set_xlabel('Nearest City Population', fontsize=12)
-        ax.set_ylabel('Accuracy (%)', fontsize=12)
+        ax.set_xlabel('Nearest City Population', fontsize=15)
+        ax.set_ylabel('Accuracy (%)', fontsize=15)
         ax.set_title('All Tasks: Accuracy by Nearest City Population', fontsize=14, fontweight='bold')
         ax.set_xticks(x)
-        ax.set_xticklabels(pop_buckets, fontsize=11)
+        ax.set_xticklabels(pop_buckets, fontsize=14)
         ax.set_ylim(0, 100)
-        ax.legend(loc='upper left', fontsize=9)
+        ax.legend(loc='upper left', fontsize=12)
         ax.grid(axis='y', alpha=0.3)
 
         plt.tight_layout()

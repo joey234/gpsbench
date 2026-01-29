@@ -1,0 +1,257 @@
+{
+  "models": [
+    {
+      "name": "gpt-5-mini-2025-08-07",
+      "overall_accuracy": 77.57324910140507,
+      "total_correct": 14244,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 83.13003702896972,
+          "correct": 7633,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 72.01525054466231,
+          "correct": 6611,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gpt-5.1",
+      "overall_accuracy": 73.51051083759938,
+      "total_correct": 13498,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 72.89261598780222,
+          "correct": 6693,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 74.12854030501089,
+          "correct": 6805,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gemini-2.5-pro",
+      "overall_accuracy": 71.86036379479359,
+      "total_correct": 13195,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 72.02134611195818,
+          "correct": 6613,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 71.69934640522875,
+          "correct": 6582,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gpt-4.1",
+      "overall_accuracy": 67.25846857640781,
+      "total_correct": 12350,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 61.23938139838815,
+          "correct": 5623,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 73.27886710239652,
+          "correct": 6727,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gemini-2.5-flash",
+      "overall_accuracy": 64.66615837054786,
+      "total_correct": 11874,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 55.9681986495317,
+          "correct": 5139,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 73.36601307189542,
+          "correct": 6735,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gpt-4.1-mini",
+      "overall_accuracy": 64.51366953490904,
+      "total_correct": 11846,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 58.50577216292747,
+          "correct": 5372,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 70.52287581699346,
+          "correct": 6474,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "claude-haiku-4.5",
+      "overall_accuracy": 63.13582398431543,
+      "total_correct": 11593,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 54.39991287301241,
+          "correct": 4995,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 71.87363834422658,
+          "correct": 6598,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "qwen3-235b-a22b-2507",
+      "overall_accuracy": 61.16980721054352,
+      "total_correct": 11232,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 52.50490089305162,
+          "correct": 4821,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 69.83660130718954,
+          "correct": 6411,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "mistral-large-2512",
+      "overall_accuracy": 59.33449515303344,
+      "total_correct": 10895,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 46.18819429318231,
+          "correct": 4241,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 72.48366013071895,
+          "correct": 6654,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "gpt-5-nano-2025-08-07",
+      "overall_accuracy": 57.47739897614639,
+      "total_correct": 10554,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 51.50294053583097,
+          "correct": 4729,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 63.453159041394336,
+          "correct": 5825,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "qwen3-8b",
+      "overall_accuracy": 53.066114802309116,
+      "total_correct": 9744,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 43.9011108690917,
+          "correct": 4031,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 62.233115468409586,
+          "correct": 5713,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "qwen3-30b-a3b-instruct-2507",
+      "overall_accuracy": 53.00620847402244,
+      "total_correct": 9733,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 52.134611195817904,
+          "correct": 4787,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 53.87799564270153,
+          "correct": 4946,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "qwen3-14b",
+      "overall_accuracy": 50.234179283302474,
+      "total_correct": 9224,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 41.01502940535831,
+          "correct": 3766,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 59.45533769063181,
+          "correct": 5458,
+          "total": 9180
+        }
+      }
+    },
+    {
+      "name": "mistral-small-24b-instruct-2501",
+      "overall_accuracy": 46.71604400392114,
+      "total_correct": 8578,
+      "total_cases": 18362,
+      "tracks": {
+        "pure_gps": {
+          "accuracy": 33.663689827924195,
+          "correct": 3091,
+          "total": 9182
+        },
+        "applied": {
+          "accuracy": 59.77124183006536,
+          "correct": 5487,
+          "total": 9180
+        }
+      }
+    }
+  ],
+  "generated_at": "2026-01-29T09:40:54.210393"
+}

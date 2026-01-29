@@ -17,10 +17,12 @@ import seaborn as sns
 # Set style
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'DejaVu Sans'
-plt.rcParams['font.size'] = 10
-plt.rcParams['axes.labelsize'] = 11
-plt.rcParams['axes.titlesize'] = 12
-plt.rcParams['legend.fontsize'] = 9
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
 plt.rcParams['figure.dpi'] = 150
 
 OUTPUT_DIR = Path('paper/figures')
@@ -211,7 +213,7 @@ def plot_size_vs_accuracy(models):
     ax1.scatter(sizes, applied_accs, c=colors, s=150, alpha=0.8, edgecolors='black', linewidths=0.5)
     for i, name in enumerate(names):
         ax1.annotate(name.split('-')[0], (sizes[i], applied_accs[i]),
-                    xytext=(5, 5), textcoords='offset points', fontsize=8, alpha=0.7)
+                    xytext=(5, 5), textcoords='offset points', fontsize=11, alpha=0.7)
 
     # Add trend line
     z = np.polyfit(np.log(sizes), applied_accs, 1)
@@ -230,7 +232,7 @@ def plot_size_vs_accuracy(models):
     ax2.scatter(sizes, pure_gps_accs, c=colors, s=150, alpha=0.8, edgecolors='black', linewidths=0.5)
     for i, name in enumerate(names):
         ax2.annotate(name.split('-')[0], (sizes[i], pure_gps_accs[i]),
-                    xytext=(5, 5), textcoords='offset points', fontsize=8, alpha=0.7)
+                    xytext=(5, 5), textcoords='offset points', fontsize=11, alpha=0.7)
 
     # Add trend line
     z2 = np.polyfit(np.log(sizes), pure_gps_accs, 1)
@@ -246,8 +248,8 @@ def plot_size_vs_accuracy(models):
 
     # Add legend
     handles = [mpatches.Patch(color=c, label=f) for f, c in family_colors.items()]
-    ax1.legend(handles=handles, loc='lower right', fontsize=8)
-    ax2.legend(handles=handles, loc='lower right', fontsize=8)
+    ax1.legend(handles=handles, loc='lower right', fontsize=11)
+    ax2.legend(handles=handles, loc='lower right', fontsize=11)
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'size_vs_accuracy.pdf', bbox_inches='tight')
@@ -348,7 +350,7 @@ def plot_noise_robustness(models):
     ax1.set_title('Accuracy vs GPS Noise Level')
     ax1.set_xticks(noise_levels)
     ax1.set_xticklabels(['0', '10', '50', '100', '500', '1000'])
-    ax1.legend(loc='lower left', fontsize=8, ncol=2)
+    ax1.legend(loc='lower left', fontsize=11, ncol=2)
     ax1.grid(True, alpha=0.3)
     ax1.set_ylim(0, 70)
 

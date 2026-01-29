@@ -2,6 +2,14 @@
 """Generate finetuning comparison figure for GPSBench paper."""
 
 import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'DejaVu Sans'
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
+plt.rcParams['figure.dpi'] = 150
 import numpy as np
 
 # Data: Zero-shot vs Finetuned for Qwen3-30B
@@ -49,16 +57,16 @@ for i, (zs, ft) in enumerate(zip(zero_shot, finetuned)):
     delta = ft - zs
     if delta > 5:
         ax1.annotate(f'+{delta:.0f}', xy=(x[i] + width/2, ft), xytext=(0, 3),
-                    textcoords='offset points', ha='center', fontsize=7, color='green', fontweight='bold')
+                    textcoords='offset points', ha='center', fontsize=10, color='green', fontweight='bold')
     elif delta < -5:
         ax1.annotate(f'{delta:.0f}', xy=(x[i] + width/2, ft + 2), xytext=(0, 3),
-                    textcoords='offset points', ha='center', fontsize=7, color='red', fontweight='bold')
+                    textcoords='offset points', ha='center', fontsize=10, color='red', fontweight='bold')
 
 ax1.set_xlabel('Task')
 ax1.set_ylabel('Accuracy (%)')
 ax1.set_title('Applied Track: Zero-shot vs Finetuned')
 ax1.set_xticks(x)
-ax1.set_xticklabels(tasks, rotation=45, ha='right', fontsize=9)
+ax1.set_xticklabels(tasks, rotation=45, ha='right', fontsize=12)
 ax1.legend(loc='upper right')
 ax1.set_ylim(0, 110)
 ax1.axhline(y=52.3, color='#4472C4', linestyle='--', alpha=0.5, label='Zero-shot avg')
@@ -80,16 +88,16 @@ for i, (zs, ft) in enumerate(zip(zero_shot, finetuned)):
     delta = ft - zs
     if delta > 5:
         ax2.annotate(f'+{delta:.0f}', xy=(x[i] + width/2, ft), xytext=(0, 3),
-                    textcoords='offset points', ha='center', fontsize=7, color='green', fontweight='bold')
+                    textcoords='offset points', ha='center', fontsize=10, color='green', fontweight='bold')
     elif delta < -5:
         ax2.annotate(f'{delta:.0f}', xy=(x[i] + width/2, ft + 2), xytext=(0, 3),
-                    textcoords='offset points', ha='center', fontsize=7, color='red', fontweight='bold')
+                    textcoords='offset points', ha='center', fontsize=10, color='red', fontweight='bold')
 
 ax2.set_xlabel('Task')
 ax2.set_ylabel('Accuracy (%)')
 ax2.set_title('Pure GPS Track: Zero-shot vs Finetuned')
 ax2.set_xticks(x)
-ax2.set_xticklabels(tasks, rotation=45, ha='right', fontsize=9)
+ax2.set_xticklabels(tasks, rotation=45, ha='right', fontsize=12)
 ax2.legend(loc='upper right')
 ax2.set_ylim(0, 110)
 ax2.axhline(y=53.1, color='#4472C4', linestyle='--', alpha=0.5)

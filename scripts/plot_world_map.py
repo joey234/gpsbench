@@ -180,8 +180,8 @@ def plot_world_map_cartopy(cities, output_path):
                    edgecolors='none')
 
     # Legend
-    ax.legend(loc='lower left', fontsize=9, framealpha=0.9,
-              title='Cities by Continent', title_fontsize=10)
+    ax.legend(loc='lower left', fontsize=12, framealpha=0.9,
+              title='Cities by Continent', title_fontsize=13)
 
     # Title
     ax.set_title('GPSBench Geographic Coverage\n{:,} Unique Locations from GeoNames'.format(len(cities)),
@@ -231,8 +231,8 @@ def plot_world_map_basic(cities, output_path):
     # Formatting
     ax.set_xlim(-180, 180)
     ax.set_ylim(-60, 85)
-    ax.set_xlabel('Longitude', fontsize=11)
-    ax.set_ylabel('Latitude', fontsize=11)
+    ax.set_xlabel('Longitude', fontsize=14)
+    ax.set_ylabel('Latitude', fontsize=14)
     ax.set_title('GPSBench Geographic Coverage\n{:,} Unique Locations from GeoNames'.format(len(cities)),
                  fontsize=14, fontweight='bold')
 
@@ -242,8 +242,8 @@ def plot_world_map_basic(cities, output_path):
     ax.axvline(x=0, color='#666', linewidth=0.5)
 
     # Legend
-    ax.legend(loc='lower left', fontsize=9, framealpha=0.9,
-              title='Cities by Continent', title_fontsize=10)
+    ax.legend(loc='lower left', fontsize=12, framealpha=0.9,
+              title='Cities by Continent', title_fontsize=13)
 
     plt.tight_layout()
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')

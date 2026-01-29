@@ -103,16 +103,16 @@ def create_population_chart(all_results: dict, output_file: str):
         for bar, acc in zip(bars, accuracies):
             if acc > 0:
                 ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                       f'{acc:.0f}%', ha='center', va='bottom', fontsize=7, rotation=45)
+                       f'{acc:.0f}%', ha='center', va='bottom', fontsize=10, rotation=45)
 
-    ax.set_xlabel('City Population', fontsize=12)
-    ax.set_ylabel('Accuracy (%)', fontsize=12)
+    ax.set_xlabel('City Population', fontsize=15)
+    ax.set_ylabel('Accuracy (%)', fontsize=15)
     ax.set_title('Place Association: Accuracy by City Population\n(Larger cities are easier to identify)',
                  fontsize=14, fontweight='bold')
     ax.set_xticks(x)
-    ax.set_xticklabels(pop_buckets, fontsize=11)
+    ax.set_xticklabels(pop_buckets, fontsize=14)
     ax.set_ylim(0, 110)
-    ax.legend(loc='upper left', fontsize=9)
+    ax.legend(loc='upper left', fontsize=12)
     ax.grid(axis='y', alpha=0.3)
 
     plt.tight_layout()
@@ -139,15 +139,15 @@ def create_heatmap(all_results: dict, output_file: str):
 
     ax.set_xticks(np.arange(len(pop_buckets)))
     ax.set_yticks(np.arange(len(models)))
-    ax.set_xticklabels(pop_buckets, fontsize=11)
-    ax.set_yticklabels(models, fontsize=10)
-    ax.set_xlabel('City Population', fontsize=12)
+    ax.set_xticklabels(pop_buckets, fontsize=14)
+    ax.set_yticklabels(models, fontsize=13)
+    ax.set_xlabel('City Population', fontsize=15)
 
     # Add value annotations
     for i in range(len(models)):
         for j in range(len(pop_buckets)):
             text = ax.text(j, i, f'{data[i, j]:.1f}%',
-                          ha='center', va='center', fontsize=10,
+                          ha='center', va='center', fontsize=13,
                           color='white' if data[i, j] < 50 else 'black')
 
     ax.set_title('Place Association: Accuracy by City Population\n(Green = Better)',
@@ -155,7 +155,7 @@ def create_heatmap(all_results: dict, output_file: str):
 
     # Colorbar
     cbar = ax.figure.colorbar(im, ax=ax)
-    cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=11)
+    cbar.ax.set_ylabel('Accuracy (%)', rotation=-90, va='bottom', fontsize=14)
 
     plt.tight_layout()
     plt.savefig(output_file, dpi=150, bbox_inches='tight')

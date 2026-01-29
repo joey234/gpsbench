@@ -17,10 +17,12 @@ import numpy as np
 # Set style
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.family'] = 'DejaVu Sans'
-plt.rcParams['font.size'] = 10
-plt.rcParams['axes.labelsize'] = 11
-plt.rcParams['axes.titlesize'] = 12
-plt.rcParams['legend.fontsize'] = 9
+plt.rcParams['font.size'] = 14
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['legend.fontsize'] = 13
+plt.rcParams['xtick.labelsize'] = 13
+plt.rcParams['ytick.labelsize'] = 13
 plt.rcParams['figure.dpi'] = 150
 
 OUTPUT_DIR = Path('paper/figures')
@@ -308,7 +310,7 @@ def plot_granularity_line():
     ax.set_title('Hierarchical Degradation in Geographic Knowledge (All 14 Models)')
     ax.set_xticks(x)
     ax.set_xticklabels(level_labels)
-    ax.legend(loc='upper right', fontsize=7, ncol=2, framealpha=0.9)
+    ax.legend(loc='upper right', fontsize=10, ncol=2, framealpha=0.9)
     ax.set_ylim(0, 105)
     ax.grid(True, alpha=0.3)
 
@@ -358,7 +360,7 @@ def plot_downstream_augmentation():
         delta = a - b
         if delta != 0:
             ax1.annotate(f'+{delta:.1f}%', xy=(x1[i] + width/2, a + 2),
-                        ha='center', va='bottom', fontsize=9, color='#ED7D31', fontweight='bold')
+                        ha='center', va='bottom', fontsize=12, color='#ED7D31', fontweight='bold')
 
     # Hierarchical Spatial plot
     ax2 = axes[1]
@@ -380,7 +382,7 @@ def plot_downstream_augmentation():
         delta = a - b
         if delta > 0:
             ax2.annotate(f'+{delta:.0f}%', xy=(x2[i] + width/2, a + 2),
-                        ha='center', va='bottom', fontsize=9, color='#ED7D31', fontweight='bold')
+                        ha='center', va='bottom', fontsize=12, color='#ED7D31', fontweight='bold')
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'downstream_gps_augmentation.pdf', bbox_inches='tight')
@@ -409,7 +411,7 @@ def plot_downstream_combined():
         delta = a - b
         if delta > 0:
             ax.annotate(f'+{delta:.0f}%', xy=(x[i] + width/2, a + 2),
-                       ha='center', va='bottom', fontsize=9, fontweight='bold', color='#C65911')
+                       ha='center', va='bottom', fontsize=12, fontweight='bold', color='#C65911')
 
     ax.set_ylabel('Accuracy (%)')
     ax.set_title('Effect of GPS Coordinate Augmentation on Downstream Tasks')
@@ -420,8 +422,8 @@ def plot_downstream_combined():
 
     # Add vertical line to separate datasets
     ax.axvline(x=2.5, color='gray', linestyle='--', alpha=0.5)
-    ax.text(1, 108, 'MapEval', ha='center', fontsize=10, style='italic')
-    ax.text(4.5, 108, 'Hierarchical Spatial', ha='center', fontsize=10, style='italic')
+    ax.text(1, 108, 'MapEval', ha='center', fontsize=13, style='italic')
+    ax.text(4.5, 108, 'Hierarchical Spatial', ha='center', fontsize=13, style='italic')
 
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / 'downstream_gps_combined.pdf', bbox_inches='tight')
