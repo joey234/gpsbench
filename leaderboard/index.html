@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPSBench: Do Large Language Models Understand GPS Coordinates?</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ Title Block (always visible) ============ -->
+  <section class="title-block">
+    <div class="narrow">
+      <h1 class="paper-title">GPSBench: Do Large Language Models<br>Understand GPS Coordinates?</h1>
+      <div class="authors">
+        <span class="author">Thinh Hung Truong</span>,
+        <span class="author">Jey Han Lau</span>,
+        <span class="author">Jianzhong Qi</span>
+      </div>
+      <div class="affiliations">
+        <span>The University of Melbourne</span>
+      </div>
+      <div class="link-buttons">
+        <a href="https://arxiv.org/abs/2602.16105" class="link-btn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Paper</a>
+        <a href="https://github.com/joey234/gpsbench" class="link-btn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Code</a>
+        <a href="https://github.com/joey234/gpsbench" class="link-btn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Data</a>
+        <a href="#citation" class="link-btn" id="link-bibtex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6-6 6 6"/><path d="M6 15l6 6 6-6"/></svg> BibTeX</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Tab Navigation ============ -->
+  <nav class="tab-nav" id="tab-nav">
+    <div class="wide">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="leaderboard">Leaderboard</button>
+    </div>
+  </nav>
+
+  <!-- ============ OVERVIEW TAB ============ -->
+  <div class="tab-panel active" id="panel-overview">
+
+    <!-- Abstract -->
+    <section class="section" id="abstract">
+      <div class="narrow">
+        <h2>Abstract</h2>
+        <p class="abstract-text">Large Language Models (LLMs) are increasingly deployed in applications that interact with the physical world, such as navigation, robotics, or mapping, making robust geospatial reasoning a critical capability. Despite that, LLMs' ability to reason about GPS coordinates and real-world geography remains underexplored. We introduce <strong>GPSBench</strong>, a dataset of <strong>57,800 samples</strong> across <strong>17 tasks</strong> for evaluating geospatial reasoning in LLMs, spanning geometric coordinate operations (e.g., distance and bearing computation) and reasoning that integrates coordinates with world knowledge. Focusing on intrinsic model capabilities rather than tool use, we evaluate <strong>14 state-of-the-art LLMs</strong> and find that GPS reasoning remains challenging, with substantial variation across tasks: models are generally more reliable at real-world geographic reasoning than at geometric computations. Geographic knowledge degrades hierarchically, with strong country-level performance but weak city-level localization, while robustness to coordinate noise suggests genuine coordinate understanding rather than memorization. We further show that GPS-coordinate augmentation can improve in downstream geospatial tasks, and that finetuning induces trade-offs between gains in geometric computation and degradation in world knowledge.</p>
+      </div>
+    </section>
+
+    <!-- Results Overview -->
+    <section class="section section-alt" id="results-overview">
+      <div class="wide">
+        <h2>Results Overview</h2>
+        <p class="section-sub">Overall accuracy of 14 models across all 17 tasks (18,362 test samples)</p>
+        <div class="teaser-chart-wrap">
+          <canvas id="chart-teaser"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benchmark Taxonomy -->
+    <section class="section" id="taxonomy">
+      <div class="wide">
+        <h2>Benchmark Taxonomy</h2>
+        <p class="section-sub">GPSBench evaluates GPS reasoning across two complementary tracks and six capability categories</p>
+        <div id="taxonomy-container"></div>
+      </div>
+    </section>
+
+    <!-- Benchmark Overview -->
+    <section class="section section-alt" id="benchmark">
+      <div class="narrow">
+        <h2>Benchmark Overview</h2>
+        <p>GPSBench is organized into two complementary evaluation tracks:</p>
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="ov-header pure">Pure GPS Track</div>
+            <ul>
+              <li>Format Conversion <small>(DD, DMS, UTM, MGRS, Plus Code)</small></li>
+              <li>Coordinate System Transformation</li>
+              <li>Distance Calculation <small>(Haversine)</small></li>
+              <li>Bearing Computation</li>
+              <li>Coordinate Interpolation</li>
+              <li>Area &amp; Perimeter Calculation</li>
+              <li>Bounding Box Computation</li>
+              <li>Route Geometry Analysis</li>
+              <li>Relative Position <small>(coordinate-based)</small></li>
+            </ul>
+          </div>
+          <div class="overview-card">
+            <div class="ov-header applied">Applied Track</div>
+            <ul>
+              <li>Place Association <small>(reverse geocoding)</small></li>
+              <li>Name Disambiguation</li>
+              <li>Relative Position <small>(knowledge-based)</small></li>
+              <li>Proximity &amp; Nearest Neighbor</li>
+              <li>Route Analysis</li>
+              <li>Boundary Analysis</li>
+              <li>Spatial Patterns</li>
+              <li>Terrain Classification</li>
+              <li>Missing Data Inference</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-pill"><strong>57,800</strong> total samples</div>
+          <div class="stat-pill"><strong>17</strong> tasks</div>
+          <div class="stat-pill"><strong>18,362</strong> test samples</div>
+          <div class="stat-pill"><strong>14</strong> models evaluated</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section class="section" id="getting-started">
+      <div class="narrow">
+        <h2>Getting Started</h2>
+        <div class="code-block"><pre><code>git clone https://github.com/joey234/gpsbench.git
+cd GPSBench
+pip install -r requirements.txt
+cp .env.example .env   # add your API keys</code></pre></div>
+        <p>Run the benchmark:</p>
+        <div class="code-block"><pre><code># Evaluate all tasks
+python run_benchmark.py --model gpt-4o --provider openai
+
+# Specific track or task
+python run_benchmark.py --model gpt-4o --track pure_gps
+python run_benchmark.py --model gpt-4o --task distance_calculation
+
+# Quick test (100 samples)
+python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
+        <p>Supported providers: <code>openai</code>, <code>anthropic</code>, <code>google</code>, <code>openrouter</code></p>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="section section-alt" id="citation">
+      <div class="narrow">
+        <h2>Citation</h2>
+        <p>If you use GPSBench in your research, please cite:</p>
+        <div class="code-block cite-block">
+          <button class="copy-btn" id="copy-bib" title="Copy to clipboard">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+<pre><code id="bib-text">@article{gpsbench2025,
+  title   = {GPSBench: Do Large Language Models
+             Understand GPS Coordinates?},
+  author  = {Truong, Thinh Hung and Lau, Jey Han and Qi, Jianzhong},
+  journal = {arXiv preprint arXiv:2602.16105},
+  year    = {2025}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /panel-overview -->
+
+  <!-- ============ LEADERBOARD TAB ============ -->
+  <div class="tab-panel" id="panel-leaderboard">
+
+    <!-- Main Leaderboard -->
+    <section class="section" id="leaderboard">
+      <div class="wide">
+        <h2>Leaderboard</h2>
+        <div class="controls-bar">
+          <div class="search-wrap">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5" stroke-linecap="round"/></svg>
+            <input type="text" id="search-input" placeholder="Filter models..." autocomplete="off">
+          </div>
+          <select id="provider-filter">
+            <option value="all">All Providers</option>
+            <option value="OpenAI">OpenAI</option>
+            <option value="Google">Google</option>
+            <option value="Anthropic">Anthropic</option>
+            <option value="Alibaba">Alibaba</option>
+            <option value="Mistral">Mistral</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="lb-table" id="lb-table">
+            <thead>
+              <tr>
+                <th class="col-rank">#</th>
+                <th class="col-model">Model</th>
+                <th class="col-prov">Provider</th>
+                <th class="col-num sort-active" data-sort="overall">Overall&thinsp;%</th>
+                <th class="col-num" data-sort="pure_gps">Pure GPS&thinsp;%</th>
+                <th class="col-num" data-sort="applied">Applied&thinsp;%</th>
+                <th class="col-bar"></th>
+              </tr>
+            </thead>
+            <tbody id="lb-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Track Comparison -->
+    <section class="section section-alt" id="tracks">
+      <div class="wide">
+        <h2>Track Results</h2>
+        <p class="section-sub">Performance separated by Pure GPS (coordinate manipulation) vs Applied (geographic reasoning)</p>
+        <div class="track-cols">
+          <div class="track-col">
+            <h3 class="track-heading pure">Pure GPS Track <span>9 tasks &middot; 9,182 test samples</span></h3>
+            <table class="mini-table" id="table-pure"></table>
+          </div>
+          <div class="track-col">
+            <h3 class="track-heading applied">Applied Track <span>9 tasks &middot; 9,180 test samples</span></h3>
+            <table class="mini-table" id="table-applied"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task-Level Heatmap -->
+    <section class="section" id="heatmap">
+      <div class="wide">
+        <h2>Task-Level Results</h2>
+        <p class="section-sub">Accuracy (%) per task per model. Darker green = higher accuracy.</p>
+        <div class="heatmap-wrap">
+          <table class="heatmap-table" id="heatmap-table"></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Comparison Radar -->
+    <section class="section section-alt" id="compare">
+      <div class="wide">
+        <h2>Model Comparison</h2>
+        <p class="section-sub">Select models to compare across all tasks</p>
+        <div class="chip-bar" id="chip-bar"></div>
+        <div class="radar-wrap">
+          <canvas id="chart-radar"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /panel-leaderboard -->
+
+  <!-- ============ Footer (always visible) ============ -->
+  <footer class="site-footer">
+    <div class="narrow">
+      <p>GPSBench &middot; MIT License &middot; <a href="https://github.com/joey234/gpsbench" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://arxiv.org/abs/2602.16105" target="_blank" rel="noopener">Paper</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
