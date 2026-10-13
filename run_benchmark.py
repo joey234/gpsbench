@@ -39,8 +39,8 @@ Usage:
     python run_benchmark.py --batch-mode process --batch-ids batch_ABC123 batch_XYZ789
 
 Prerequisites:
-    Test splits must be generated first:
-    python scripts/create_splits.py --track both --seed 42
+    Use the released test splits in this repository.
+    Verify them with: python scripts/verify_dataset.py
 
 Environment Variables:
     OPENAI_API_KEY      - Required for OpenAI provider
@@ -62,6 +62,8 @@ from functools import lru_cache
 sys.path.insert(0, str(Path(__file__).parent / "evaluation"))
 
 from llm_client import LLMClient
+from evaluation.registry import runner_tracks
+from evaluation.current import score_response, score_task_result, score_run, rescore_directory
 
 # Prompt template loading
 @lru_cache(maxsize=32)
@@ -92,40 +94,7 @@ class GPSBenchRunner:
         self.batch_size = batch_size
         self.max_workers = max_workers
 
-        # Track structure - UPDATED to match current task files
-        self.tracks = {
-            "pure_gps": {
-                "name": "Pure GPS Track",
-                "tasks": [
-                    # All Pure GPS tasks (9 tasks total)
-                    {"file": "task1_format_conversion.json", "name": "Format Conversion"},
-                    {"file": "task3_coordinate_system_transformation.json", "name": "Coordinate System Transformation"},
-                    {"file": "task4_distance_calculation.json", "name": "Distance Calculation"},
-                    {"file": "task5_bearing_computation.json", "name": "Bearing Computation"},
-                    {"file": "task6_interpolation.json", "name": "Coordinate Interpolation"},
-                    {"file": "task7_area_perimeter.json", "name": "Polygon Area"},
-                    {"file": "task8_bounding_box.json", "name": "Bounding Box"},
-                    {"file": "task9_route_geometry.json", "name": "Route Geometry"},
-                    {"file": "task10_relative_position.json", "name": "Relative Position"},
-                ]
-            },
-            "applied": {
-                "name": "Applied Track",
-                "tasks": [
-                    # All Applied tasks (9 tasks total)
-                    # Note: task1 now includes noise tolerance/sensitivity items
-                    {"file": "task1_place_association.json", "name": "Place Association"},
-                    {"file": "task3_name_disambiguation.json", "name": "Name Disambiguation"},
-                    {"file": "task5_relative_position.json", "name": "Relative Position"},
-                    {"file": "task6_proximity.json", "name": "Proximity & Nearest Neighbor"},
-                    {"file": "task7_route_analysis.json", "name": "Route Analysis"},
-                    {"file": "task8_boundary_analysis.json", "name": "Boundary Analysis"},
-                    {"file": "task9_spatial_patterns.json", "name": "Spatial Patterns"},
-                    {"file": "task11_missing_data.json", "name": "Missing Data Inference"},
-                    {"file": "task13_terrain_classification.json", "name": "Terrain Classification"},
-                ]
-            }
-        }
+        self.tracks = runner_tracks()
 
         # For incremental saving
         self._current_output_dir = None
@@ -171,6 +140,7 @@ class GPSBenchRunner:
         Returns:
             Path to the saved task result file
         """
+        score_task_result(task_result, track_name, self.data_dir)
         task_results_dir = output_dir / "task_results"
         task_results_dir.mkdir(exist_ok=True)
 
@@ -912,7 +882,7 @@ FINAL ANSWER: [your answer]"""
             print(f"❌ ERROR: Test split not found!")
             print(f"File: {task_file}")
             print(f"\nThe benchmark MUST run on test splits only to prevent data leakage.")
-            print(f"Please generate test splits using: python scripts/create_splits.py --track both")
+            print(f"Restore the released split files, then run: python scripts/verify_dataset.py")
             print(f"{'='*80}\n")
             return {
                 "task_name": task_info["name"],
@@ -1072,14 +1042,14 @@ FINAL ANSWER: [your answer]"""
         # Calculate metrics
         accuracy = (correct / len(task_data) * 100) if task_data else 0.0
 
-        return {
+        return score_task_result({
             "task_name": task_info["name"],
             "task_file": task_info["file"],
             "total": len(task_data),
             "correct": correct,
             "accuracy": accuracy,
             "results": results
-        }
+        }, track_name, self.data_dir)
 
     def extract_numbers(self, text: str) -> List[float]:
         """
@@ -1108,326 +1078,8 @@ FINAL ANSWER: [your answer]"""
         return numbers
 
     def simple_evaluate(self, response: str, example: Dict[str, Any]) -> bool:
-        """
-        Simple evaluation - extract FINAL ANSWER and compare to ground truth
-
-        This is a basic evaluator. For production, use task-specific evaluators.
-        """
-        # Extract FINAL ANSWER
-        final_answer = None
-        for line in response.split('\n'):
-            if 'FINAL ANSWER:' in line.upper():
-                final_answer = line.split(':', 1)[1].strip()
-                break
-
-        if not final_answer:
-            # Fallback: try to extract answer from end of response
-            lines = response.strip().split('\n')
-            # Check last few lines for an answer
-            for line in reversed(lines[-10:]):
-                line = line.strip()
-                # Skip common explanation starters and empty lines
-                if line and not line.startswith(('To ', 'The ', 'Step ', 'First', 'Next', 'Calculate', 'We ', 'Using')):
-                    # Prefer lines with = (final calculations) or lines with numbers
-                    if '=' in line or any(c.isdigit() for c in line):
-                        final_answer = line
-                        break
-
-        if not final_answer:
-            # Last resort: use full response
-            final_answer = response.strip()
-
-        # Get ground truth
-        ground_truth = example.get("ground_truth", {})
-        task_type = example.get("task", "")
-
-        # MCQ answer (options field present with string answer)
-        if "options" in example and "answer" in ground_truth and isinstance(ground_truth["answer"], str):
-            expected = ground_truth["answer"].lower()
-            answer_lower = final_answer.lower().strip()
-            options = [opt.lower() for opt in example["options"]]
-
-            # Check if the expected answer word appears in the response
-            if expected in answer_lower:
-                return True
-
-            # Check if answer is just the option word or starts with it
-            for opt in options:
-                if answer_lower == opt or answer_lower.startswith(opt + " ") or answer_lower.startswith(opt + "."):
-                    return opt == expected
-
-            # Check single letter answer (e.g., "N" for North when options are North/South/East/West)
-            if len(answer_lower) == 1 and answer_lower.isalpha():
-                for opt in options:
-                    if opt.startswith(answer_lower):
-                        return opt == expected
-
-            return False
-
-        # Boolean answer (True/False questions)
-        if "answer" in ground_truth and isinstance(ground_truth["answer"], bool):
-            expected = ground_truth["answer"]
-            # Check for Yes/True or No/False in response
-            answer_lower = final_answer.lower()
-            if expected:
-                return any(word in answer_lower for word in ["yes", "true", "correct"])
-            else:
-                return any(word in answer_lower for word in ["no", "false", "incorrect"])
-
-        # Name Disambiguation special case: ground truth has "name" but LLM answers with letter
-        if "name" in ground_truth and "candidates" in example:
-            expected_name = ground_truth["name"]
-            candidates = example["candidates"]
-
-            # Check if LLM answered with a letter
-            stripped_answer = final_answer.strip()
-            if stripped_answer and len(stripped_answer) <= 3 and stripped_answer[0].upper().isalpha():
-                # LLM gave letter answer - map to candidate name
-                letter = stripped_answer[0].upper()
-                letter_index = ord(letter) - ord('A')
-
-                if 0 <= letter_index < len(candidates):
-                    selected_candidate = candidates[letter_index]
-                    # Candidates are dicts with 'name' field
-                    if isinstance(selected_candidate, dict):
-                        selected_name = selected_candidate.get('name', '')
-                        return selected_name.lower() == expected_name.lower()
-
-            # Otherwise check if name is in response
-            return expected_name.lower() in final_answer.lower()
-
-        # Multiple choice - check answer letter (only for single-letter answers)
-        if "answer" in ground_truth:
-            answer_value = ground_truth["answer"]
-
-            # Check if this is a numeric answer with tolerance (e.g., missing data inference)
-            if isinstance(answer_value, (int, float)) and "tolerance" in ground_truth:
-                # Numeric answer with tolerance - use numeric comparison
-                response_nums = self.extract_numbers(final_answer)
-                if response_nums:
-                    try:
-                        predicted = float(response_nums[0])
-                        expected = float(answer_value)
-                        tolerance = ground_truth["tolerance"]
-                        return abs(predicted - expected) <= tolerance
-                    except (ValueError, IndexError):
-                        pass
-
-            # Convert to string for other checks
-            expected = str(answer_value).strip()
-
-            # Check if this is a single-letter answer (A, B, C, D, etc.)
-            if len(expected) == 1 and expected.isalpha():
-                # Extract just the letter from response
-                predicted = final_answer[0].upper() if final_answer else ""
-                return predicted == expected.upper()
-            else:
-                # String answer (e.g., city name) - check if answer is in response
-                return expected.lower() in final_answer.lower()
-
-        # Location name matching
-        if "name" in ground_truth or "location_name" in ground_truth or "location" in ground_truth:
-            expected = (ground_truth.get("name") or ground_truth.get("location_name") or ground_truth.get("location", "")).lower()
-            return expected in final_answer.lower()
-
-        # Terrain type - check for letter answer or terrain name
-        if "terrain_type" in ground_truth:
-            expected_terrain = ground_truth["terrain_type"].lower()
-            answer_lower = final_answer.lower()
-
-            # Check if answered with letter (e.g., "G" for Forest)
-            if "answer" in ground_truth:
-                expected_letter = ground_truth["answer"].strip().upper()
-                # Extract first letter from response
-                for char in final_answer:
-                    if char.isalpha():
-                        if char.upper() == expected_letter:
-                            return True
-                        break  # Only check first letter
-
-            # Fallback: Check if terrain type name is in answer
-            return expected_terrain in answer_lower
-
-        # Interpolation - midpoint or interpolated_point coordinates
-        interpolation_point = ground_truth.get("midpoint") or ground_truth.get("interpolated_point")
-        if interpolation_point and isinstance(interpolation_point, dict):
-            expected_lat = interpolation_point.get("lat")
-            expected_lon = interpolation_point.get("lon")
-
-            # Extract numbers from response
-            numbers = self.extract_numbers(final_answer)
-            if len(numbers) >= 2:
-                try:
-                    predicted_lat = numbers[0]
-                    predicted_lon = numbers[1]
-
-                    # Check with tolerance
-                    tolerance_km = ground_truth.get("tolerance_km", 5.0)
-                    # ~1 degree ≈ 111 km
-                    tolerance_deg = tolerance_km / 111.0
-
-                    lat_match = abs(predicted_lat - expected_lat) <= tolerance_deg
-                    lon_match = abs(predicted_lon - expected_lon) <= tolerance_deg
-
-                    return lat_match and lon_match
-                except (ValueError, IndexError):
-                    pass
-
-        # Route Geometry - polyline simplification (points_kept)
-        if "points_kept" in ground_truth:
-            import re
-            expected_points = set(ground_truth["points_kept"])
-
-            # Extract all numbers from response
-            numbers = re.findall(r'\d+', final_answer)
-            predicted_points = set(int(n) for n in numbers if n.isdigit())
-
-            # Check if sets match
-            return predicted_points == expected_points
-
-        # Precision Understanding - multi-field answer
-        if task_type == "precision_understanding" and all(k in ground_truth for k in ["decimal_places", "accuracy_meters"]):
-            import re
-            numbers = re.findall(r'\d+', final_answer.replace(',', ''))
-
-            if len(numbers) >= 2:
-                try:
-                    # Extract decimal places and accuracy
-                    predicted_decimal = int(numbers[0])
-                    predicted_accuracy = int(numbers[1])
-
-                    expected_decimal = ground_truth["decimal_places"]
-                    expected_accuracy = ground_truth["accuracy_meters"]
-
-                    # Check decimal places (exact match)
-                    decimal_match = predicted_decimal == expected_decimal
-
-                    # Check accuracy (within 20% tolerance due to approximation)
-                    accuracy_tolerance = expected_accuracy * 0.2
-                    accuracy_match = abs(predicted_accuracy - expected_accuracy) <= accuracy_tolerance
-
-                    return decimal_match and accuracy_match
-                except (ValueError, IndexError):
-                    pass
-
-        # Grouping/boundary analysis (check if key continents/regions are mentioned)
-        if "grouping" in ground_truth:
-            grouping = ground_truth["grouping"]
-            # Check if all groups are mentioned in the answer
-            answer_lower = final_answer.lower()
-            groups_found = sum(1 for group_name in grouping.keys() if group_name.lower() in answer_lower)
-            # Consider correct if at least half the groups are mentioned
-            return groups_found >= len(grouping) / 2
-
-        # Polygon Area - parse area value from response
-        if "area_km2" in ground_truth:
-            try:
-                # Extract numbers from response
-                numbers = self.extract_numbers(final_answer)
-                if numbers:
-                    predicted_area = float(numbers[0])
-                    expected_area = ground_truth["area_km2"]
-
-                    # Allow 5% tolerance
-                    area_tolerance = abs(expected_area * 0.05) if expected_area != 0 else 1.0
-                    area_correct = abs(predicted_area - expected_area) <= area_tolerance
-
-                    return area_correct
-            except (ValueError, AttributeError):
-                pass
-
-        # Coordinate Transformation - special case for (x, y) or (easting, northing) pairs
-        # Handles Web Mercator (x, y) and UTM (easting, northing)
-        coord_pairs = [
-            ("x", "y"),  # Web Mercator
-            ("easting", "northing"),  # UTM
-        ]
-
-        for coord1_key, coord2_key in coord_pairs:
-            if coord1_key in ground_truth and coord2_key in ground_truth:
-                numbers = self.extract_numbers(final_answer)
-
-                if len(numbers) >= 2:
-                    try:
-                        predicted_1 = float(numbers[0])
-                        predicted_2 = float(numbers[1])
-                        expected_1 = ground_truth[coord1_key]
-                        expected_2 = ground_truth[coord2_key]
-
-                        # Use 1% tolerance for coordinate transformations (they should be precise)
-                        # Web Mercator, UTM have meter precision
-                        tolerance_percent = 0.01  # 1%
-                        tolerance_1 = abs(expected_1 * tolerance_percent) if expected_1 != 0 else 100.0  # 100m minimum
-                        tolerance_2 = abs(expected_2 * tolerance_percent) if expected_2 != 0 else 100.0
-
-                        coord1_match = abs(predicted_1 - expected_1) <= tolerance_1
-                        coord2_match = abs(predicted_2 - expected_2) <= tolerance_2
-
-                        return coord1_match and coord2_match
-                    except (ValueError, IndexError):
-                        pass
-
-        # Bounding Box - special case for 4 coordinates
-        if all(k in ground_truth for k in ["min_lat", "max_lat", "min_lon", "max_lon"]):
-            numbers = self.extract_numbers(final_answer)
-
-            if len(numbers) >= 4:
-                try:
-                    predicted = [float(n) for n in numbers[:4]]
-                    expected = [
-                        ground_truth["min_lat"],
-                        ground_truth["max_lat"],
-                        ground_truth["min_lon"],
-                        ground_truth["max_lon"]
-                    ]
-
-                    # Check each coordinate with tolerance
-                    tolerance_deg = ground_truth.get("tolerance_deg", 0.1)
-                    matches = all(abs(p - e) <= tolerance_deg for p, e in zip(predicted, expected))
-
-                    return matches
-                except (ValueError, IndexError):
-                    pass
-
-        # Numeric comparison (distance, bearing, etc.)
-        numeric_keys = [
-            "distance", "distance_km", "distance_miles",
-            "bearing", "initial_bearing_deg", "final_bearing_deg",
-            "latitude", "longitude",
-            "original_lat", "original_lon",  # For missing data inference task
-            "min_lat", "max_lat", "min_lon", "max_lon",
-            "straightness_ratio"  # For route geometry task
-        ]
-
-        if any(key in ground_truth for key in numeric_keys):
-            # Extract numbers from both
-            response_nums = self.extract_numbers(final_answer)
-            if response_nums:
-                predicted = float(response_nums[0])
-
-                # Try each numeric key in priority order
-                for key in numeric_keys:
-                    if key in ground_truth:
-                        expected = ground_truth[key]
-
-                        # Check for task-specific tolerance fields first
-                        if "tolerance_deg" in ground_truth:
-                            # Absolute degree tolerance (for bearing tasks)
-                            tolerance = ground_truth["tolerance_deg"]
-                        elif "tolerance_km" in ground_truth:
-                            # Absolute km tolerance (for distance tasks)
-                            tolerance = ground_truth["tolerance_km"]
-                        elif "tolerance_percent" in ground_truth:
-                            # Percentage tolerance
-                            tolerance = abs(expected * ground_truth["tolerance_percent"] / 100.0)
-                        else:
-                            # Default: 5% tolerance
-                            tolerance = abs(expected * 0.05) if expected != 0 else 0.1
-
-                        return abs(predicted - expected) <= tolerance
-
-        # Default: exact string match
-        return final_answer.lower() == str(ground_truth).lower()
+        """Binary correctness; numeric task headline scores are computed separately."""
+        return score_response(response, example).correct
 
     def filter_tasks(self, tasks: List[Dict], task_filter: Optional[List[str]]) -> List[Dict]:
         """Filter tasks based on partial name matching."""
@@ -1518,7 +1170,7 @@ FINAL ANSWER: [your answer]"""
         return {
             "track_name": track_name,
             "track_display_name": track_info["name"],
-            "total_tasks": len(track_info["tasks"]),
+            "total_tasks": len(tasks_to_run),
             "total_cases": total_cases,
             "total_correct": total_correct,
             "overall_accuracy": overall_accuracy,
@@ -1927,6 +1579,8 @@ FINAL ANSWER: [your answer]"""
         already been saved incrementally during evaluation.
         """
 
+        score_run(results, self.data_dir)
+
         # Use existing output dir if available (from incremental saving)
         if self._current_output_dir is not None:
             output_dir = self._current_output_dir
@@ -1950,6 +1604,8 @@ FINAL ANSWER: [your answer]"""
 
         # 1. Save summary with overall metrics
         summary = {
+            "scoring_version": results["scoring_version"],
+            "complete": results["complete"],
             "model": results["model"],
             "provider": results["provider"],
             "timestamp": results["timestamp"],
@@ -1967,6 +1623,9 @@ FINAL ANSWER: [your answer]"""
                 "total_tasks": track_data.get("total_tasks", len(track_data.get("tasks", []))),
                 "total_cases": track_data.get("total_cases", 0),
                 "total_correct": track_data.get("total_correct", 0),
+                "score": track_data["score"],
+                "scored_tasks": track_data["scored_tasks"],
+                "scoring_version": results["scoring_version"],
                 "overall_accuracy": track_data.get("overall_accuracy", 0.0),
                 "tasks_summary": []
             }
@@ -1978,6 +1637,12 @@ FINAL ANSWER: [your answer]"""
                     "task_file": task.get("task_file"),
                     "total": task.get("total", 0),
                     "correct": task.get("correct", 0),
+                    "score": task["score"],
+                    "metric": task["metric"],
+                    "role": task["role"],
+                    "complete": task["complete"],
+                    "parsed": task["parsed"],
+                    **({"included": task["included"]} if "included" in task else {}),
                     "accuracy": task.get("accuracy", 0.0)
                 })
 
@@ -1996,6 +1661,9 @@ FINAL ANSWER: [your answer]"""
                 "total_tasks": track_data.get("total_tasks", len(track_data.get("tasks", []))),
                 "total_cases": track_data.get("total_cases", 0),
                 "total_correct": track_data.get("total_correct", 0),
+                "score": track_data["score"],
+                "scored_tasks": track_data["scored_tasks"],
+                "scoring_version": results["scoring_version"],
                 "overall_accuracy": track_data.get("overall_accuracy", 0.0),
                 "tasks": []
             }
@@ -2016,6 +1684,12 @@ FINAL ANSWER: [your answer]"""
                     "task_file": task.get("task_file"),
                     "total": task.get("total", 0),
                     "correct": task.get("correct", 0),
+                    "score": task["score"],
+                    "metric": task["metric"],
+                    "role": task["role"],
+                    "complete": task["complete"],
+                    "parsed": task["parsed"],
+                    **({"included": task["included"]} if "included" in task else {}),
                     "accuracy": task.get("accuracy", 0.0),
                     "results_file": f"task_results/{track_name}_{task_file_name}.json"
                 })
@@ -2035,7 +1709,10 @@ FINAL ANSWER: [your answer]"""
 
 - **Total Cases:** {results.get('overall', {}).get('total_cases', 0)}
 - **Total Correct:** {results.get('overall', {}).get('total_correct', 0)}
-- **Overall Accuracy:** {results.get('overall', {}).get('overall_accuracy', 0.0):.2f}%
+- **Overall score (0–100):** {results["overall"]["score"]}
+- **Scoring version:** {results["scoring_version"]}
+- **Complete 17-task test evaluation:** {results["complete"]}
+- **Binary diagnostic accuracy:** {results.get('overall', {}).get('overall_accuracy', 0.0):.2f}%
 
 ## Track Results
 
@@ -2043,7 +1720,8 @@ FINAL ANSWER: [your answer]"""
         for track_name, track_data in results.get("tracks", {}).items():
             readme_content += f"""### {track_data.get('track_display_name', track_name)}
 
-- **Accuracy:** {track_data.get('overall_accuracy', 0.0):.2f}%
+- **Score (0–100):** {track_data["score"]}
+- **Binary diagnostic accuracy:** {track_data.get('overall_accuracy', 0.0):.2f}%
 - **Correct:** {track_data.get('total_correct', 0)}/{track_data.get('total_cases', 0)}
 - **Tasks:** {track_data.get('total_tasks', len(track_data.get('tasks', [])))}
 
@@ -2051,7 +1729,7 @@ FINAL ANSWER: [your answer]"""
             # Add task breakdown
             for task in track_data.get("tasks", []):
                 status = "✅" if task.get("accuracy", 0) > 50 else "❌"
-                readme_content += f"  {status} **{task.get('task_name')}:** {task.get('accuracy', 0):.1f}% ({task.get('correct', 0)}/{task.get('total', 0)})\n"
+                readme_content += f"  {status} **{task.get('task_name')}:** score {task['score']:.1f} ({task['metric']}; {task['role']})\n"
             readme_content += "\n"
 
         readme_content += """## File Structure
@@ -2097,6 +1775,8 @@ FINAL ANSWER: [your answer]"""
         This saves only the task results to an existing folder, overwriting any
         existing task files. Useful for re-running specific tasks.
         """
+        score_run(results, self.data_dir)
+
         # Find the existing folder
         output_dir = self.results_dir / existing_folder
         if not output_dir.exists():
@@ -2123,6 +1803,15 @@ FINAL ANSWER: [your answer]"""
                     json.dump(task, f, indent=2)
 
                 updated_files.append(task_result_path.name)
+
+        # Rebuild summaries from all tasks, including those not rerun this time.
+        merged = rescore_directory(output_dir, self.data_dir)
+        previous_path = output_dir / "summary.json"
+        previous = json.loads(previous_path.read_text()) if previous_path.exists() else {}
+        merged.update({k: previous.get(k, results.get(k)) for k in
+                       ("model", "provider", "timestamp", "max_samples_per_task")})
+        self._current_output_dir = output_dir
+        self.save_results(merged)
 
         print(f"\n✅ Updated existing results: {output_dir}/")
         print(f"   - Updated {len(updated_files)} task files:")
@@ -2179,6 +1868,8 @@ def main():
     )
 
     # Evaluation configuration
+    parser.add_argument("--include-diagnostics", action="store_true",
+                        help="Also run Missing Data; exclude it from main scores")
     parser.add_argument(
         '--track',
         type=str,
@@ -2334,6 +2025,8 @@ def main():
         data_dir=args.data_dir,
         results_dir=args.results_dir
     )
+
+    runner.tracks = runner_tracks(args.include_diagnostics)
 
     # Handle batch modes
     if args.batch_mode == 'auto':
@@ -2659,20 +2352,20 @@ def main():
 
     if "overall" in results:
         metrics = results["overall"]
-        print(f"Overall Accuracy: {metrics['overall_accuracy']:.2f}%")
+        print(f"Overall score (0–100): {metrics['score']}")
         print(f"Total Correct: {metrics['total_correct']}/{metrics['total_cases']}")
         print()
 
     for track_name, track_results in results.get("tracks", {}).items():
         track_display_name = track_results.get('track_display_name', track_results.get('track_name', track_name))
         print(f"{track_display_name}:")
-        print(f"  Accuracy: {track_results['overall_accuracy']:.2f}%")
+        print(f"  Score (0–100): {track_results['score']}")
         print(f"  Correct: {track_results['total_correct']}/{track_results['total_cases']}")
         print()
 
         for task in track_results.get("tasks", []):
             status = "✅" if task.get("accuracy", 0) > 50 else "❌"
-            print(f"    {status} {task['task_name']}: {task.get('accuracy', 0):.1f}%")
+            print(f"    {status} {task['task_name']}: {task['score']:.1f} ({task['metric']}; {task['role']})")
         print()
 
     print(f"{'='*80}")

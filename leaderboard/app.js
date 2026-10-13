@@ -126,7 +126,7 @@ function renderTeaser() {
       datasets: [
         {
           label: "Pure GPS",
-          data: sorted.map(m => m.pure_gps.accuracy),
+          data: sorted.map(m => m.pure_gps.score),
           backgroundColor: "rgba(37,99,235,0.55)",
           borderColor: "rgba(37,99,235,0.85)",
           borderWidth: 1,
@@ -134,7 +134,7 @@ function renderTeaser() {
         },
         {
           label: "Applied",
-          data: sorted.map(m => m.applied.accuracy),
+          data: sorted.map(m => m.applied.score),
           backgroundColor: "rgba(124,58,237,0.45)",
           borderColor: "rgba(124,58,237,0.8)",
           borderWidth: 1,
@@ -154,11 +154,11 @@ function renderTeaser() {
           bodyColor: "#5a6370",
           borderColor: "#e0e3e8",
           borderWidth: 1,
-          callbacks: { label: c => `${c.dataset.label}: ${c.raw.toFixed(1)}%` }
+          callbacks: { label: c => `${c.dataset.label}: ${c.raw.toFixed(1)}` }
         }
       },
       scales: {
-        x: { stacked: false, beginAtZero: true, max: 100, ticks: { color: "#8a92a0", font: { size: 10 }, callback: v => v + "%" }, grid: { color: "#e0e3e830" } },
+        x: { stacked: false, beginAtZero: true, max: 100, ticks: { color: "#8a92a0", font: { size: 10 }, callback: v => v }, grid: { color: "#e0e3e830" } },
         y: { ticks: { color: "#3a4050", font: { size: 11, weight: "500" } }, grid: { display: false } }
       }
     }
@@ -220,7 +220,7 @@ function renderTaxonomy() {
     <div class="tax-root">
       <div class="tax-node tax-node-root">
         <strong>GPSBench</strong>
-        <span>17 tasks &middot; 57,800 samples</span>
+        <span>17 tasks &middot; 58,614 samples</span>
       </div>
     </div>
     <div class="tax-branches">
@@ -242,23 +242,23 @@ function renderLeaderboard() {
   });
 
   list.sort((a, b) => {
-    const va = sortKey === "overall" ? a.overall : sortKey === "pure_gps" ? a.pure_gps.accuracy : a.applied.accuracy;
-    const vb = sortKey === "overall" ? b.overall : sortKey === "pure_gps" ? b.pure_gps.accuracy : b.applied.accuracy;
+    const va = sortKey === "overall" ? a.overall : sortKey === "pure_gps" ? a.pure_gps.score : a.applied.score;
+    const vb = sortKey === "overall" ? b.overall : sortKey === "pure_gps" ? b.pure_gps.score : b.applied.score;
     return vb - va;
   });
 
   document.getElementById("lb-tbody").innerHTML = list.map((m, i) => {
     const r = i + 1;
     const rc = r <= 3 ? `rb-${r}` : "rb-n";
-    const pw = m.pure_gps.accuracy / 100 * 80;
-    const aw = m.applied.accuracy / 100 * 80;
+    const pw = m.pure_gps.score / 100 * 80;
+    const aw = m.applied.score / 100 * 80;
     return `<tr>
       <td class="col-rank"><span class="rb ${rc}">${r}</span></td>
       <td class="col-model"><div class="mn">${m.name}</div><div class="mf">${m.fullName}</div></td>
       <td class="col-prov">${prov(m)}</td>
-      <td class="col-num"><span class="acc ${acc(m.overall)}">${m.overall.toFixed(2)}%</span></td>
-      <td class="col-num"><span class="acc ${acc(m.pure_gps.accuracy)}">${m.pure_gps.accuracy.toFixed(2)}%</span></td>
-      <td class="col-num"><span class="acc ${acc(m.applied.accuracy)}">${m.applied.accuracy.toFixed(2)}%</span></td>
+      <td class="col-num"><span class="acc ${acc(m.overall)}">${m.overall.toFixed(2)}</span></td>
+      <td class="col-num"><span class="acc ${acc(m.pure_gps.score)}">${m.pure_gps.score.toFixed(2)}</span></td>
+      <td class="col-num"><span class="acc ${acc(m.applied.score)}">${m.applied.score.toFixed(2)}</span></td>
       <td class="col-bar">
         <div class="ibar">
           <div class="ibar-seg" style="width:${pw}px;background:rgba(37,99,235,0.5)"></div>
@@ -272,16 +272,16 @@ function renderLeaderboard() {
 
 /* ===== Track Tables ===== */
 function renderTrackTables() {
-  const sorted = [...models].sort((a, b) => b.pure_gps.accuracy - a.pure_gps.accuracy);
-  const sortedA = [...models].sort((a, b) => b.applied.accuracy - a.applied.accuracy);
+  const sorted = [...models].sort((a, b) => b.pure_gps.score - a.pure_gps.score);
+  const sortedA = [...models].sort((a, b) => b.applied.score - a.applied.score);
 
-  const head = `<thead><tr><th>#</th><th>Model</th><th>Accuracy</th></tr></thead>`;
+  const head = `<thead><tr><th>#</th><th>Model</th><th>Score</th></tr></thead>`;
 
   document.getElementById("table-pure").innerHTML = head + "<tbody>" +
-    sorted.map((m, i) => `<tr><td style="width:30px;text-align:center;color:var(--text3);font-family:var(--mono)">${i+1}</td><td>${m.name}</td><td><span class="acc ${acc(m.pure_gps.accuracy)}">${m.pure_gps.accuracy.toFixed(2)}%</span></td></tr>`).join("") + "</tbody>";
+    sorted.map((m, i) => `<tr><td style="width:30px;text-align:center;color:var(--text3);font-family:var(--mono)">${i+1}</td><td>${m.name}</td><td><span class="acc ${acc(m.pure_gps.score)}">${m.pure_gps.score.toFixed(2)}</span></td></tr>`).join("") + "</tbody>";
 
   document.getElementById("table-applied").innerHTML = head + "<tbody>" +
-    sortedA.map((m, i) => `<tr><td style="width:30px;text-align:center;color:var(--text3);font-family:var(--mono)">${i+1}</td><td>${m.name}</td><td><span class="acc ${acc(m.applied.accuracy)}">${m.applied.accuracy.toFixed(2)}%</span></td></tr>`).join("") + "</tbody>";
+    sortedA.map((m, i) => `<tr><td style="width:30px;text-align:center;color:var(--text3);font-family:var(--mono)">${i+1}</td><td>${m.name}</td><td><span class="acc ${acc(m.applied.score)}">${m.applied.score.toFixed(2)}</span></td></tr>`).join("") + "</tbody>";
 }
 
 /* ===== Heatmap ===== */
@@ -391,7 +391,7 @@ function renderRadar() {
         tooltip: {
           backgroundColor:"#ffffff", titleColor:"#1a1f2e", bodyColor:"#5a6370",
           borderColor:"#e0e3e8", borderWidth:1,
-          callbacks: { label: c => `${c.dataset.label}: ${c.raw.toFixed(1)}%` }
+          callbacks: { label: c => `${c.dataset.label}: ${c.raw.toFixed(1)}` }
         }
       },
       scales: {

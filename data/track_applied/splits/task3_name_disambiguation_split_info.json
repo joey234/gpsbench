@@ -4,7 +4,7 @@
   "split_strategy": "geographic",
   "split_ratios": null,
   "seed": 42,
-  "total_examples": 3400,
+  "total_examples": 4214,
   "splits": {
     "train": 2883,
     "dev": 311,
@@ -15,5 +15,6 @@
     "dev": "task3_name_disambiguation_dev.json",
     "test": "task3_name_disambiguation_test.json"
   },
-  "_canonical_sync": "Synced from GPT-4.1 canonical results"
+  "_canonical_sync": "Synced from GPT-4.1 canonical results",
+  "notes": "Canonical split used by all reported tables. Test is 1,020 rows / 470 unique questions (near-duplicates share gold, differ in candidates). Test candidate lat/lon are zeroed; prompts identify options by country."
 }

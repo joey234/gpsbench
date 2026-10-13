@@ -1,126 +1,93 @@
-# GPSBench: A Benchmark for GPS Reasoning in Large Language Models
+# GPSBench: Do Large Language Models Understand GPS Coordinates?
 
-GPSBench is a comprehensive benchmark for evaluating GPS and geographic reasoning capabilities in Large Language Models. It comprises **57,800 samples across 17 tasks** organized into two tracks.
+GPSBench evaluates reasoning with GPS coordinates and real-world geography. It contains **58,614 examples across 17 tasks**: nine Pure GPS tasks and eight Applied tasks. The released splits contain **35,522 training, 5,750 development, and 17,342 test examples**. Missing Data is an additional 3,400-example probe, excluded from benchmark averages.
 
-## Benchmark Overview
+- [Dataset and splits](data/README.md)
+- [Evaluation guide](evaluation/README.md) and [current scoring rules](evaluation/SCORING_SPEC.md)
+- [Verified model scores](results/current/scores.json) and [project website](leaderboard/)
+- [Repository guide](docs/REPOSITORY.md)
 
-### Applied Track (8 tasks)
-Tests real-world geographic reasoning requiring world knowledge:
-- Place Association
-- Name Disambiguation
-- Relative Position
-- Proximity
-- Route Analysis
-- Boundary Analysis
-- Spatial Patterns
-- Terrain Classification
+## Setup
 
-### Pure GPS Track (9 tasks)
-Tests coordinate manipulation without geographic knowledge:
-- Format Conversion
-- Coordinate Transformation
-- Distance Calculation
-- Bearing Computation
-- Coordinate Interpolation
-- Area & Perimeter
-- Bounding Box
-- Route Geometry
-- Relative Position (coordinate-based)
-
-## Installation
+Use Python 3.10 or newer and a project-local environment. The repository uses requirements files.
 
 ```bash
-pip install -r requirements.txt
-```
-
-Configure API keys:
-```bash
+uv venv --python 3.12 .venv
+uv pip install --python .venv/bin/python -r requirements.txt
 cp .env.example .env
-# Edit .env with your API keys (OPENAI_API_KEY, etc.)
 ```
 
-## Quick Start
-
-Run the benchmark on a model:
+Set the key for your provider in `.env`. The runner supports `openai`, `openrouter`, `gemini`, and automatic provider detection. Gemini additionally requires `google-genai`:
 
 ```bash
-# Evaluate all tasks
-python run_benchmark.py --model gpt-4o --provider openai
-
-# Evaluate specific track
-python run_benchmark.py --model gpt-4o --track applied
-python run_benchmark.py --model gpt-4o --track pure_gps
-
-# Evaluate specific task
-python run_benchmark.py --model gpt-4o --task distance_calculation
-
-# Limit samples for quick testing
-python run_benchmark.py --model gpt-4o --max-samples 100
+uv pip install --python .venv/bin/python -r requirements-gemini.txt
 ```
 
-### Supported Providers
+## Run the benchmark
 
-- `openai`: OpenAI models (gpt-4o, gpt-4-turbo, etc.)
-- `anthropic`: Anthropic models (claude-3-opus, claude-3-sonnet, etc.)
-- `google`: Google models (gemini-pro, gemini-1.5-pro, etc.)
-- `openrouter`: Access multiple providers via OpenRouter
+Run from the repository root. These commands send requests to the selected model provider.
 
-## Repository Structure
+```bash
+# Small run across the 17 main tasks
+uv run --no-project --python .venv/bin/python python run_benchmark.py \
+  --provider openai --model gpt-4.1-mini --max-samples 10
 
-```
-GPSBench/
-├── run_benchmark.py          # Main entry point
-├── requirements.txt          # Dependencies
-├── .env.example              # API key template
-│
-├── data/                     # Benchmark data
-│   ├── applied/              # Applied track tasks
-│   └── pure_gps/             # Pure GPS track tasks
-│
-├── evaluation/               # Evaluation framework
-│   ├── llm_client.py         # LLM API clients
-│   ├── task_evaluators.py    # Task-specific evaluators
-│   └── ...
-│
-├── scripts/                  # Utility scripts
-│   ├── analyze_results.py    # Results analysis
-│   ├── visualize_results.py  # Generate plots
-│   ├── generate_*.py         # Data generation
-│   └── ...
-│
-├── results/                  # Evaluation results
-│
-└── paper/                    # Paper LaTeX source
+# A complete track
+uv run --no-project --python .venv/bin/python python run_benchmark.py \
+  --provider openai --model gpt-4.1-mini --track pure_gps
+
+# One task
+uv run --no-project --python .venv/bin/python python run_benchmark.py \
+  --provider openai --model gpt-4.1-mini --tasks distance_calculation
+
+# Optional probe; excluded from main averages
+uv run --no-project --python .venv/bin/python python run_benchmark.py \
+  --provider openai --model gpt-4.1-mini --include-diagnostics --tasks missing_data
 ```
 
-## Results
+The runner uses the released test splits. Do not regenerate splits to reproduce the reported results. Saved summaries identify the scoring version and whether the run covers all 17 complete test sets. Partial runs report averages only over the main tasks actually evaluated.
 
-Results are saved to `results/gpsbench_{model}_{timestamp}/`:
-- `summary.json`: Overall accuracy by track and task
-- `task_results/`: Per-sample predictions and scores
+## Scoring
 
-## Data Format
+The current version is `gpsbench-neurips-metrics-restored-v1`.
 
-Each task file contains samples with:
-```json
-{
-  "id": "sample_001",
-  "question": "What is the distance between...",
-  "ground_truth": {"distance_km": 1234.5, "tolerance_km": 61.7},
-  "metadata": {...}
-}
+- Distance and Area use `max(0, 100 × (1 − mean relative error))`.
+- Bearing uses the same formula with wrapped angular error divided by 180°.
+- These numerical scores include finite, parsed errors below 1000; parsing and inclusion counts are also reported.
+- Interpolation requires both coordinates within ±0.5°. The remaining tasks use the corrected matching rules described in the [scoring specification](evaluation/SCORING_SPEC.md).
+- Track and overall **scores** equally weight tasks. Saved `accuracy` and `overall_accuracy` fields are binary diagnostics, not the headline score.
+
+Rescore an existing run without API calls or changing its saved responses:
+
+```bash
+uv run --no-project --python .venv/bin/python python -m evaluation.current \
+  results/YOUR_RUN --out /tmp/gpsbench-current-scores.json
 ```
 
-## Citation
+## Verify the release
 
-```bibtex
-@article{gpsbench2025,
-  title={GPSBench: A Benchmark for GPS Reasoning in Large Language Models},
-  author={...},
-  year={2025}
-}
+```bash
+uv run --no-project --python .venv/bin/python python scripts/verify_dataset.py
+uv run --no-project --python .venv/bin/python python -m unittest \
+  evaluation.test_strict_evaluator evaluation.test_neurips_metrics evaluation.test_current
 ```
+
+[Current results](results/current/README.md) were rescored from the saved responses for the fixed 14-model cohort. They include input checksums. Raw response archives are not included in this Git checkout; reproducing those model results requires the corresponding archives or new model runs.
+
+## Tasks
+
+| Pure GPS (9) | Applied (8) |
+|---|---|
+| Format Conversion | Place Association |
+| Coordinate Transformation | Name Disambiguation |
+| Distance | Relative Position |
+| Bearing | Proximity |
+| Interpolation | Route Analysis |
+| Area | Boundary Analysis |
+| Bounding Box | Spatial Patterns |
+| Route Geometry | Terrain Classification |
+| Relative Position | |
 
 ## License
 
-MIT License
+Code and evaluator: [MIT](LICENSE). Derived task files: [CC BY 4.0](DATA_LICENSE). GeoNames source data also requires attribution under CC BY 4.0.

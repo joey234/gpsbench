@@ -1,0 +1,19 @@
+{
+  "cohort": {
+    "GPT-5-mini": "results/gpsbench_gpt-5-mini-2025-08-07_20251205_142538",
+    "GPT-5.1": "results/gpsbench_gpt-5.1_20251202_114655",
+    "Gemini-2.5-Pro": "results/gpsbench_gemini-2.5-pro_20251210_182109",
+    "GPT-4.1-mini": "results/gpsbench_gpt-4.1-mini_20251201_221915",
+    "GPT-4.1": "results/gpsbench_gpt-4.1_20251201_235326",
+    "Gemini-2.5-Flash": "results/gpsbench_gemini-2.5-flash_20251210_160050",
+    "Claude-Haiku-4.5": "results/gpsbench_anthropic_claude-haiku-4.5_20260101_181018",
+    "Qwen3-235B": "results/gpsbench_qwen_qwen3-235b-a22b-2507_20251205_015659",
+    "Mistral-Large": "results/gpsbench_mistralai_mistral-large-2512_20251228_094842",
+    "GPT-5-nano": "results/gpsbench_gpt-5-nano-2025-08-07_20251205_162633",
+    "Qwen3-30B": "results/gpsbench_qwen_qwen3-30b-a3b-instruct-2507_20251203_194935",
+    "Qwen3-8B": "results/gpsbench_qwen_qwen3-8b_20260114_154454",
+    "Qwen3-14B": "results/gpsbench_qwen_qwen3-14b_20260114_150050",
+    "Mistral-Small-24B": "results/gpsbench_mistralai_mistral-small-24b-instruct-2501_20251228_174803"
+  },
+  "selection": "Fixed cohort copied from the saved ARR audit; directory identity is authoritative. No automatic newest-directory selection."
+}

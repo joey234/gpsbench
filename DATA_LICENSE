@@ -1,0 +1,16 @@
+GPSBench derived dataset license
+================================
+
+The GPSBench task files in `data/` are a derived dataset built from the
+GeoNames gazetteer (https://www.geonames.org/).
+
+- GeoNames source data: Creative Commons Attribution 4.0 (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
+- GPSBench derived task files: Creative Commons Attribution 4.0 (CC BY 4.0)
+- GPSBench code, evaluator, and scripts: MIT (see LICENSE)
+
+You must retain GeoNames attribution when redistributing the derived data.
+
+This release is versioned by `data/MANIFEST.md` (per-file SHA-256 checksums).
+Missing Data (`task11_missing_data`) is a diagnostic configuration, not an
+18th main benchmark task.

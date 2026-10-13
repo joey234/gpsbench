@@ -1,0 +1,265 @@
+{
+  "categories": {
+    "representation": {
+      "name": "Representation",
+      "description": "Converting between coordinate formats and systems",
+      "track": "pure_gps"
+    },
+    "measurement": {
+      "name": "Measurement",
+      "description": "Computing geometric measurements from coordinates",
+      "track": "pure_gps"
+    },
+    "spatial_ops": {
+      "name": "Spatial Operations",
+      "description": "Operations on sets of coordinates",
+      "track": "pure_gps"
+    },
+    "knowledge_retrieval": {
+      "name": "Knowledge Retrieval",
+      "description": "Recalling geographic facts from coordinates",
+      "track": "applied"
+    },
+    "spatial_reasoning": {
+      "name": "Spatial Reasoning",
+      "description": "Reasoning about spatial relationships using world knowledge",
+      "track": "applied"
+    },
+    "pattern_analysis": {
+      "name": "Pattern Analysis",
+      "description": "Analyzing spatial data patterns and anomalies",
+      "track": "applied"
+    }
+  },
+  "taskMeta": {
+    "format_conversion": {
+      "name": "Format Conversion",
+      "track": "pure_gps",
+      "category": "representation",
+      "samples": 1020,
+      "description": "Convert coordinates between decimal degrees and DMS",
+      "evaluationType": "Coordinate accuracy (0.00005\u00b0)"
+    },
+    "coordinate_transformation": {
+      "name": "Coord. System Transform",
+      "track": "pure_gps",
+      "category": "representation",
+      "samples": 1022,
+      "description": "Transform coordinates between geographic coordinate systems",
+      "evaluationType": "Coordinate accuracy (10/100 m)"
+    },
+    "distance_calculation": {
+      "name": "Distance Calculation",
+      "track": "pure_gps",
+      "category": "measurement",
+      "samples": 1020,
+      "description": "Compute geodesic distance between coordinate pairs",
+      "evaluationType": "Relative-error score"
+    },
+    "bearing_computation": {
+      "name": "Bearing Computation",
+      "track": "pure_gps",
+      "category": "measurement",
+      "samples": 1020,
+      "description": "Calculate initial bearing/azimuth between two points",
+      "evaluationType": "Angular-error score"
+    },
+    "area_perimeter": {
+      "name": "Polygon Area",
+      "track": "pure_gps",
+      "category": "measurement",
+      "samples": 1020,
+      "description": "Calculate the spherical area of a GPS-defined polygon",
+      "evaluationType": "Relative-error score"
+    },
+    "coordinate_interpolation": {
+      "name": "Coordinate Interpolation",
+      "track": "pure_gps",
+      "category": "spatial_ops",
+      "samples": 1020,
+      "description": "Interpolate intermediate points along a geodesic path",
+      "evaluationType": "Coordinate accuracy (0.5\u00b0)"
+    },
+    "bounding_box": {
+      "name": "Bounding Box",
+      "track": "pure_gps",
+      "category": "spatial_ops",
+      "samples": 1020,
+      "description": "Compute the minimum bounding rectangle for a set of points",
+      "evaluationType": "Bound accuracy (0.5\u00b0)"
+    },
+    "route_geometry": {
+      "name": "Route Geometry",
+      "track": "pure_gps",
+      "category": "spatial_ops",
+      "samples": 1020,
+      "description": "Analyze geometric properties of multi-point routes",
+      "evaluationType": "Option or retained point set"
+    },
+    "relative_position_gps": {
+      "name": "Relative Position",
+      "track": "pure_gps",
+      "category": "spatial_ops",
+      "samples": 1020,
+      "description": "Determine cardinal direction relationship between coordinates",
+      "evaluationType": "Cardinal direction"
+    },
+    "place_association": {
+      "name": "Place Association",
+      "track": "applied",
+      "category": "knowledge_retrieval",
+      "samples": 1020,
+      "description": "Identify a city directly from GPS coordinates",
+      "evaluationType": "Canonical city name"
+    },
+    "name_disambiguation": {
+      "name": "Name Disambiguation",
+      "track": "applied",
+      "category": "knowledge_retrieval",
+      "samples": 1020,
+      "description": "Distinguish between places sharing the same name using coordinates",
+      "evaluationType": "Multiple choice"
+    },
+    "terrain_classification": {
+      "name": "Terrain Classification",
+      "track": "applied",
+      "category": "knowledge_retrieval",
+      "samples": 1020,
+      "description": "Classify terrain type (ocean, mountain, desert, etc.) from coordinates",
+      "evaluationType": "Multiple choice"
+    },
+    "relative_position_applied": {
+      "name": "Relative Position",
+      "track": "applied",
+      "category": "spatial_reasoning",
+      "samples": 1020,
+      "description": "Determine spatial relationships between real-world locations",
+      "evaluationType": "Cardinal direction"
+    },
+    "proximity": {
+      "name": "Proximity & Nearest Neighbor",
+      "track": "applied",
+      "category": "spatial_reasoning",
+      "samples": 1020,
+      "description": "Identify nearest location from a set of candidates",
+      "evaluationType": "Candidate name"
+    },
+    "boundary_analysis": {
+      "name": "Boundary Analysis",
+      "track": "applied",
+      "category": "spatial_reasoning",
+      "samples": 1020,
+      "description": "Group every named city by continent",
+      "evaluationType": "Complete city-to-continent grouping"
+    },
+    "route_analysis": {
+      "name": "Route Analysis",
+      "track": "applied",
+      "category": "pattern_analysis",
+      "samples": 1020,
+      "description": "Analyze travel routes for geographic context and feasibility",
+      "evaluationType": "Yes/No"
+    },
+    "spatial_patterns": {
+      "name": "Spatial Patterns",
+      "track": "applied",
+      "category": "pattern_analysis",
+      "samples": 1020,
+      "description": "Identify geographic patterns and clusters in coordinate sets",
+      "evaluationType": "Outlier name"
+    }
+  },
+  "providerColors": {
+    "OpenAI": "#10a37f",
+    "Google": "#4285f4",
+    "Anthropic": "#d4a574",
+    "Alibaba": "#ff6a00",
+    "Mistral": "#f24822"
+  },
+  "models": {
+    "gpt-5-mini": {
+      "id": "gpt-5-mini",
+      "name": "GPT-5 Mini",
+      "fullName": "gpt-5-mini-2025-08-07",
+      "provider": "OpenAI"
+    },
+    "gpt-5.1": {
+      "id": "gpt-5.1",
+      "name": "GPT-5.1",
+      "fullName": "gpt-5.1",
+      "provider": "OpenAI"
+    },
+    "gemini-2.5-pro": {
+      "id": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "fullName": "gemini-2.5-pro",
+      "provider": "Google"
+    },
+    "gpt-4.1": {
+      "id": "gpt-4.1",
+      "name": "GPT-4.1",
+      "fullName": "gpt-4.1",
+      "provider": "OpenAI"
+    },
+    "gemini-2.5-flash": {
+      "id": "gemini-2.5-flash",
+      "name": "Gemini 2.5 Flash",
+      "fullName": "gemini-2.5-flash",
+      "provider": "Google"
+    },
+    "gpt-4.1-mini": {
+      "id": "gpt-4.1-mini",
+      "name": "GPT-4.1 Mini",
+      "fullName": "gpt-4.1-mini",
+      "provider": "OpenAI"
+    },
+    "claude-haiku-4.5": {
+      "id": "claude-haiku-4.5",
+      "name": "Claude Haiku 4.5",
+      "fullName": "claude-haiku-4.5",
+      "provider": "Anthropic"
+    },
+    "qwen3-235b": {
+      "id": "qwen3-235b",
+      "name": "Qwen3 235B",
+      "fullName": "qwen3-235b-a22b-2507",
+      "provider": "Alibaba"
+    },
+    "mistral-large": {
+      "id": "mistral-large",
+      "name": "Mistral Large",
+      "fullName": "mistral-large-2512",
+      "provider": "Mistral"
+    },
+    "gpt-5-nano": {
+      "id": "gpt-5-nano",
+      "name": "GPT-5 Nano",
+      "fullName": "gpt-5-nano-2025-08-07",
+      "provider": "OpenAI"
+    },
+    "qwen3-8b": {
+      "id": "qwen3-8b",
+      "name": "Qwen3 8B",
+      "fullName": "qwen3-8b",
+      "provider": "Alibaba"
+    },
+    "qwen3-30b": {
+      "id": "qwen3-30b",
+      "name": "Qwen3 30B",
+      "fullName": "qwen3-30b-a3b-instruct-2507",
+      "provider": "Alibaba"
+    },
+    "qwen3-14b": {
+      "id": "qwen3-14b",
+      "name": "Qwen3 14B",
+      "fullName": "qwen3-14b",
+      "provider": "Alibaba"
+    },
+    "mistral-small": {
+      "id": "mistral-small",
+      "name": "Mistral Small 24B",
+      "fullName": "mistral-small-24b-instruct-2501",
+      "provider": "Mistral"
+    }
+  }
+}

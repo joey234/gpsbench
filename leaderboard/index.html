@@ -47,7 +47,7 @@
     <section class="section" id="abstract">
       <div class="narrow">
         <h2>Abstract</h2>
-        <p class="abstract-text">Large Language Models (LLMs) are increasingly deployed in applications that interact with the physical world, such as navigation, robotics, or mapping, making robust geospatial reasoning a critical capability. Despite that, LLMs' ability to reason about GPS coordinates and real-world geography remains underexplored. We introduce <strong>GPSBench</strong>, a dataset of <strong>57,800 samples</strong> across <strong>17 tasks</strong> for evaluating geospatial reasoning in LLMs, spanning geometric coordinate operations (e.g., distance and bearing computation) and reasoning that integrates coordinates with world knowledge. Focusing on intrinsic model capabilities rather than tool use, we evaluate <strong>14 state-of-the-art LLMs</strong> and find that GPS reasoning remains challenging, with substantial variation across tasks: models are generally more reliable at real-world geographic reasoning than at geometric computations. Geographic knowledge degrades hierarchically, with strong country-level performance but weak city-level localization, while robustness to coordinate noise suggests genuine coordinate understanding rather than memorization. We further show that GPS-coordinate augmentation can improve in downstream geospatial tasks, and that finetuning induces trade-offs between gains in geometric computation and degradation in world knowledge.</p>
+        <p class="abstract-text">Large Language Models (LLMs) are increasingly deployed in applications that interact with the physical world, such as navigation, robotics, or mapping, making robust geospatial reasoning a critical capability. Despite that, LLMs' ability to reason about GPS coordinates and real-world geography remains underexplored. We introduce <strong>GPSBench</strong>, a dataset of <strong>58,614 samples</strong> across <strong>17 tasks</strong> for evaluating geospatial reasoning in LLMs, spanning geometric coordinate operations (e.g., distance and bearing computation) and reasoning that integrates coordinates with world knowledge. Focusing on intrinsic model capabilities rather than tool use, we evaluate <strong>14 state-of-the-art LLMs</strong> and find that GPS reasoning remains challenging, with substantial variation across tasks: models are generally more reliable at real-world geographic reasoning than at geometric computations. Responses often include the correct country but fail to identify the city, and city identification remains difficult across coordinate-noise levels. Adding GPS coordinates improves accuracy on two downstream geospatial benchmarks, while computation and geographic lookup tools improve coordinate calculations and city identification.</p>
       </div>
     </section>
 
@@ -55,7 +55,7 @@
     <section class="section section-alt" id="results-overview">
       <div class="wide">
         <h2>Results Overview</h2>
-        <p class="section-sub">Overall accuracy of 14 models across all 17 tasks (18,362 test samples)</p>
+        <p class="section-sub">Task scores of 14 models across all 17 tasks (17,342 test samples). Scores range from 0 to 100; Distance, Bearing, and Area use error-based scores. Track and overall scores equally weight tasks.</p>
         <div class="teaser-chart-wrap">
           <canvas id="chart-teaser"></canvas>
         </div>
@@ -102,14 +102,13 @@
               <li>Boundary Analysis</li>
               <li>Spatial Patterns</li>
               <li>Terrain Classification</li>
-              <li>Missing Data Inference</li>
             </ul>
           </div>
         </div>
         <div class="stats-row">
-          <div class="stat-pill"><strong>57,800</strong> total samples</div>
+          <div class="stat-pill"><strong>58,614</strong> total samples</div>
           <div class="stat-pill"><strong>17</strong> tasks</div>
-          <div class="stat-pill"><strong>18,362</strong> test samples</div>
+          <div class="stat-pill"><strong>17,342</strong> test samples</div>
           <div class="stat-pill"><strong>14</strong> models evaluated</div>
         </div>
       </div>
@@ -120,20 +119,22 @@
       <div class="narrow">
         <h2>Getting Started</h2>
         <div class="code-block"><pre><code>git clone https://github.com/joey234/gpsbench.git
-cd GPSBench
-pip install -r requirements.txt
+cd gpsbench
+uv venv --python 3.12 .venv
+uv pip install --python .venv/bin/python -r requirements.txt
 cp .env.example .env   # add your API keys</code></pre></div>
         <p>Run the benchmark:</p>
         <div class="code-block"><pre><code># Evaluate all tasks
-python run_benchmark.py --model gpt-4o --provider openai
+uv run --no-project --python .venv/bin/python python run_benchmark.py --model gpt-4o --provider openai
 
 # Specific track or task
-python run_benchmark.py --model gpt-4o --track pure_gps
-python run_benchmark.py --model gpt-4o --task distance_calculation
+uv run --no-project --python .venv/bin/python python run_benchmark.py --model gpt-4o --track pure_gps
+uv run --no-project --python .venv/bin/python python run_benchmark.py --model gpt-4o --tasks distance_calculation
 
 # Quick test (100 samples)
-python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
-        <p>Supported providers: <code>openai</code>, <code>anthropic</code>, <code>google</code>, <code>openrouter</code></p>
+uv run --no-project --python .venv/bin/python python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
+        <p>Gemini requires the optional <code>requirements-gemini.txt</code> dependencies.</p>
+        <p>Supported providers: <code>openai</code>, <code>openrouter</code>, <code>gemini</code>, <code>auto</code></p>
       </div>
     </section>
 
@@ -187,9 +188,9 @@ python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
                 <th class="col-rank">#</th>
                 <th class="col-model">Model</th>
                 <th class="col-prov">Provider</th>
-                <th class="col-num sort-active" data-sort="overall">Overall&thinsp;%</th>
-                <th class="col-num" data-sort="pure_gps">Pure GPS&thinsp;%</th>
-                <th class="col-num" data-sort="applied">Applied&thinsp;%</th>
+                <th class="col-num sort-active" data-sort="overall">Overall score</th>
+                <th class="col-num" data-sort="pure_gps">Pure GPS score</th>
+                <th class="col-num" data-sort="applied">Applied score</th>
                 <th class="col-bar"></th>
               </tr>
             </thead>
@@ -210,7 +211,7 @@ python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
             <table class="mini-table" id="table-pure"></table>
           </div>
           <div class="track-col">
-            <h3 class="track-heading applied">Applied Track <span>9 tasks &middot; 9,180 test samples</span></h3>
+            <h3 class="track-heading applied">Applied Track <span>8 tasks &middot; 8,160 test samples</span></h3>
             <table class="mini-table" id="table-applied"></table>
           </div>
         </div>
@@ -221,7 +222,7 @@ python run_benchmark.py --model gpt-4o --max-samples 100</code></pre></div>
     <section class="section" id="heatmap">
       <div class="wide">
         <h2>Task-Level Results</h2>
-        <p class="section-sub">Accuracy (%) per task per model. Darker green = higher accuracy.</p>
+        <p class="section-sub">Scores (0–100) per task and model. Darker green indicates a higher score. Distance, Bearing, and Area use error-based scores; other tasks use accuracy.</p>
         <div class="heatmap-wrap">
           <table class="heatmap-table" id="heatmap-table"></table>
         </div>

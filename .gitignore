@@ -28,6 +28,7 @@ wheels/
 *.egg
 
 # Virtual environments
+.venv/
 venv/
 env/
 ENV/
@@ -55,6 +56,8 @@ data/raw/cities15000.zip
 data/raw/cities15000.txt
 
 # Temporary files
+.pytest_cache/
+.ruff_cache/
 *.tmp
 *.bak
 *.backup

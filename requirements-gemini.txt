@@ -1,0 +1,2 @@
+# Optional Google Gemini provider used by evaluation/llm_client.py.
+google-genai>=1.0.0
