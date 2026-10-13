@@ -5,6 +5,8 @@ Run from the repository root through the local uv environment.
 | Current release task | Command after `uv run --no-project --python .venv/bin/python python` |
 |---|---|
 | Verify dataset counts, checksums, and unsplit consistency | `scripts/verify_dataset.py` |
+| Verify current reference answers and direction corrections | `scripts/export_scoring_references.py --check` |
+| Compare the current paper's result tables with released scores | `scripts/verify_paper_scores.py PATH_TO_CURRENT_PAPER.tex` |
 | Score one saved run without API calls | `-m evaluation.current results/YOUR_RUN --out /tmp/scores.json` |
 | Rebuild public model scores from fixed response archives | `scripts/export_current_results.py` |
 | Refresh website data from public scores | `scripts/export_leaderboard.py` |

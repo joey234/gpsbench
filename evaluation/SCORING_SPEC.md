@@ -36,4 +36,6 @@ Track means give equal weight to the nine Pure GPS or eight Applied task scores.
 
 ## Historical versions
 
+Current reference answers are exported in `data/scoring_references.json`. Relative Position recomputation changes 243 Pure GPS and 263 Applied test labels compared with the stored historical `ground_truth.answer`; these corrections were already used for the published scores. The export also lists corrections for training and development data. Use `evaluation.references.scoring_example` to obtain current labels and an accepted answer without historical worked solutions.
+
 `SCORING_SPEC_V1.md` describes the original answer extraction. `SCORING_SPEC_V2.md` describes the earlier binary analysis. Current scoring combines corrected extraction/matching with the restored numerical metrics above. Neither historical document overrides this specification.

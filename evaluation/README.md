@@ -14,6 +14,7 @@ The output file must not already exist. This command reads one run's `task_resul
 | File | Purpose |
 |---|---|
 | `registry.py` | Single task list: 17 main tasks and one optional probe |
+| `references.py` | Current reference answers and a dataset view with corrected direction labels |
 | `current.py` | Current answer scoring, task aggregation, and offline CLI |
 | `strict_evaluator.py` | Corrected final-answer parsing and task matching |
 | `neurips_metrics.py` | Numerical headline metrics and Interpolation precision |

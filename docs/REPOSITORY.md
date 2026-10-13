@@ -22,7 +22,7 @@ Manuscript working copies and review notes may exist locally without being part 
 
 ## Updating a release
 
-1. Run `scripts/verify_dataset.py` and the current evaluator tests.
+1. Run `scripts/verify_dataset.py`, `scripts/export_scoring_references.py --check`, and the current evaluator tests. See [paper alignment checks](PAPER_ALIGNMENT.md).
 2. With the saved response archives present, run `scripts/export_current_results.py`.
 3. Run `scripts/export_leaderboard.py` to refresh the website from `results/current/scores.json`.
 4. Review score differences and the staged file list before publishing.

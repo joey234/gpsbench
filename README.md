@@ -3,6 +3,7 @@
 GPSBench evaluates reasoning with GPS coordinates and real-world geography. It contains **58,614 examples across 17 tasks**: nine Pure GPS tasks and eight Applied tasks. The released splits contain **35,522 training, 5,750 development, and 17,342 test examples**. Missing Data is an additional 3,400-example probe, excluded from benchmark averages.
 
 - [Dataset and splits](data/README.md)
+- [Current scoring references and label corrections](data/scoring_references.json) (historical direction labels differ; see the dataset guide)
 - [Evaluation guide](evaluation/README.md) and [current scoring rules](evaluation/SCORING_SPEC.md)
 - [Verified model scores](results/current/scores.json) and [project website](leaderboard/)
 - [Repository guide](docs/REPOSITORY.md)
@@ -69,7 +70,7 @@ uv run --no-project --python .venv/bin/python python -m evaluation.current \
 ```bash
 uv run --no-project --python .venv/bin/python python scripts/verify_dataset.py
 uv run --no-project --python .venv/bin/python python -m unittest \
-  evaluation.test_strict_evaluator evaluation.test_neurips_metrics evaluation.test_current
+  evaluation.test_strict_evaluator evaluation.test_neurips_metrics evaluation.test_current evaluation.test_references
 ```
 
 [Current results](results/current/README.md) were rescored from the saved responses for the fixed 14-model cohort. They include input checksums. Raw response archives are not included in this Git checkout; reproducing those model results requires the corresponding archives or new model runs.
